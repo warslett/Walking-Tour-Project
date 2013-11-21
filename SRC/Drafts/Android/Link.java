@@ -26,5 +26,18 @@ public void receive();
 *
 */
 public void disconnect();
+/**
+ * Pauses the current connection to the server.
+ *
+ *
+ */
+public void pauseConnection();
+
+/**
+ * Re-opens a paused connection the server.
+ *
+ *
+ */
+public void openConnection();
 
 }
