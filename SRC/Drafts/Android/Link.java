@@ -7,7 +7,7 @@ public interface Link{
 *@param ipAddr The IP address of the server you wish to connect to.
 *@param portNum The port number of the application that you are using.
 */
-public void connect(String ipAddr,int portNum);
+public void connect(String hostName,int portNum);
 /**
 * Sends data to the server.
 *
@@ -38,6 +38,6 @@ public void pauseConnection();
  *
  *
  */
-public void openConnection();
+public void reconnect();
 
 }
