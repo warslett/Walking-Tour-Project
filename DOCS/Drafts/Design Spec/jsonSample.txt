@@ -1,0 +1,44 @@
+{
+    "Title": "My Walk",
+    "shortDesc": "A walk from grans house to my house",
+    "longDesc": "This is a walk that I take from my house to my nans. I hope you enjoy it…",
+    "route": [
+        {
+            "id": 0,
+            "longitude": 345674,
+            "latitude": 583848,
+            "time": 0
+        },
+        {
+            "id": 1,
+            "longitude": 345684,
+            "latitude": 583848,
+            "time": 5
+        },
+//LOTS MORE HERE…
+    ],
+    "locations": [
+        {
+            "coord": 5,
+            "description": "This is where I live",
+            "media": [
+                "file1.jpg",
+                "file2.jpg"
+            ]
+        },
+        {
+            "coord": 17,
+            "description": "This is about half way",
+            "media": []
+        },
+        {
+            "coord": 25,
+            "description": "This is where my gran lives",
+            "media": [
+                "file3.jpg"
+            ]
+        }
+    ],
+    "time": 45676,
+    "distance": 23454
+}
