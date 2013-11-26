@@ -39,5 +39,11 @@ public class Location {
 	public String getTimeStamp(){
 		return timeStamp;
 	}
+	/*Json Generation basic layout*/
+	public String toJSON(){
+		String out;
+		out = "{\"Longitude\": \""+Long.toString(longitude)+"\",\"Latitude\": \""+Long.toString(latitude)+"\"Time Stamp\": \""+timeStamp+"\"}";
+		return out;
+	}
 
 }

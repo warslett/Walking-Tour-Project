@@ -43,8 +43,10 @@ public class Tour {
 		locations.remove(l);
 	}
 
-	public void toJSON(){
-
+	public String toJSON(){
+		String out;
+		//going to have to do some testing on Linked Lists and JSON generation
+		return out;
 	}
 
 	public void setTourName(String tourName){
