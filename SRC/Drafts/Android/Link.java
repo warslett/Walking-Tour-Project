@@ -4,7 +4,7 @@ public interface Link{
 * Connects to a server with a given IP address and port number.
 *
 *
-*@param ipAddr The IP address of the server you wish to connect to.
+*@param hostName The host name of the server you wish to connect to.
 *@param portNum The port number of the application that you are using.
 */
 public void connect(String hostName,int portNum);
