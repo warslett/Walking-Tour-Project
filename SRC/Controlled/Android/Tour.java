@@ -45,11 +45,11 @@ public class Tour {
 
 	public String toJSON(){
 		String out;
-		for(int i=0;i<locations.size();i++){
-				
-
-
+		out = "{\"Tour Name\": \""+tourName+"\",\"Long Description\": \""+longDesc+"\",\"Short Description\": \""+shortDesc+"\",\"Locations\": [";
+		for(int i=0;i<locations.size()-1;i++){
+			out += locations.get(i).toJSON()+",";		
 		}
+		out+=locations.get(locations.size()-1).toJSON()+"]}";
 
 		return tourName;
 	}
