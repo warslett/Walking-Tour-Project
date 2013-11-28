@@ -7,7 +7,7 @@ public class Person {
 		age = a;
 		name = n;
 		jobs[0] = new Job("Cleaner",1);
-		jobs[1] = new Job("Wanker",19);
+		jobs[1] = new Job("Doctor",19);
 	}
 	public String toJson(){
 		/*should use string buffer but DILLIGAF prototyping*/
