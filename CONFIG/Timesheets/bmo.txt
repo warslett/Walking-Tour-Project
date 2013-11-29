@@ -40,4 +40,5 @@ Week: 29/11/13 - 05/12/13
 
 Tasks:
 	Orchard - 01:00
+	QA Design spec - 00:30
 	
