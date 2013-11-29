@@ -35,4 +35,9 @@ Tasks:
 	Design spec - 01:30
 
 	TOTAL HOURS: 06:50
+
+Week: 29/11/13 - 05/12/13
+
+Tasks:
+	Orchard - 01:00
 	
