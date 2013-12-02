@@ -215,7 +215,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int about_btn=0x7f050008;
-        public static final int action_settings=0x7f05000a;
+        public static final int action_settings=0x7f05000d;
         public static final int g_map=0x7f050009;
         public static final int hybrid=0x7f050004;
         public static final int logIn_btn=0x7f050006;
@@ -225,6 +225,9 @@ containing a value of this type.
         public static final int satellite=0x7f050002;
         public static final int settings_btn=0x7f050007;
         public static final int terrain=0x7f050003;
+        public static final int walkLongDesc_tf=0x7f05000c;
+        public static final int walkShortDesc_tf=0x7f05000b;
+        public static final int walkTitle_tf=0x7f05000a;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
@@ -234,6 +237,7 @@ containing a value of this type.
         public static final int activity_main=0x7f030001;
         public static final int activity_map=0x7f030002;
         public static final int activity_recorded=0x7f030003;
+        public static final int dialog_new_walk=0x7f030004;
     }
     public static final class menu {
         public static final int about=0x7f0b0000;
