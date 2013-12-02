@@ -10,7 +10,6 @@ public class Person {
 		jobs[1] = new Job("Doctor",19);
 	}
 	public String toJson(){
-		/*should use string buffer but DILLIGAF prototyping*/
 		String out;
 		out = "{\"Name\": \""+name+"\",\"Age\": \""+Integer.toString(age)+"\",\"Jobs\": [";
 		for(int i = 0;i<amountOfJobs-1;i++){
