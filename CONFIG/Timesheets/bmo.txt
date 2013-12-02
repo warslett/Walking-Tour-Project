@@ -34,6 +34,7 @@ Tasks:
 	Tutorial: 00:50
 	Design spec - 01:30
 
+<<<<<<< HEAD
 	TOTAL HOURS: 06:50
 
 Week: 29/11/13 - 05/12/13
@@ -44,4 +45,21 @@ Tasks:
 	B23 Group meeting - 00:50
 
 	TOTAL HOURS: 03:20
+=======
+	TOTAL HOURS: 06:50
+
+Week: 29/11/13 - 05/12/13
+
+Tasks:
+	Orchard - 01:00
+
+
+
+
+
+
+
+
+
+3d01f97e916b4488a03c08f0cee6
 	

@@ -215,7 +215,8 @@ containing a value of this type.
     }
     public static final class id {
         public static final int about_btn=0x7f050008;
-        public static final int action_settings=0x7f050009;
+        public static final int action_settings=0x7f05000a;
+        public static final int g_map=0x7f050009;
         public static final int hybrid=0x7f050004;
         public static final int logIn_btn=0x7f050006;
         public static final int newWalk_btn=0x7f050005;
@@ -231,12 +232,14 @@ containing a value of this type.
     public static final class layout {
         public static final int activity_about=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_recorded=0x7f030002;
+        public static final int activity_map=0x7f030002;
+        public static final int activity_recorded=0x7f030003;
     }
     public static final class menu {
         public static final int about=0x7f0b0000;
         public static final int main=0x7f0b0001;
-        public static final int recorded=0x7f0b0002;
+        public static final int map=0x7f0b0002;
+        public static final int recorded=0x7f0b0003;
     }
     public static final class string {
         public static final int action_settings=0x7f06001c;
@@ -336,31 +339,32 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060013;
         public static final int hello_world=0x7f06001d;
-        public static final int pref_default_display_name=0x7f060025;
-        public static final int pref_description_social_recommendations=0x7f060023;
+        public static final int pref_default_display_name=0x7f060026;
+        public static final int pref_description_social_recommendations=0x7f060024;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f060027;
+        public static final int pref_header_data_sync=0x7f060028;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f060021;
+        public static final int pref_header_general=0x7f060022;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f06002a;
-        public static final int pref_ringtone_silent=0x7f06002d;
-        public static final int pref_title_add_friends_to_messages=0x7f060026;
-        public static final int pref_title_display_name=0x7f060024;
-        public static final int pref_title_new_message_notifications=0x7f06002b;
-        public static final int pref_title_ringtone=0x7f06002c;
-        public static final int pref_title_social_recommendations=0x7f060022;
-        public static final int pref_title_sync_frequency=0x7f060028;
-        public static final int pref_title_system_sync_settings=0x7f060029;
-        public static final int pref_title_vibrate=0x7f06002e;
+        public static final int pref_header_notifications=0x7f06002b;
+        public static final int pref_ringtone_silent=0x7f06002e;
+        public static final int pref_title_add_friends_to_messages=0x7f060027;
+        public static final int pref_title_display_name=0x7f060025;
+        public static final int pref_title_new_message_notifications=0x7f06002c;
+        public static final int pref_title_ringtone=0x7f06002d;
+        public static final int pref_title_social_recommendations=0x7f060023;
+        public static final int pref_title_sync_frequency=0x7f060029;
+        public static final int pref_title_system_sync_settings=0x7f06002a;
+        public static final int pref_title_vibrate=0x7f06002f;
         public static final int title_activity_about=0x7f06001f;
         public static final int title_activity_main=0x7f06001b;
+        public static final int title_activity_map=0x7f060020;
         public static final int title_activity_recorded=0x7f06001e;
-        public static final int title_activity_settings=0x7f060020;
+        public static final int title_activity_settings=0x7f060021;
     }
     public static final class style {
         /** 

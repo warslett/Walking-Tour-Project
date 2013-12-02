@@ -36,9 +36,13 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
+		case R.id.newWalk_btn:
+			Intent newWalk = new Intent(this, MapActivity.class);
+			startActivity(newWalk);
+			break;
 		case R.id.about_btn:
-			Intent intent = new Intent(this, AboutActivity.class);
-			startActivity(intent);
+			Intent about = new Intent(this, AboutActivity.class);
+			startActivity(about);
 			break;
 		}
 		
