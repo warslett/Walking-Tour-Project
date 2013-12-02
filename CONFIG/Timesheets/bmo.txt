@@ -39,5 +39,9 @@ Tasks:
 Week: 29/11/13 - 05/12/13
 
 Tasks:
-	Orchard - 01:00
+	Orchard - 01:30
+	QA Design spec - 01:00
+	B23 Group meeting - 00:50
+
+	TOTAL HOURS: 03:20
 	
