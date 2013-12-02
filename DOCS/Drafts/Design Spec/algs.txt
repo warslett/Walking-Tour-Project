@@ -1,5 +1,16 @@
-toJSON()
-generating MIME
+toJSON() - Refer to source code under SRC/Drafts/Android/Json\ Testing
+generating MIME http://stackoverflow.com/questions/15275871/android-httppost-sends-data-to-a-form-on-a-php-server
 photo-relateed algs, save-storage
-Location LL options
-Auto Location Generation on Per M differnce (PROTOTYPE asap)
+Location LL options Find linked list code in java(At home) 
+Auto Location Generation on Per M differnce
+in PSUDOCODE{
+	while(true){
+		if(Logic test on mins difference if > #Work it out harvey){
+			Location john = new Location(this.getlocation());
+			locations.add(john);
+			//not a Key Location
+		}
+	}
+}
+#HASHTAG
+#Swag
