@@ -1,7 +1,8 @@
 Group 05 Project Tasks:
 
 Will L:
-	-We need class java code for each class [like the interface] 
+	-We need class java code for each class [like the interface]
+	-Is there a description of the WalkActivity class? 
 Will A:
 	-Component diagram [Server side]
 Sev:
