@@ -1,3 +1,5 @@
+package com.wtc.grp5.model;
+
 import java.util.LinkedList;
 
 public class Tour {
@@ -8,13 +10,13 @@ public class Tour {
 	private LinkedList<Location> locations;
 	
 	/**
-	* Conrtucts a blank tour.
+	* Constructs a blank tour.
 	*/
 	public Tour(){
 		tourName = new String();
 		shortDesc = new String();
 		longDesc = new String();
-		locations = new LinkedList<String>();
+		locations = new LinkedList<Location>();
 	}
 	
 	/**
@@ -26,7 +28,7 @@ public class Tour {
 		this.tourName = tourName;
 		shortDesc = new String();
 		longDesc = new String();
-		locations = new LinkedList<String>();
+		locations = new LinkedList<Location>();
 	}
 
 	/**
@@ -39,7 +41,7 @@ public class Tour {
 		this.tourName = tourName;
 		this.shortDesc = shortDesc;
 		longDesc = new String();
-		locations = new LinkedList<String>();
+		locations = new LinkedList<Location>();
 	}
 
 	/**
@@ -53,7 +55,7 @@ public class Tour {
 		this.tourName = tourName;
 		this.shortDesc = shortDesc;
 		this.longDesc = longDesc;
-		locations = new LinkedList<String>();
+		locations = new LinkedList<Location>();
 	}
 	
 	/**
@@ -143,7 +145,7 @@ public class Tour {
 	*
 	* @param locations the new value for this.locations.
 	*/
-	public void setLocations(LinkedList locations){
+	public void setLocations(LinkedList<Location> locations){
 		this.locations = locations;
 	}
 

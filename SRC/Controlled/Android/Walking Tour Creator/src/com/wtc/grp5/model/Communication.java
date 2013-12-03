@@ -1,10 +1,10 @@
-import java.net.Socket;
+package com.wtc.grp5.model;
 
 import java.net.HttpURLConnection;
 
 public class Communication implements Link {
 
-	private HttpUrlConnection socket;
+	private HttpURLConnection connection;
 	private String hostName;
 	private Tour tour;
 	
@@ -12,7 +12,7 @@ public class Communication implements Link {
 	 * Constructs a blank Communication object.
 	 */
 	public Communication(){
-	
+		// Does nothing
 	}
 	
 	/**
@@ -21,21 +21,25 @@ public class Communication implements Link {
 	 * @param tour the object to sent to the server.
 	 */
 	public Communication(Tour tour){
-
+		this.tour = tour;
 	}
 	
+	@Override
 	public void connect(String hostName){
 		
 	}
 
+	@Override
 	public void send(){
 		
 	}
 
+	@Override
 	public void disconnect(){
 
 	}
 
+	@Override
 	public void reconnect(){
 
 	}

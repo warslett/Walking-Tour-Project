@@ -1,3 +1,5 @@
+package com.wtc.grp5.model;
+
 public class Location {
 
 	private double longitude;
@@ -37,7 +39,7 @@ public class Location {
 	/**
 	 * @return the longitude of the location.
 	 */
-	public long getLongitude(){
+	public double getLongitude(){
 		return longitude;
 	}
 	
@@ -53,7 +55,7 @@ public class Location {
 	/**
 	 * @return the latitude for the location.
 	 */
-	public long getLatitude(){
+	public double getLatitude(){
 		return latitude;
 	}
 	
