@@ -12,5 +12,7 @@ in PSUDOCODE{
 		}
 	}
 }
+https://developers.google.com/maps/documentation/directions/?csw=1
+or by maths, found, here http://stackoverflow.com/questions/4813828/distance-between-two-map-point-or-lat-long-in-android
 #HASHTAG
 #Swag
