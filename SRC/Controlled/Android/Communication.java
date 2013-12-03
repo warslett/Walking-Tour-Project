@@ -1,23 +1,30 @@
 import java.net.Socket;
 
+import java.net.HttpURLConnection;
+
 public class Communication implements Link {
 
-	private String username;
-	private String password;
-	private Socket socket;
+	private HttpUrlConnection socket;
 	private String hostName;
-	private int portNum;
 	private Tour tour;
-
+	
+	/**
+	 * Constructs a blank Communication object.
+	 */
 	public Communication(){
 	
 	}
-
+	
+	/**
+	 * Constructs a Communication object with a specified Tour object.
+	 * 
+	 * @param tour the object to sent to the server.
+	 */
 	public Communication(Tour tour){
 
 	}
-
-	public void connect(String hostName, int portNum){
+	
+	public void connect(String hostName){
 		
 	}
 
@@ -25,27 +32,11 @@ public class Communication implements Link {
 		
 	}
 
-	public void receive(){
-
-	}
-
 	public void disconnect(){
 
 	}
 
-	public void pauseConnection(){
-
-	}
-
 	public void reconnect(){
-
-	}
-
-	public void login(String username, String password){
-
-	}
-
-	public void logout(){
 
 	}
 
