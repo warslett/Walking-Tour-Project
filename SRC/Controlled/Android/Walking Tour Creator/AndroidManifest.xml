@@ -48,7 +48,7 @@
             android:label="@string/title_activity_about" >
         </activity>
         <activity
-            android:name="com.wtc.grp5.MapActivity"
+            android:name="com.wtc.grp5.WalkActivity"
             android:label="@string/title_activity_map" >
         </activity>
     </application>

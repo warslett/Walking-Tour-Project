@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.os.Bundle;
 import android.app.Activity;
 
-public class MapActivity extends Activity {
+public class WalkActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

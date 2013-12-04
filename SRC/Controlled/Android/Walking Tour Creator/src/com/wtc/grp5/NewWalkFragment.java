@@ -41,7 +41,7 @@ public class NewWalkFragment extends DialogFragment implements OnClickListener{
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		if(which == DialogInterface.BUTTON_POSITIVE){
-			Intent newWalk = new Intent(this.getActivity(), MapActivity.class);
+			Intent newWalk = new Intent(this.getActivity(), WalkActivity.class);
 			startActivity(newWalk);
 			dismiss();
 		}
