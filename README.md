@@ -1,18 +1,13 @@
 Group 05 Project Tasks:
 
-Will L:
-	-We need class java code for each class [like the interface]
-	-Is there a description of the WalkActivity class? 
 Will A:
-	-Component diagram [Server side]
-Sev:
-	-Carry on adding work to the DesignSpec
+	- Go through req. Spec. and let me (bmo) know which sections are related to the classes/Objects Serverside
 Ben:
-	-TableMapping updates whenever needed
+	-TableMapping updates (need Will.A)
 	-QA requirements
 Harvey:
-	-Algorithms
+	-Algorithms (make them into bullets (steps))
 Neil:
-	-Look at previous Documents and update/improve
+	-Test spec
 Steve:
-	-Carry on working on website Website [screenshot of how its working?]
+	-Upload everything you have to Git
