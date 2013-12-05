@@ -34,18 +34,6 @@ Tasks:
 	Tutorial: 00:50
 	Design spec - 01:30
 
-<<<<<<< HEAD
-	TOTAL HOURS: 06:50
-
-Week: 29/11/13 - 05/12/13
-
-Tasks:
-	Orchard - 01:30
-	QA Design spec - 01:00
-	B23 Group meeting - 00:50
-
-	TOTAL HOURS: 03:20
-=======
 	TOTAL HOURS: 06:50
 
 Week: 29/11/13 - 05/12/13
@@ -57,9 +45,13 @@ Tasks:
 	group meeting orchard - 02:00
 	group meeting - 03:00
 	Tutorial - 00:50
-	Group meeting - 1:00	
+	Group meeting - 1:00
+	Design Spec - 3:00	
 
-	TOTAL HOURS: 09:40
+	TOTAL HOURS: 12:40
+
+
+	ACCUMULATED HOURS: 33:50 
 
 
 
