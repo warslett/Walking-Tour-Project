@@ -18,6 +18,9 @@ public class NewWalkFragment extends DialogFragment implements OnClickListener{
 	private EditText tfShortDesc;
 	private EditText tfLongDesc;
 	
+	/**
+	* Creates the dialog box that collects the details for the walk.
+	*/
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -37,11 +40,14 @@ public class NewWalkFragment extends DialogFragment implements OnClickListener{
 		return builder.create();
 	}
 
-
+	/**
+	* Dictates what happens when the user clicks the positive or negative button on the
+	* dialog.
+	*/
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		if(which == DialogInterface.BUTTON_POSITIVE){
-			Intent newWalk = new Intent(this.getActivity(), MapActivity.class);
+			Intent newWalk = new Intent(this.getActivity(), WalkActivity.class);
 			startActivity(newWalk);
 			dismiss();
 		}

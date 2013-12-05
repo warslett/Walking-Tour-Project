@@ -55,9 +55,11 @@ Tasks:
 	QA Design spec - 01:00
 	B23 meeting - 00:50
 	group meeting orchard - 02:00
-	group meeting - 03:00	
+	group meeting - 03:00
+	Tutorial - 00:50
+	Group meeting - 1:00	
 
-	TOTAL HOURS: 07:50
+	TOTAL HOURS: 09:40
 
 
 
