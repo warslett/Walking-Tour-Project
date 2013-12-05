@@ -5,7 +5,10 @@ import android.app.Activity;
 import android.view.Menu;
 
 public class AboutActivity extends Activity {
-
+	
+	/**
+	* Creates this activity its layout.
+	*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

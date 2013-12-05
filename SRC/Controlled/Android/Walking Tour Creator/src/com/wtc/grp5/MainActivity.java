@@ -17,6 +17,10 @@ public class MainActivity extends Activity implements OnClickListener{
 	private Button btnSettings;
 	private Button btnAbout;
 	
+	/**
+	* Creates this activity and sets its layout. It also initialises the buttons and sets
+	* their listeners.
+	*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +39,9 @@ public class MainActivity extends Activity implements OnClickListener{
 		btnAbout.setOnClickListener(this);
 	}
 
+	/**
+	* Dictates what what happens when the user clicks a button.
+	*/
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
