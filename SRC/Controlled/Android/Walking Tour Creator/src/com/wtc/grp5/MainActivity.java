@@ -13,12 +13,10 @@ import android.widget.Button;
 public class MainActivity extends Activity implements OnClickListener{
 
 	private Button btnNewWalk; 
-	private Button btnLogin;
-	private Button btnSettings;
 	private Button btnAbout;
 	
 	/**
-	* Creates this activity and sets its layout. It also initialises the buttons and sets
+	* Creates this activity and sets its layout. It also initializes the buttons and sets
 	* their listeners.
 	*/
 	@Override
@@ -28,14 +26,10 @@ public class MainActivity extends Activity implements OnClickListener{
 		ActionBar ab = getActionBar();
 		ab.hide();
 		btnNewWalk = (Button) findViewById(R.id.newWalk_btn);
-		btnLogin = (Button) findViewById(R.id.logIn_btn);
-		btnSettings = (Button) findViewById(R.id.settings_btn);
 		btnAbout = (Button) findViewById(R.id.about_btn);
 		
 		// Make buttons respond to clicks
 		btnNewWalk.setOnClickListener(this);
-		btnLogin.setOnClickListener(this);
-		btnSettings.setOnClickListener(this);
 		btnAbout.setOnClickListener(this);
 	}
 

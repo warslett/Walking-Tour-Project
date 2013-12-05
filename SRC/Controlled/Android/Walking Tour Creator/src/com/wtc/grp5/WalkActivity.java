@@ -5,14 +5,19 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.wtc.grp5.model.Communication;
+import com.wtc.grp5.model.Location;
+import com.wtc.grp5.model.Tour;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.app.Activity;
 
 public class WalkActivity extends Activity {
 
 	private Tour tour;
 	private Communication communication;
+	private double sampleRate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,6 @@ public class WalkActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.map, menu);
 		return true;
 	}
@@ -57,7 +61,7 @@ public class WalkActivity extends Activity {
 	*
 	* @param l the location being removed from the tour.
 	*/
-	public void removeLocation(Location l){
+	public void removeLocation(Location location){
 	}
 	
 	/**
@@ -104,6 +108,22 @@ public class WalkActivity extends Activity {
 	*/
 	public Communication getCommunication(){
 		return communication;
+	}
+	
+	/**
+	 * Sets a new value for this.sampleRate.
+	 * 
+	 * @param sampleRate the new value for this.sampleRate.
+	 */
+	public void setSameRate(double sampleRate){
+		this.sampleRate = sampleRate;
+	}
+	
+	/**
+	 * @return the sample rate.
+	 */
+	public double getSampleRate(){
+		return sampleRate;
 	}
 	
 }
