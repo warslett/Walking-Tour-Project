@@ -23,8 +23,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ActionBar ab = getActionBar();
-		ab.hide();
 		btnNewWalk = (Button) findViewById(R.id.newWalk_btn);
 		btnAbout = (Button) findViewById(R.id.about_btn);
 		
