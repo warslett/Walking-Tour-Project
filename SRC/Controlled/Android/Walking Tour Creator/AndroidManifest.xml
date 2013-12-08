@@ -46,6 +46,7 @@
         <activity
             android:name="com.wtc.grp5.WalkActivity"
             android:label="@string/title_activity_map"
+            android:uiOptions="splitActionBarWhenNarrow"
             android:screenOrientation="portrait" >
         </activity>
     </application>

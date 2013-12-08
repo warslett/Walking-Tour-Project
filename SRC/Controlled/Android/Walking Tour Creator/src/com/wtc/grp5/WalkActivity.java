@@ -11,7 +11,9 @@ import com.wtc.grp5.model.Tour;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.app.Activity;
+import android.content.Intent;
 
 public class WalkActivity extends Activity {
 
@@ -23,6 +25,9 @@ public class WalkActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
+		Intent intent = getIntent();
+		setTitle(intent.getStringExtra("TourTitle"));
+		tour = new Tour(intent.getStringExtra("TourTitle"));
 		
 		GoogleMap map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.g_map)).getMap();
@@ -44,6 +49,11 @@ public class WalkActivity extends Activity {
 		return true;
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
+
 	/**
 	* Adds a location to the tour.
 	*/
