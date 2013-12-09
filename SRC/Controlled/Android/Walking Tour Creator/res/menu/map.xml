@@ -3,7 +3,27 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="ifRoom"
         android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/action_addLoc"
+        android:showAsAction="always"
+        android:title="Add"/>
+    
+    <item
+        android:id="@+id/action_remLoc"
+        android:showAsAction="always"
+        android:title="Remove"/>
+    
+    <item
+        android:id="@+id/action_cancel"
+        android:showAsAction="ifRoom"
+        android:title="Cancel Walk"/>
+        
+    <item
+        android:id="@+id/action_finish"
+        android:showAsAction="ifRoom"
+        android:title="Finish Walk"/>
 
 </menu>

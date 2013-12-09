@@ -32,19 +32,32 @@ public class KeyLocation extends Location {
 	/**
 	 * Adds the file path of a photo to this key location.
 	 * 
-	 * @param p the file path.
+	 * @param path the file path.
 	 */
-	public void addPhoto(String p){
+	public void addPhoto(String path){
 		//TODO needs implementing
 	}
 
 	/**
 	 * Removes the file path of a photo from this hey location. 
 	 * 
-	 * @param p the file path.
+	 * @param path the file path.
 	 */
-	public void removePhoto(String p){
+	public void removePhoto(String path){
 		//TODO needs implementing
+	}
+	
+	public String toJSON(){
+		String out;
+		out = "{\"Location name\":\""+locName+"\",\"Location Description\":\""+locDesc+"\",\"Photos\"[";
+		for(int i=0;i<4;i++){
+			out+="{\"Photo filename\":\""+photos[i]",\"";
+
+		}
+		out+="\""//TODO finish
+
+
+		return out;
 	}
 
 }
