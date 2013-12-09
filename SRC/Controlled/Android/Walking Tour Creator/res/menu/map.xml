@@ -8,21 +8,25 @@
     
     <item
         android:id="@+id/action_addLoc"
+        android:icon="@drawable/add_location"
         android:showAsAction="always"
         android:title="Add"/>
     
     <item
         android:id="@+id/action_remLoc"
+        android:icon="@drawable/remove_location"
         android:showAsAction="always"
         android:title="Remove"/>
     
     <item
         android:id="@+id/action_cancel"
+        android:icon="@drawable/cancel_walk"
         android:showAsAction="ifRoom"
         android:title="Cancel Walk"/>
         
     <item
         android:id="@+id/action_finish"
+        android:icon="@drawable/finish_walk"
         android:showAsAction="ifRoom"
         android:title="Finish Walk"/>
 
