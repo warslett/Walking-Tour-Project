@@ -32,8 +32,8 @@ public class MainActivity extends Activity implements OnClickListener{
 	* Dictates what what happens when the user clicks a button.
 	*/
 	@Override
-	public void onClick(View v) {
-		switch(v.getId()){
+	public void onClick(View view) {
+		switch(view.getId()){
 		case R.id.newWalk_btn:
 			NewWalkFragment newFrag = new NewWalkFragment();
 			newFrag.show(getFragmentManager(), "NewWalk");
