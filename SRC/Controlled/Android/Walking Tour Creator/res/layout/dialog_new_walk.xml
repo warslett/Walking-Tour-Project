@@ -12,7 +12,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:hint="Walk Name" />
+        android:hint="@string/hint_walk_name" />
 	
 	<EditText
 	    android:id="@+id/walkShortDesc_tf"
@@ -22,7 +22,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:hint="Short Description" />
+        android:hint="@string/hint_short_desc" />
 	
 	<EditText
 	    android:id="@+id/walkLongDesc_tf"
@@ -32,5 +32,5 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:hint="Long Description" />
+        android:hint="@string/hint_long_desc" />
 </LinearLayout>

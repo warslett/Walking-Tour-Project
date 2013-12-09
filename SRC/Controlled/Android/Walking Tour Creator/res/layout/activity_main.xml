@@ -20,7 +20,7 @@
         android:textSize="35sp"
         android:textStyle="bold"
         android:typeface="sans"
-        android:text="New Walk" />
+        android:text="@string/button_new_walk" />
 
     <Button
         android:id="@+id/about_btn"
@@ -33,6 +33,6 @@
         android:textSize="35sp"
         android:textStyle="bold"
         android:typeface="sans"
-        android:text="About" />
+        android:text="@string/button_about" />
 
 </RelativeLayout>
