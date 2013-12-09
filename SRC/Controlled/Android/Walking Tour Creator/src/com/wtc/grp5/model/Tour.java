@@ -63,8 +63,8 @@ public class Tour {
 	*
 	* @param l the location being added to the tour.
 	*/
-	public void addLocation(Location l){
-		locations.add(l);
+	public void addLocation(Location location){
+		locations.add(location);
 	}
 	
 	/**
@@ -72,8 +72,8 @@ public class Tour {
 	*
 	* @param l the location being removed.
 	*/
-	public void removeLocation(Location l){
-		locations.remove(l);
+	public void removeLocation(Location location){
+		locations.remove(location);
 	}
 	
 	/**
