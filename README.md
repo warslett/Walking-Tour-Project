@@ -1,4 +1,3 @@
-
 Group 05 Project Tasks:
 
-Complete the WebSite write-up.
+Will.L - In your MainActivity class, the method onClick has a one letter parameter, just to let you know.
