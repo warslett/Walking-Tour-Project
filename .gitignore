@@ -10,3 +10,4 @@ bin/
 .DS_Store
 /SRC/Controlled/website/nbproject/private/
 ._.DS_Store
+._*
