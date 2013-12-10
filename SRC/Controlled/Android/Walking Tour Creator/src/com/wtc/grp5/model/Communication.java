@@ -1,11 +1,16 @@
 package com.wtc.grp5.model;
 
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.HttpURLConnection;
 
 public class Communication implements Link {
 
 	private HttpURLConnection connection;
+	private URL url;
 	private String hostName;
 	private Tour tour;
 	
@@ -26,32 +31,31 @@ public class Communication implements Link {
 	}
 	
 	@Override
-	public void connect(String hostName){
-		try{
-			URL url = new URL(hostName);
-			connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestMethod("POST");
-			connection.SetDoOutput(true);
-		}catch(IOException e){
-			// TODO display error message
-		}
+	public void connect(String hostName) throws IOException{
+		url = new URL(hostName);
+		connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("POST");
+		connection.setDoOutput(true);
 	}
 
 	@Override
-	public void send(){
+	public void send() throws IOException{
 		OutputStream out = new BufferedOutputStream(connection.getOutputStream());
+		// Send the data
 		out.close();
 	}
 
 	@Override
-	public void disconnect(){
+	public void disconnect() throws IOException{
 		connection.disconnect();
 	}
 
 	@Override
-	public void reconnect(){
-		URL url = new URL(hostName);
+	public void reconnect() throws IOException{
+		url = new URL(this.hostName);
 		connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("POST");
+		connection.setDoOutput(true);
 	}
 
 }

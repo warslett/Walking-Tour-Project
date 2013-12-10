@@ -1,5 +1,7 @@
 package com.wtc.grp5.model;
 
+import java.io.IOException;
+
 public interface Link{
 
 /**
@@ -7,21 +9,21 @@ public interface Link{
 *
 * @param hostName The host name of the server you wish to connect to.
 */
-public void connect(String hostName);
+public void connect(String hostName) throws IOException;
 
 /**
 * Sends data to the server.
 */
-public void send();
+public void send() throws IOException;
 
 /**
 * Destroys the connection to the server.
 */
-public void disconnect();
+public void disconnect() throws IOException;
 
 /**
  * Re-opens a connection to the server.
  */
-public void reconnect();
+public void reconnect() throws IOException;
 
 }
