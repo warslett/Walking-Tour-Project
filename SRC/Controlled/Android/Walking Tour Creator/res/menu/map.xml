@@ -1,29 +1,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_sampleRate"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_sample_rate">
+        <menu>
+            <item
+                android:id="@+id/action_sample_five"
+                android:title="@string/action_sample_five"/>
+            <item
+                android:id="@+id/action_sample_ten"
+                android:title="@string/action_sample_ten"/>
+            <item
+                android:id="@+id/action_sample_fifteen"
+                android:title="@string/action_sample_fifteen"/>
+        </menu>
+    </item>
     
     <item
         android:id="@+id/action_addLoc"
+        android:icon="@drawable/add_location"
         android:showAsAction="always"
-        android:title="Add"/>
+        android:title="@string/action_add_loc"/>
     
     <item
         android:id="@+id/action_remLoc"
+        android:icon="@drawable/remove_location"
         android:showAsAction="always"
-        android:title="Remove"/>
+        android:title="@string/action_rem_loc"/>
     
     <item
         android:id="@+id/action_cancel"
+        android:icon="@drawable/cancel_walk"
         android:showAsAction="ifRoom"
-        android:title="Cancel Walk"/>
+        android:title="@string/action_cancel"/>
         
     <item
         android:id="@+id/action_finish"
+        android:icon="@drawable/finish_walk"
         android:showAsAction="ifRoom"
-        android:title="Finish Walk"/>
+        android:title="@string/action_finish"/>
 
 </menu>

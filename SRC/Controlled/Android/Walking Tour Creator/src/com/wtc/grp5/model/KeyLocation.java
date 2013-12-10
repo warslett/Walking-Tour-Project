@@ -46,18 +46,5 @@ public class KeyLocation extends Location {
 	public void removePhoto(String path){
 		//TODO needs implementing
 	}
-	
-	public String toJSON(){
-		String out;
-		out = "{\"Location name\":\""+locName+"\",\"Location Description\":\""+locDesc+"\",\"Photos\"[";
-		for(int i=0;i<4;i++){
-			out+="{\"Photo filename\":\""+photos[i]",\"";
-
-		}
-		out+="\""//TODO finish
-
-
-		return out;
-	}
 
 }

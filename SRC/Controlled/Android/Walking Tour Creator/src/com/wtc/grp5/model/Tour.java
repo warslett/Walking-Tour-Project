@@ -63,8 +63,8 @@ public class Tour {
 	*
 	* @param l the location being added to the tour.
 	*/
-	public void addLocation(Location l){
-		locations.add(l);
+	public void addLocation(Location location){
+		locations.add(location);
 	}
 	
 	/**
@@ -72,8 +72,8 @@ public class Tour {
 	*
 	* @param l the location being removed.
 	*/
-	public void removeLocation(Location l){
-		locations.remove(l);
+	public void removeLocation(Location location){
+		locations.remove(location);
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class Tour {
 	* @return the JSON String.
 	*/
 	public String toJSON(){
-		String out;	//hac22 check out string buffer for efficiency
+		String out;
 		out = "{\"Tour Name\": \""+tourName+"\",\"Long Description\": \""+longDesc+"\",\"Short Description\": \""+shortDesc+"\",\"Locations\": [";
 		for(int i=0;i<locations.size()-1;i++){
 			out += locations.get(i).toJSON()+",";		

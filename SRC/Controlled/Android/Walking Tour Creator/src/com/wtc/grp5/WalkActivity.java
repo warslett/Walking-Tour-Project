@@ -51,13 +51,38 @@ public class WalkActivity extends Activity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		return super.onOptionsItemSelected(item);
+		switch(item.getItemId()){
+		case R.id.action_addLoc:
+			addKeyLocation();
+			return true;
+		case R.id.action_remLoc:
+			
+			return true;
+		case R.id.action_cancel:
+			cancelWalk();
+			return true;
+		case R.id.action_finish:
+			finishWalk();
+			return true;
+		case R.id.action_sample_five:
+			this.setSameRate(5.00);
+			return true;
+		case R.id.action_sample_ten:
+			this.setSameRate(10.00);
+			return true;
+		case R.id.action_sample_fifteen:
+			this.setSameRate(15.00);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	/**
 	* Adds a location to the tour.
 	*/
 	public void addLocation(){
+		
 	}
 	
 	/**

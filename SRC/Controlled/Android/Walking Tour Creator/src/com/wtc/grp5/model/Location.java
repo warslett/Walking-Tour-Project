@@ -75,7 +75,7 @@ public class Location {
 		return timeStamp;
 	}
 	
-	/**
+	/*
 	* Converts the data stored in this object to a JSON string.
 	* 
 	* @return the JSON String.
