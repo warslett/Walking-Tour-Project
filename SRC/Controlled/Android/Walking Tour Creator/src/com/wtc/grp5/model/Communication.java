@@ -1,5 +1,6 @@
 package com.wtc.grp5.model;
 
+import java.net.URL;
 import java.net.HttpURLConnection;
 
 public class Communication implements Link {
@@ -26,22 +27,31 @@ public class Communication implements Link {
 	
 	@Override
 	public void connect(String hostName){
-		
+		try{
+			URL url = new URL(hostName);
+			connection = (HttpURLConnection) url.openConnection();
+			connection.setRequestMethod("POST");
+			connection.SetDoOutput(true);
+		}catch(IOException e){
+			// TODO display error message
+		}
 	}
 
 	@Override
 	public void send(){
-		
+		OutputStream out = new BufferedOutputStream(connection.getOutputStream());
+		out.close();
 	}
 
 	@Override
 	public void disconnect(){
-
+		connection.disconnect();
 	}
 
 	@Override
 	public void reconnect(){
-
+		URL url = new URL(hostName);
+		connection = (HttpURLConnection) url.openConnection();
 	}
 
 }
