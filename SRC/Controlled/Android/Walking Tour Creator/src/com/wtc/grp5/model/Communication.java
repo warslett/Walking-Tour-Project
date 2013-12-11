@@ -3,7 +3,6 @@ package com.wtc.grp5.model;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.HttpURLConnection;
 
@@ -32,10 +31,12 @@ public class Communication implements Link {
 	
 	@Override
 	public void connect(String hostName) throws IOException{
+		this.hostName = hostName;
 		url = new URL(hostName);
 		connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("POST");
 		connection.setDoOutput(true);
+		connection.connect();
 	}
 
 	@Override
@@ -56,6 +57,7 @@ public class Communication implements Link {
 		connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("POST");
 		connection.setDoOutput(true);
+		connection.connect();
 	}
 
 }

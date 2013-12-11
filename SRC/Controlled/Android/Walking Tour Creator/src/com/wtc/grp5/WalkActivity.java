@@ -1,5 +1,7 @@
 package com.wtc.grp5;
 
+import java.io.IOException;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -9,10 +11,14 @@ import com.wtc.grp5.model.Communication;
 import com.wtc.grp5.model.Location;
 import com.wtc.grp5.model.Tour;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 
 public class WalkActivity extends Activity {
@@ -28,6 +34,7 @@ public class WalkActivity extends Activity {
 		Intent intent = getIntent();
 		setTitle(intent.getStringExtra("TourTitle"));
 		tour = new Tour(intent.getStringExtra("TourTitle"));
+		communication = new Communication();
 		
 		GoogleMap map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.g_map)).getMap();
@@ -102,7 +109,9 @@ public class WalkActivity extends Activity {
 	/**
 	* Saves the tour to the server.
 	*/
-	public void saveToServer(){
+	private void saveToServer(){
+		String[] data = {"users.aber.ac.uk/wia2/WTC/upload.php"};
+		new SendData().execute(data);
 	}
 	
 	/**
@@ -115,6 +124,13 @@ public class WalkActivity extends Activity {
 	* Adds a stopping location to the tour and stops the recording.
 	*/
 	public void finishWalk(){
+		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+		if (networkInfo != null && networkInfo.isConnected()) {
+			saveToServer();
+		} else {
+			Toast.makeText(this, "Couldn't connect to server", Toast.LENGTH_LONG).show();
+		}
 	}
 	
 	/**
