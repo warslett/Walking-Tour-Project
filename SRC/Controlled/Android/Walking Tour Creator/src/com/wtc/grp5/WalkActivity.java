@@ -1,9 +1,5 @@
 package com.wtc.grp5;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
-import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -12,7 +8,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.wtc.grp5.model.Communication;
 import com.wtc.grp5.model.Tour;
 
-import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -23,14 +18,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener{
+public class WalkActivity extends Activity{
 
 	private Tour tour;
 	private Communication communication;
 	private double sampleRate;
 	
-	private LocationClient locClient;
-	private Location currentLoc;
 	private GoogleMap map;
 
 	@Override
@@ -39,30 +32,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		setContentView(R.layout.activity_map);
 		Intent intent = getIntent();
 		setTitle(intent.getStringExtra("TourTitle"));
-		tour = new Tour(intent.getStringExtra("TourTitle"));
+		tour = new Tour(intent.getStringExtra("TourTitle"), intent.getStringExtra("TourShortDesc"), intent.getStringExtra("TourLongDesc"));
 		communication = new Communication();
-		locClient = new LocationClient(this, this, this);
+		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.g_map)).getMap();
-	}
-
-	@Override
-	protected void onStart() {
-		super.onStart();
-		locClient.connect();
-		currentLoc = locClient.getLastLocation();
-		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
 		map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 7));
+		LatLng loc = new LatLng(52.4140, -4.0810);
+		map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 7));
         map.addMarker(new MarkerOptions()
         	.title(tour.getTourName())
         	.snippet(tour.getShortDesc())
         	.position(loc));
-	}
-
-	@Override
-	protected void onStop() {
-		locClient.disconnect();
-		super.onStop();
 	}
 
 	@Override
@@ -98,24 +78,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
-
-	@Override
-	public void onConnectionFailed(ConnectionResult result) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onConnected(Bundle bundle) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onDisconnected() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	/**
