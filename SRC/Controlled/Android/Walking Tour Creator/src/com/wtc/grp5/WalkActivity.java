@@ -31,6 +31,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	
 	private LocationClient locClient;
 	private Location currentLoc;
+	private GoogleMap map;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,21 +41,28 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		setTitle(intent.getStringExtra("TourTitle"));
 		tour = new Tour(intent.getStringExtra("TourTitle"));
 		communication = new Communication();
-		
 		locClient = new LocationClient(this, this, this);
-		
-		GoogleMap map = ((MapFragment) getFragmentManager()
-                .findFragmentById(R.id.g_map)).getMap();
+		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.g_map)).getMap();
+	}
 
-        LatLng london = new LatLng(51.5072, 0.1275);
-        
-        map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(london, 7));
-
+	@Override
+	protected void onStart() {
+		super.onStart();
+		locClient.connect();
+		currentLoc = locClient.getLastLocation();
+		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
+		map.setMyLocationEnabled(true);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 7));
         map.addMarker(new MarkerOptions()
-                .title("London")
-                .snippet("The Capital city of England")
-                .position(london));
+        	.title(tour.getTourName())
+        	.snippet(tour.getShortDesc())
+        	.position(loc));
+	}
+
+	@Override
+	protected void onStop() {
+		locClient.disconnect();
+		super.onStop();
 	}
 
 	@Override
