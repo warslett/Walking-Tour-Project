@@ -1,16 +1,18 @@
 package com.wtc.grp5;
 
-import java.io.IOException;
-
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
+import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.wtc.grp5.model.Communication;
-import com.wtc.grp5.model.Location;
 import com.wtc.grp5.model.Tour;
 
+import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -21,11 +23,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-public class WalkActivity extends Activity {
+public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener{
 
 	private Tour tour;
 	private Communication communication;
 	private double sampleRate;
+	
+	private LocationClient locClient;
+	private Location currentLoc;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,8 @@ public class WalkActivity extends Activity {
 		setTitle(intent.getStringExtra("TourTitle"));
 		tour = new Tour(intent.getStringExtra("TourTitle"));
 		communication = new Communication();
+		
+		locClient = new LocationClient(this, this, this);
 		
 		GoogleMap map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.g_map)).getMap();
@@ -85,6 +92,24 @@ public class WalkActivity extends Activity {
 		}
 	}
 
+	@Override
+	public void onConnectionFailed(ConnectionResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onConnected(Bundle bundle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onDisconnected() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	/**
 	* Adds a location to the tour.
 	*/
@@ -96,6 +121,7 @@ public class WalkActivity extends Activity {
 	* Adds a key location to the walk.
 	*/
 	public void addKeyLocation(){
+	
 	}
 	
 	/**
@@ -103,7 +129,8 @@ public class WalkActivity extends Activity {
 	*
 	* @param l the location being removed from the tour.
 	*/
-	public void removeLocation(Location location){
+	public void removeLocation(){
+		// The argument will be re-added when Will L is resolves type conflict
 	}
 	
 	/**
@@ -118,6 +145,7 @@ public class WalkActivity extends Activity {
 	* Stops the recording of the and deletes the data.
 	*/
 	public void cancelWalk(){
+	
 	}
 	
 	/**
