@@ -20,5 +20,6 @@
     <string name="hint_walk_name">Walk Name</string>
     <string name="hint_short_desc">Short Description</string>
     <string name="hint_long_desc">Long Description</string>
+    <string name="image_title_logo">WTC Main Logo</string>
 
 </resources>

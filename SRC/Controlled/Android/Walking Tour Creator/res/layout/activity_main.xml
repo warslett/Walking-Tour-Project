@@ -13,14 +13,14 @@
         android:id="@+id/newWalk_btn"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/image_title_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/new_walk_button"
+        android:text="@string/button_new_walk"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:typeface="sans"
-        android:text="@string/button_new_walk" />
+        android:typeface="sans" />
 
     <Button
         android:id="@+id/about_btn"
@@ -28,11 +28,20 @@
         android:layout_height="65dp"
         android:layout_alignLeft="@+id/newWalk_btn"
         android:layout_below="@+id/newWalk_btn"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="34dp"
         android:background="@drawable/about_button"
+        android:text="@string/button_about"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:typeface="sans"
-        android:text="@string/button_about" />
+        android:typeface="sans" />
+
+    <ImageView
+        android:id="@+id/image_title_logo"
+        android:contentDescription="@string/image_title_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/newWalk_btn"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/title" />
 
 </RelativeLayout>
