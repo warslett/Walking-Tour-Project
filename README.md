@@ -2,9 +2,10 @@ Group 05 Project:
 ==================
 TODO
 --------------
-1. ~~Will.L - In your MainActivity class, the method onClick has a one letter parameter, just to let you know.~~     
-Done hac22
-
+1. WIll A. to create the database tables by Friday Afternoon.
+2. Will L. to look into making the locations work.
+3. Neil V. to look into implementing the Leaflet API on the site.
+4. Steve to provide a list of references for any work he's done on the site.
 
 Notes
 -------------
