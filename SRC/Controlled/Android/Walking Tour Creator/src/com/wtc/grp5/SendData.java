@@ -14,15 +14,14 @@ public class SendData extends AsyncTask<String, Void, Void> {
 	@Override
 	protected Void doInBackground(String... params) {
 		try{
-			URL url = new URL(params[0]);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("POST");
-			conn.setDoOutput(true);
-			conn.connect();
-			String s = "Hello World!";
-			OutputStream out = new BufferedOutputStream(conn.getOutputStream());
-			out.write(s.getBytes());
-			out.close();
+			HttpClient client = new DefaultHttpClient();
+			HttpPost post = new HttpPost(params[0]);
+			ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
+			
+			post.setEntity(new UrlEncodedFormEntity(data));
+			HttpResponse response = client.execute(post);
+		}catch(ClientProtocolException e){
+			
 		}catch(IOException e){
 			
 		}
