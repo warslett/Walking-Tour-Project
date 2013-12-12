@@ -107,8 +107,8 @@ public class WalkActivity extends Activity{
 	* Saves the tour to the server.
 	*/
 	private void saveToServer(){
-		String[] data = {"users.aber.ac.uk/wia2/WTC/upload.php"};
-		new SendData().execute(data);
+		String[] data = {"http://users.aber.ac.uk/wia2/WTC/upload.php"};
+		new SendData(this).execute(data);
 	}
 	
 	/**
