@@ -1,5 +1,4 @@
 <?
-
 function displayContent() {
     ?>
 
@@ -7,7 +6,7 @@ function displayContent() {
         <h2 class="postheader">About this Project</h2>
 
         <div class="postcontent postcontent-0 clearfix">
-            <p>All about this project...</p>
+            <p></p>
         </div>
     </article>
 
