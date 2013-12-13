@@ -8,11 +8,12 @@ function initmap() {
 	map = new L.Map('map');
 
 	// create the tile layer with correct attribution
-	var cmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	var cmAttrib='Map data © OpenStreetMap contributors';
-	var cm = new L.TileLayer(cmUrl, {minZoom: 8, maxZoom: 12, attribution: cmAttrib});		
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © OpenStreetMap contributors';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});		
 
 	// start the map in South-East England
-	map.setView(new L.LatLng(52.41592, -4.06259),9);
+	map.setView(new L.LatLng(51.3, 0.7),9);
 	map.addLayer(osm);
+}
 }
