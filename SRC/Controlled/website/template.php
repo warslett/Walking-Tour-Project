@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
 
-        <title>Map</title>
+        <title>Group 5: Walking Tour Creator</title>
         <meta content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" name="viewport" /><!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <link href="style.css" media="screen" rel="stylesheet" /><!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
         <link href="style.responsive.css" media="all" rel="stylesheet" />

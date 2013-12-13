@@ -2724,4 +2724,5 @@ blockquote p,
 /* Begin Additional CSS Styles */
 .logo-text {margin: -10px 0 0 5px}
 .blockheader .t, .vmenublockheader .t {white-space: nowrap;}
+#map { height: 180px; }
 /* End Additional CSS Styles */
