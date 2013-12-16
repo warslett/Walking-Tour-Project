@@ -12,7 +12,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.wtc.grp5.model.Tour;
+import com.wtc.grp5.model.WTCTour;
 
 import android.location.Location;
 import android.net.ConnectivityManager;
@@ -28,7 +28,7 @@ import android.content.Intent;
 
 public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener, LocationListener{
 
-	private Tour tour;
+	private WTCTour tour;
 	private double sampleRate;
 	
 	private GoogleMap map;
@@ -42,7 +42,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		setContentView(R.layout.activity_map);
 		Intent intent = getIntent();
 		setTitle(intent.getStringExtra("TourTitle"));
-		tour = new Tour(intent.getStringExtra("TourTitle"), intent.getStringExtra("TourShortDesc"), intent.getStringExtra("TourLongDesc"));
+		tour = new WTCTour(intent.getStringExtra("TourTitle"), intent.getStringExtra("TourShortDesc"), intent.getStringExtra("TourLongDesc"));
 		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.g_map)).getMap();
 		map.setMyLocationEnabled(true);
@@ -195,14 +195,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	/**
 	* @param tour the new value for this.tour.
 	*/
-	public void setTour(Tour tour){
+	public void setTour(WTCTour tour){
 		this.tour = tour;
 	}
 	
 	/**
 	* @return the tour.
 	*/
-	public Tour getTour(){
+	public WTCTour getTour(){
 		return tour;
 	}
 	

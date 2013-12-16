@@ -2,21 +2,21 @@ package com.wtc.grp5.model;
 
 import java.util.LinkedList;
 
-public class Tour {
+public class WTCTour {
 
 	private String tourName;
 	private String shortDesc;
 	private String longDesc;
-	private LinkedList<Location> locations;
+	private LinkedList<WTCLocation> locations;
 	
 	/**
 	* Constructs a blank tour.
 	*/
-	public Tour(){
+	public WTCTour(){
 		tourName = new String();
 		shortDesc = new String();
 		longDesc = new String();
-		locations = new LinkedList<Location>();
+		locations = new LinkedList<WTCLocation>();
 	}
 	
 	/**
@@ -24,11 +24,11 @@ public class Tour {
 	*
 	* @param tourName the name of the tour.
 	*/
-	public Tour(String tourName){
+	public WTCTour(String tourName){
 		this.tourName = tourName;
 		shortDesc = new String();
 		longDesc = new String();
-		locations = new LinkedList<Location>();
+		locations = new LinkedList<WTCLocation>();
 	}
 
 	/**
@@ -37,11 +37,11 @@ public class Tour {
 	* @param tourName the name of the tour.
 	* @param shortDesc a short description for the tour.
 	*/
-	public Tour(String tourName, String shortDesc){
+	public WTCTour(String tourName, String shortDesc){
 		this.tourName = tourName;
 		this.shortDesc = shortDesc;
 		longDesc = new String();
-		locations = new LinkedList<Location>();
+		locations = new LinkedList<WTCLocation>();
 	}
 
 	/**
@@ -51,11 +51,11 @@ public class Tour {
 	* @param shortDesc a short description for the tour.
 	* @param longDesc a long description for the tour.
 	*/
-	public Tour(String tourName, String shortDesc, String longDesc){
+	public WTCTour(String tourName, String shortDesc, String longDesc){
 		this.tourName = tourName;
 		this.shortDesc = shortDesc;
 		this.longDesc = longDesc;
-		locations = new LinkedList<Location>();
+		locations = new LinkedList<WTCLocation>();
 	}
 	
 	/**
@@ -63,7 +63,7 @@ public class Tour {
 	*
 	* @param l the location being added to the tour.
 	*/
-	public void addLocation(Location location){
+	public void addLocation(WTCLocation location){
 		locations.add(location);
 	}
 	
@@ -72,7 +72,7 @@ public class Tour {
 	*
 	* @param l the location being removed.
 	*/
-	public void removeLocation(Location location){
+	public void removeLocation(WTCLocation location){
 		locations.remove(location);
 	}
 	
@@ -145,14 +145,14 @@ public class Tour {
 	*
 	* @param locations the new value for this.locations.
 	*/
-	public void setLocations(LinkedList<Location> locations){
+	public void setLocations(LinkedList<WTCLocation> locations){
 		this.locations = locations;
 	}
 
 	/**
 	* @return the list of locations in the tour.
 	*/
-	public LinkedList<Location> getLocations(){
+	public LinkedList<WTCLocation> getLocations(){
 		return locations;
 	}
 

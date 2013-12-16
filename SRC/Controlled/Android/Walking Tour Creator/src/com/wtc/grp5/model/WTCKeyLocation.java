@@ -1,6 +1,6 @@
 package com.wtc.grp5.model;
 
-public class KeyLocation extends Location {
+public class WTCKeyLocation extends WTCLocation {
 
 	private String[] photos; // Might be changed to ArrayList
 	private String locName;
@@ -9,7 +9,7 @@ public class KeyLocation extends Location {
 	/**
 	 * Constructs a blank key location.
 	 */
-	public KeyLocation(){
+	public WTCKeyLocation(){
 		super();
 		photos = new String[5];
 		locName = new String();
@@ -22,7 +22,7 @@ public class KeyLocation extends Location {
 	 * @param longitude the longitude of the location.
 	 * @param latitude the latitude of the location.
 	 */
-	public KeyLocation(long longitude, long latitude){
+	public WTCKeyLocation(long longitude, long latitude){
 		super(longitude, latitude);
 		photos = new String[5];
 		locName = new String();

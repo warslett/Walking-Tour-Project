@@ -1,6 +1,6 @@
 package com.wtc.grp5.model;
 
-public class Location {
+public class WTCLocation {
 
 	private double longitude;
 	private double latitude;
@@ -9,7 +9,7 @@ public class Location {
 	/**
 	 * Constructs a blank location.
 	 */
-	public Location(){
+	public WTCLocation(){
 		longitude = 0;
 		latitude = 0;
 		// timeStamp will implemented later...
@@ -21,7 +21,7 @@ public class Location {
 	 * @param longitude the longitude of the location.
 	 * @param latitude the latitude of the location.
 	 */
-	public Location(double longitude, double latitude){
+	public WTCLocation(double longitude, double latitude){
 		this.longitude = longitude;
 		this.latitude = latitude;
 		// timeStamp will implemented later...

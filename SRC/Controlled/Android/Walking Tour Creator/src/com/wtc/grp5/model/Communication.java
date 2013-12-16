@@ -11,7 +11,7 @@ public class Communication implements Link {
 	private HttpURLConnection connection;
 	private URL url;
 	private String hostName;
-	private Tour tour;
+	private WTCTour tour;
 	
 	/**
 	 * Constructs a blank Communication object.
@@ -25,7 +25,7 @@ public class Communication implements Link {
 	 * 
 	 * @param tour the object to sent to the server.
 	 */
-	public Communication(Tour tour){
+	public Communication(WTCTour tour){
 		this.tour = tour;
 	}
 	
