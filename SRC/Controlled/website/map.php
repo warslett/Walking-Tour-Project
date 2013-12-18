@@ -6,11 +6,15 @@ if(isset($_GET['id'])){
 } else {
     header("Location: list.php");
 }
-?>
+
+$header='
 <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
 <script type="text/javascript" src="leaflet/leaflet.js"></script>
 <script type="text/javascript" src="leaflet/leafletembed.js"></script>
-<?
+';
+$footer='
+<script type="text/javascript">initmap()</script>
+';
 function displayContent() {
     global $tour;
     ?>
@@ -30,4 +34,3 @@ function displayContent() {
 
 require_once 'template.php';
 ?>
-<script type="text/javascript">initmap()</script>

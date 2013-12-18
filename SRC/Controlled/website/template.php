@@ -11,6 +11,11 @@
         <script src="jquery.js"></script>
         <script src="script.js"></script>
         <script src="script.responsive.js"></script>
+        <?
+        if(isset($header)){
+            echo $header;
+        }
+        ?>
     </head>
 
     <body>
@@ -91,5 +96,10 @@
                 </div>
             </footer>
         </div>
+        <?
+        if(isset($footer)){
+            echo $footer;
+        }
+        ?>
     </body>
 </html>
