@@ -7,8 +7,12 @@ function displayContent() {
         <h2 class="postheader">List of Tours</h2>
         <div class="postcontent postcontent-0 clearfix">
             <?$list=$database->getListOfTours();
-            foreach($list as $walk){
-                print('<a href="map.php?id=' . $walk->getID() . '">' . $walk->getTitle() . '</a><br>');
+            foreach($list as $tour){
+                print("<p>");
+                print('<a href="map.php?id=' . $tour->getID() . '">' . $tour->getTitle() . '</a><br>');
+                print($tour->getShortDesc());
+                print("</p>");
+                print("<hr>");
             }?>
         </div>
     </article><?

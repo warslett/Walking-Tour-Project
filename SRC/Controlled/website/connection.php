@@ -59,4 +59,12 @@ class Tour {
         return $this->id;
     }
     
+    function getShortDesc(){
+        return $this->shortDesc;
+    }
+    
+    function getLongDesc(){
+        return $this->longDesc;
+    }
+
 }

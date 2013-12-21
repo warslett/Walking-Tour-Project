@@ -21,9 +21,8 @@ function displayContent() {
 
     <article class="post article">
         <h2 class="postheader"><? echo $tour->getTitle(); ?></h2>
-
         <div class="postcontent postcontent-0 clearfix">
-
+        <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
            <div id="map">
 		   </div>
         </div>
