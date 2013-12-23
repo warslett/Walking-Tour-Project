@@ -22,7 +22,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param longitude the longitude of the location.
 	 * @param latitude the latitude of the location.
 	 */
-	public WTCKeyLocation(long longitude, long latitude){
+	public WTCKeyLocation(double longitude, double latitude){
 		super(longitude, latitude);
 		photos = new String[5];
 		locName = new String();

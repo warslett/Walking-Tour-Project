@@ -12,6 +12,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.wtc.grp5.model.WTCKeyLocation;
+import com.wtc.grp5.model.WTCLocation;
 import com.wtc.grp5.model.WTCTour;
 
 import android.location.Location;
@@ -29,7 +31,7 @@ import android.content.Intent;
 public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener, LocationListener{
 
 	private WTCTour tour;
-	private double sampleRate;
+	private long sampleRate = 5000;
 	
 	private GoogleMap map;
 	private LocationClient locClient;
@@ -50,7 +52,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         locClient = new LocationClient(this, this, this);
         
         locRequest = LocationRequest.create();
-        locRequest.setInterval(5000);
+        locRequest.setInterval(sampleRate);
 	}
 
 	@Override
@@ -66,8 +68,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	protected void onStop() {
+		locClient.removeLocationUpdates(this);
 		locClient.disconnect();
-		//locClient.removeLocationUpdates(this);
 		super.onStop();
 	}
 	
@@ -75,6 +77,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onLocationChanged(Location location) {
 		currentLoc = location;
 		Log.d("WILLIAM", Double.toString(location.getLatitude()) + " " + Double.toString(location.getLongitude()));
+		addLocation();
 	}
 
 	@Override
@@ -125,13 +128,16 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			finishWalk();
 			return true;
 		case R.id.action_sample_five:
-			this.setSameRate(5.00);
+			this.setSameRate(5000);
+			locRequest.setInterval(sampleRate);
 			return true;
 		case R.id.action_sample_ten:
-			this.setSameRate(10.00);
+			this.setSameRate(10000);
+			locRequest.setInterval(sampleRate);
 			return true;
 		case R.id.action_sample_fifteen:
-			this.setSameRate(15.00);
+			this.setSameRate(15000);
+			locRequest.setInterval(sampleRate);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -142,17 +148,20 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	* Adds a location to the tour.
 	*/
 	public void addLocation(){
-		
+		tour.addLocation(new WTCLocation(currentLoc.getLongitude(), currentLoc.getLatitude()));
 	}
 	
 	/**
 	* Adds a key location to the walk.
 	*/
 	public void addKeyLocation(){
+		// Add Location pin to the map
 		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
 		map.addMarker(new MarkerOptions()
 			.title("Test")
 			.position(loc));
+		// Add location to the tour object
+		tour.addLocation(new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude()));
 	}
 	
 	/**
@@ -211,14 +220,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	 * 
 	 * @param sampleRate the new value for this.sampleRate.
 	 */
-	public void setSameRate(double sampleRate){
+	public void setSameRate(long sampleRate){
 		this.sampleRate = sampleRate;
 	}
 	
 	/**
 	 * @return the sample rate.
 	 */
-	public double getSampleRate(){
+	public long getSampleRate(){
 		return sampleRate;
 	}
 	
