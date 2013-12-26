@@ -27,13 +27,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 
-public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener, LocationListener, OnMarkerClickListener{
+public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener,
+	LocationListener, OnMarkerClickListener, LocationDetailsFragment.LocationDetailsListener{
 
 	private WTCTour tour;
-	private long sampleRate = 5000;
+	private long sampleRate = 5000; // 5000 millis (5 seconds)
 	
 	private GoogleMap map;
 	private LocationClient locClient;
@@ -110,8 +112,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public boolean onMarkerClick(Marker marker) {
-		LocationDetailsFragment locDetailsFrag = new LocationDetailsFragment();
-		locDetailsFrag.show(getFragmentManager(), "LocDetails");
+		
 		return false;
 	}
 
@@ -125,7 +126,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()){
 		case R.id.action_addLoc:
-			addKeyLocation();
+			// Bring up the dialog to add a new KeyLocation to the tour.
+			LocationDetailsFragment locDetailsFrag = new LocationDetailsFragment();
+			locDetailsFrag.show(getFragmentManager(), "LocDetails");
 			return true;
 		case R.id.action_remLoc:
 			
@@ -153,24 +156,34 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 	}
 	
+	@Override
+	public void onPositiveSelection(DialogFragment fragment) {
+		LocationDetailsFragment frag = (LocationDetailsFragment) fragment;
+		WTCKeyLocation keyLoc = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
+		keyLoc.setLocName(frag.getTfLocName().getText().toString());
+		keyLoc.setLocDesc(frag.getTfLocDesc().getText().toString());
+		addKeyLocation(keyLoc);
+	}
+
 	/**
 	* Adds a location to the tour.
 	*/
-	public void addLocation(){
+	public void addLocation() {
 		tour.addLocation(new WTCLocation(currentLoc.getLongitude(), currentLoc.getLatitude()));
 	}
 	
 	/**
 	* Adds a key location to the walk.
 	*/
-	public void addKeyLocation(){
+	public void addKeyLocation(WTCKeyLocation keyLoc) {
 		// Add Location pin to the map
-		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
+		LatLng loc = new LatLng(keyLoc.getLatitude(), keyLoc.getLongitude());
 		map.addMarker(new MarkerOptions()
-			.title("Test")
+			.title(keyLoc.getLocName())
+			.snippet(keyLoc.getLocDesc())
 			.position(loc));
 		// Add location to the tour object
-		tour.addLocation(new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude()));
+		tour.addLocation(keyLoc);
 	}
 	
 	/**
@@ -178,14 +191,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	*
 	* @param l the location being removed from the tour.
 	*/
-	public void removeLocation(){
+	public void removeLocation() {
 		// The argument will be re-added when Will L is resolves type conflict
 	}
 	
 	/**
 	* Saves the tour to the server.
 	*/
-	private void saveToServer(){
+	private void saveToServer() {
 		String[] data = {"http://users.aber.ac.uk/wia2/WTC/upload.php"};
 		new SendData(this).execute(data);
 	}
@@ -193,14 +206,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	/**
 	* Stops the recording of the and deletes the data.
 	*/
-	public void cancelWalk(){
+	public void cancelWalk() {
 	
 	}
 	
 	/**
 	* Adds a stopping location to the tour and stops the recording.
 	*/
-	public void finishWalk(){
+	public void finishWalk() {
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
@@ -213,14 +226,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	/**
 	* @param tour the new value for this.tour.
 	*/
-	public void setTour(WTCTour tour){
+	public void setTour(WTCTour tour) {
 		this.tour = tour;
 	}
 	
 	/**
 	* @return the tour.
 	*/
-	public WTCTour getTour(){
+	public WTCTour getTour() {
 		return tour;
 	}
 	
@@ -229,14 +242,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	 * 
 	 * @param sampleRate the new value for this.sampleRate.
 	 */
-	public void setSameRate(long sampleRate){
+	public void setSameRate(long sampleRate) {
 		this.sampleRate = sampleRate;
 	}
 	
 	/**
 	 * @return the sample rate.
 	 */
-	public long getSampleRate(){
+	public long getSampleRate() {
 		return sampleRate;
 	}
 	

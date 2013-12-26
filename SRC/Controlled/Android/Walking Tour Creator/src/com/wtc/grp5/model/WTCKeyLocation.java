@@ -47,4 +47,32 @@ public class WTCKeyLocation extends WTCLocation {
 		//TODO needs implementing
 	}
 
+	/**
+	 * @return the locName
+	 */
+	public String getLocName() {
+		return locName;
+	}
+
+	/**
+	 * @param locName the locName to set
+	 */
+	public void setLocName(String locName) {
+		this.locName = locName;
+	}
+
+	/**
+	 * @return the locDesc
+	 */
+	public String getLocDesc() {
+		return locDesc;
+	}
+
+	/**
+	 * @param locDesc the locDesc to set
+	 */
+	public void setLocDesc(String locDesc) {
+		this.locDesc = locDesc;
+	}
+
 }

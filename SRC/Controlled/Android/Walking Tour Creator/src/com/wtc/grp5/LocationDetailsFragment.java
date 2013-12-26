@@ -1,5 +1,7 @@
 package com.wtc.grp5;
 
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -12,8 +14,19 @@ import android.widget.EditText;
 
 public class LocationDetailsFragment extends DialogFragment implements OnClickListener{
 
+	public interface LocationDetailsListener{
+		public void onPositiveSelection(DialogFragment fragment);
+	}
+	
 	private EditText tfLocName;
 	private EditText tfLocDesc;
+	private LocationDetailsListener listener;
+	
+	@Override
+	public void onAttach(Activity activity){
+		super.onAttach(activity);
+		listener = (LocationDetailsListener) activity;
+	}
 	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,7 +43,17 @@ public class LocationDetailsFragment extends DialogFragment implements OnClickLi
 
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
-		
+		if(which == DialogInterface.BUTTON_POSITIVE){
+			listener.onPositiveSelection(this);
+		}
+	}
+
+	public EditText getTfLocName() {
+		return tfLocName;
+	}
+
+	public EditText getTfLocDesc() {
+		return tfLocDesc;
 	}
 	
 }
