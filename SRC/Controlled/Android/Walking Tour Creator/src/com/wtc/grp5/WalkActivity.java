@@ -9,8 +9,10 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.wtc.grp5.model.WTCKeyLocation;
 import com.wtc.grp5.model.WTCLocation;
@@ -28,7 +30,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener, LocationListener{
+public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener, LocationListener, OnMarkerClickListener{
 
 	private WTCTour tour;
 	private long sampleRate = 5000;
@@ -48,6 +50,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.g_map)).getMap();
 		map.setMyLocationEnabled(true);
+		map.setOnMarkerClickListener(this);
 		
         locClient = new LocationClient(this, this, this);
         
@@ -102,8 +105,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public void onDisconnected() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean onMarkerClick(Marker marker) {
+		LocationDetailsFragment locDetailsFrag = new LocationDetailsFragment();
+		locDetailsFrag.show(getFragmentManager(), "LocDetails");
+		return false;
 	}
 
 	@Override

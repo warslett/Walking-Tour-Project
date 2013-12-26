@@ -2,8 +2,7 @@
 <resources>
 
     <string name="app_name">Walking Tour Creator</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_details">Walking Tour Creator\nVersion 1\n\nCreators\nTeam Leader\nSevastiyan Raychev\n\nQA Team\nBenjamin O\'Donovan\nNeil Vicker\n\nAndroid Team\nWilliam Lea\nHarvey Clark\n\nWeb Team\nWilliam Arslett\nStephen Clasby</string><string name="title_activity_main">MainActivity</string>
     <string name="title_activity_recorded">Recorded Walks</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_map">MapActivity</string>
@@ -20,6 +19,9 @@
     <string name="hint_walk_name">Walk Name</string>
     <string name="hint_short_desc">Short Description</string>
     <string name="hint_long_desc">Long Description</string>
-    <string name="image_title_logo">WTC Main Logo</string>
+    <string name="hint_loc_name">Location Name</string><string name="hint_loc_desc">Location Description</string><string name="image_title_logo">WTC Main Logo</string>
+    
+    
+    
 
 </resources>
