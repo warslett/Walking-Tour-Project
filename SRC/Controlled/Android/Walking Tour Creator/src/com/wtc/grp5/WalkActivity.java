@@ -41,6 +41,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private LocationClient locClient;
 	private Location currentLoc;
 	private LocationRequest locRequest;
+	private Marker selectedMarker; // The marker the user clicked on
+	private Menu tourMenu; // A handle to the options menu for the walk
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -112,13 +114,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public boolean onMarkerClick(Marker marker) {
-		
+		// Make sure the user can only delete a location when they select a marker to remove.
+		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
+		removeLocItem.setEnabled(true);
+		selectedMarker = marker;
 		return false;
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.map, menu);
+		tourMenu = menu;
 		return true;
 	}
 	
@@ -131,7 +137,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			locDetailsFrag.show(getFragmentManager(), "LocDetails");
 			return true;
 		case R.id.action_remLoc:
-			
+			removeLocation(selectedMarker);
 			return true;
 		case R.id.action_cancel:
 			cancelWalk();
@@ -189,10 +195,21 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	/**
 	* Removes a location from the tour.
 	*
-	* @param l the location being removed from the tour.
+	* @param marker the marker being removed from the map; also used to identify which location to remove.
 	*/
-	public void removeLocation() {
-		// The argument will be re-added when Will L is resolves type conflict
+	public void removeLocation(Marker marker) {
+//		for(int i = 0; i < tour.getLocations().size(); i++){
+//			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
+//					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
+//					!tour.getLocations().isEmpty()){
+//				tour.getLocations().remove(i);
+//				break;
+//			}
+//		}
+		marker.remove();
+		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
+		removeLocItem.setEnabled(false);
+		Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}
 	
 	/**
