@@ -32,6 +32,18 @@
         android:title="@string/action_rem_loc"/>
     
     <item
+        android:id="@+id/action_addPhoto"
+        android:enabled="false"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_add_photo"/>
+    
+    <item
+        android:id="@+id/action_remPhoto"
+        android:enabled="false"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_remove_photo"/>
+                    
+    <item
         android:id="@+id/action_cancel"
         android:icon="@drawable/cancel_walk"
         android:showAsAction="ifRoom"

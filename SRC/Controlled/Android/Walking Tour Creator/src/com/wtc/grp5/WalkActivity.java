@@ -22,7 +22,6 @@ import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -68,7 +67,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 		// If Google Play services is available
 		if (ConnectionResult.SUCCESS == resultCode) {
-			Log.d("WILLIAM", "Google Play services is available.");
 			locClient.connect();
 		}
 	}
@@ -83,7 +81,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	@Override
 	public void onLocationChanged(Location location) {
 		currentLoc = location;
-		Log.d("WILLIAM", Double.toString(location.getLatitude()) + " " + Double.toString(location.getLongitude()));
 		addLocation();
 	}
 
@@ -94,16 +91,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public void onConnected(Bundle bundle) {
-		Log.d("WILLIAM", "location client connected");
 		currentLoc = locClient.getLastLocation();
-		// LatLng loc = new LatLng(52.4140, -4.0810);
-		LatLng loc = new LatLng(currentLoc.getLatitude(),
-		currentLoc.getLongitude());
+		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
+		
+		WTCKeyLocation walkStart = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
+		walkStart.setLocName("Walk Start");
+		addKeyLocation(walkStart);
+		
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15));
-		map.addMarker(new MarkerOptions()
-			.title(tour.getTourName())
-			.snippet(tour.getShortDesc())
-			.position(loc));
 		locClient.requestLocationUpdates(locRequest, this);
 	}
 
@@ -138,6 +133,12 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			return true;
 		case R.id.action_remLoc:
 			removeLocation(selectedMarker);
+			return true;
+		case R.id.action_addPhoto:
+			
+			return true;
+		case R.id.action_remPhoto:
+			
 			return true;
 		case R.id.action_cancel:
 			cancelWalk();
@@ -212,6 +213,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}
 	
+	public void addPhoto() {
+		
+	}
+	
+	public void removePhoto() {
+		
+	}
+	
 	/**
 	* Saves the tour to the server.
 	*/
@@ -224,13 +233,21 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	* Stops the recording of the and deletes the data.
 	*/
 	public void cancelWalk() {
-	
+		tour.getLocations().clear();
+		tour = null;
+		Intent homeScreen = new Intent(this, MainActivity.class);
+		startActivity(homeScreen);
+		finish();
 	}
 	
 	/**
 	* Adds a stopping location to the tour and stops the recording.
 	*/
 	public void finishWalk() {
+		WTCKeyLocation walkEnd = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
+		walkEnd.setLocName("Walk End");
+		addKeyLocation(walkEnd);
+		
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
