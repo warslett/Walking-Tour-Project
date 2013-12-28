@@ -61,7 +61,7 @@ public class WTCTour {
 	/**
 	* Adds a location to the tour.
 	*
-	* @param l the location being added to the tour.
+	* @param location the location being added to the tour.
 	*/
 	public void addLocation(WTCLocation location){
 		locations.add(location);
@@ -70,10 +70,10 @@ public class WTCTour {
 	/**
 	* Removes a location from the tour.
 	*
-	* @param l the location being removed.
+	* @param index the index of the location being removed.
 	*/
-	public void removeLocation(WTCLocation location){
-		locations.remove(location);
+	public void removeLocation(int index){
+		locations.remove(index);
 	}
 	
 	/**

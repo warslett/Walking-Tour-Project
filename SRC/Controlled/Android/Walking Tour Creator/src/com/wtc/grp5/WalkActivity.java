@@ -202,7 +202,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 //			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
 //					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
 //					!tour.getLocations().isEmpty()){
-//				tour.getLocations().remove(i);
+//				tour.removeLocation(i);
 //				break;
 //			}
 //		}
