@@ -25,6 +25,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -246,7 +247,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 		File photoPath = new File(storageDir.getPath() + File.separator + "test.jpg");
 		
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoPath.toURI());
+        
         startActivityForResult(intent, 100);
 	}
 	
