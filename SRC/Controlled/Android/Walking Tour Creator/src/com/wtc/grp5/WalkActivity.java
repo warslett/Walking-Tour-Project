@@ -77,6 +77,21 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		locClient.disconnect();
 		super.onStop();
 	}
+        
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 100){
+            if (resultCode == RESULT_OK) {
+                // Image captured and saved to fileUri specified in the Intent
+                Toast.makeText(this, "Image saved to:\n" +
+                               data.getData(), Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_CANCELED) {
+                // User cancelled the image capture
+            } else {
+                // Image capture failed, advise user
+            }
+        }
+    }
 	
 	@Override
 	public void onLocationChanged(Location location) {

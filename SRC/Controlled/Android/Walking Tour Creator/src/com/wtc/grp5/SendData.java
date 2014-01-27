@@ -19,9 +19,11 @@ import android.widget.Toast;
 public class SendData extends AsyncTask<String, Void, Void> {
 	
 	private Context context;
+    private WTCTour tour;
 	
-	public SendData(Context context){
+	public SendData(Context context, WTCTour tour){
 		this.context = context;
+        this.tour = tour;
 	}
 	
 	// Yes that is meant to be a capital V in Void.
@@ -32,7 +34,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 			HttpPost post = new HttpPost(params[0]);
 			Log.d("WILLIAM", "Client and POST setup");
 			ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
-			data.add(new BasicNameValuePair("message", "Hello World"));
+			data.add(new BasicNameValuePair("message", tour.toJSON()));
 			Log.d("WILLIAM", "Data specified");
 			post.setEntity(new UrlEncodedFormEntity(data));
 			Log.d("WILLIAM", "Entity set");
