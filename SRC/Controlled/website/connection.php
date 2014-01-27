@@ -75,7 +75,8 @@ class dbConnection {
                     $db_record['shortDesc'],
                     $db_record['longDesc'],
                     $db_record['hours'],
-                    $db_record['distance']);
+                    $db_record['distance'],
+                    $this->getLocations($db_record['id']));
         }
         
         return $list;
@@ -147,6 +148,14 @@ class Location {
         $this->longitude = $longitude;
         $this->timestamp = $timestamp;
         
+    }
+    
+    function getLatitude(){
+        return $this->latitude;
+    }
+    
+    function getLongitude(){
+        return $this->longitude;
     }
     
 }
