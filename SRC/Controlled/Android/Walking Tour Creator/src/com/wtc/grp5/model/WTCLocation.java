@@ -1,5 +1,6 @@
 package com.wtc.grp5.model;
-//Include Time class java
+
+import android.text.format.Time;
 
 public class WTCLocation {
 
@@ -28,6 +29,7 @@ public class WTCLocation {
 		this.longitude = longitude;
 		this.latitude = latitude;
 		// timeStamp will implemented later...
+		timeStamp = new Time();
 		timeStamp.setToNow();
 	}
 	
@@ -76,7 +78,7 @@ public class WTCLocation {
 	 * @return the time stamp for when this location was recorded
 	 */
 	public String getTimeStamp(){
-		return timeStamp;
+		return timeStamp.toString();
 	}
 	
 	/**

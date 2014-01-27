@@ -11,6 +11,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.wtc.grp5.model.WTCTour;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
