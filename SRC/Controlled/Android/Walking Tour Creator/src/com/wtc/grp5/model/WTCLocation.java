@@ -4,7 +4,8 @@ public class WTCLocation {
 
 	private double longitude;
 	private double latitude;
-	private String timeStamp;
+	//private String timeStamp; // Easier if we use times as below
+	private Time timeStamp;
 	
 	/**
 	 * Constructs a blank location.
@@ -13,6 +14,7 @@ public class WTCLocation {
 		longitude = 0;
 		latitude = 0;
 		// timeStamp will implemented later...
+		timeStamp = new Time();
 	}
 	
 	/**
@@ -25,6 +27,7 @@ public class WTCLocation {
 		this.longitude = longitude;
 		this.latitude = latitude;
 		// timeStamp will implemented later...
+		timeStamp.setToNow();
 	}
 	
 	/**
@@ -83,6 +86,7 @@ public class WTCLocation {
 	public String toJSON(){
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp+"\"}";
+		//ADD timestamp to toJSON uses toString() gives YYYYMMDDTHHMMSS format
 		return out;
 	}
 
