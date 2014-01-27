@@ -130,7 +130,7 @@ class Tour {
         $this->longDesc=$longDesc;
         $this->hours=$hours;
         $this->distance=$distance;
-        $this->location=$locations;
+        $this->locations=$locations;
         
     }
     
@@ -152,6 +152,30 @@ class Tour {
     
     function getLocations(){
         return $this->locations;
+    }
+    
+    function getLocationsJSON(){
+        
+        $assocarray = array();
+        foreach($this->locations as $location){
+            if($location->getPlace()!=null){
+                $place=array(
+                    "shortDesc" => $location->getPlace()->getShortDesc(),
+                    "photos" => $location->getPlace()->getPhotos(),
+                );
+            } else {
+                $place = NULL;
+            }
+            $assocarray[]=array(
+                "latitude" => $location->getLatitude(),
+                "longitude" => $location->getLongitude(),
+                "timestamp" => $location->getTimeStamp(),
+                "place" => $place,
+            );
+        }
+        
+        return json_encode($assocarray);
+        
     }
 
 }
@@ -181,6 +205,14 @@ class Location {
         return $this->longitude;
     }
     
+    function getTimeStamp(){
+        return $this->timestamp;
+    }
+    
+    function getPlace(){
+        return $this->place;
+    }
+    
 }
 
 class Place{
@@ -195,4 +227,11 @@ class Place{
         
     }
     
+    public function getShortDesc(){
+        return $this->shortDesc;
+    }
+    
+    public function getPhotos(){
+        return $this->photos;
+    }
 }

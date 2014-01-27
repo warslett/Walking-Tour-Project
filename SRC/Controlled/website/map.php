@@ -31,13 +31,15 @@ $header='
  * it is declared. The following footer contains a function to initialise the
  * map.
  */
-$footer='
-<script type="text/javascript">initmap()</script>
-';
+$footer;
 
 function displayContent() {
     
     global $tour;
+    global $footer;
+    $footer='
+<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
+';
     
     ?>
 
