@@ -214,7 +214,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 	
 	public void addPhoto() {
-		
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+        startActivityForResult(intent, 100);
 	}
 	
 	public void removePhoto() {
