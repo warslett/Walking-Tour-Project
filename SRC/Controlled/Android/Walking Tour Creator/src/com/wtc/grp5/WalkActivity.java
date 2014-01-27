@@ -49,7 +49,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private Marker selectedMarker; // The marker the user clicked on
 	private Menu tourMenu; // A handle to the options menu for the walk
 	
-	Uri fileUri;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +113,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	@Override
 	public void onConnected(Bundle bundle) {
 		currentLoc = locClient.getLastLocation();
-		Log.d("WILLIAM", Double.toString(currentLoc.getLatitude()));
 		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
 		
 		WTCKeyLocation walkStart = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
@@ -228,14 +226,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	* @param marker the marker being removed from the map; also used to identify which location to remove.
 	*/
 	public void removeLocation(Marker marker) {
-//		for(int i = 0; i < tour.getLocations().size(); i++){
-//			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
-//					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
-//					!tour.getLocations().isEmpty()){
-//				tour.removeLocation(i);
-//				break;
-//			}
-//		}
+		for(int i = 0; i < tour.getLocations().size(); i++){
+			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
+					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
+					!tour.getLocations().isEmpty()){
+				tour.removeLocation(i);
+				break;
+			}
+		}
 		marker.remove();
 		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
 		removeLocItem.setEnabled(false);
@@ -245,13 +243,12 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void addPhoto() {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "WTC");
-		Log.d("WILLIAM", Boolean.toString(storageDir.exists()));
         if(!storageDir.exists()){
-			storageDir.mkdir();
+			storageDir.mkdirs();
 		}
-        Log.d("WILLIAM", Boolean.toString(storageDir.exists()));
-		File photoPath = new File(storageDir.getAbsolutePath() + File.separator + "test.jpg");
-		fileUri = Uri.fromFile(photoPath);
+		File photoPath = new File(storageDir.getPath() + File.separator + "test.jpg");
+		Uri fileUri = Uri.fromFile(photoPath);
+		Log.d("WILLIAM", fileUri.toString());
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
         startActivityForResult(intent, 100);
 	}

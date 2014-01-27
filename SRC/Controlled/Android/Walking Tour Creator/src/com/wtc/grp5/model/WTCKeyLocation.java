@@ -51,28 +51,28 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @return the locName
 	 */
 	public String getLocName() {
-		return locName.substring(0,50);//Even if a 50+ char String sneaks through, cut off any extra characters
+		return locName;
 	}
 
 	/**
 	 * @param locName the locName to set
 	 */
 	public void setLocName(String locName) {
-		this.locName = locName.substring(0,50);//Forces 50 char limit on location names
+		this.locName = locName;
 	}
 
 	/**
 	 * @return the locDesc
 	 */
 	public String getLocDesc() {
-		return locDesc.substring(0,100); //even if a 100+ char string gets through cut it up
+		return locDesc;
 	}
 
 	/**
 	 * @param locDesc the locDesc to set
 	 */
 	public void setLocDesc(String locDesc) {
-		this.locDesc = locDesc.substring(0,100); // forces description to be of limit 100 chars
+		this.locDesc = locDesc;
 	}
 
 }
