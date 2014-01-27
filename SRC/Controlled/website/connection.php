@@ -38,7 +38,27 @@ class dbConnection {
                 $db_record['shortDesc'],
                 $db_record['longDesc'],
                 $db_record['hours'],
-                $db_record['distance']);
+                $db_record['distance'],
+                $this->getLocations($tourID));
+        
+    }
+    
+    function getLocations($tourID){
+        
+        $locations = array();
+        
+        $db_result = $this->connection->query("
+            SELECT * FROM location WHERE `location`.`walkID`=" . $tourID . "
+            ");
+        
+        while($db_record=mysqli_fetch_array($db_result)){
+            $locations[]=new Location(
+                    $db_record['latitude'], 
+                    $db_record['longitude'],
+                    $db_record['timestamp']);
+        }
+        
+        return $locations;
         
     }
     
@@ -72,6 +92,7 @@ class Tour {
     private $longDesc;
     private $hours;
     private $distance;
+    private $locations;
     
     function __construct(
             $id,
@@ -79,7 +100,8 @@ class Tour {
             $shortDesc,
             $longDesc,
             $hours,
-            $distance) {
+            $distance,
+            $locations) {
         
         $this->id=$id;
         $this->title=$title;
@@ -87,6 +109,7 @@ class Tour {
         $this->longDesc=$longDesc;
         $this->hours=$hours;
         $this->distance=$distance;
+        $this->location=$locations;
         
     }
     
@@ -105,5 +128,25 @@ class Tour {
     function getLongDesc(){
         return $this->longDesc;
     }
+    
+    function getLocations(){
+        return $this->locations;
+    }
 
+}
+
+class Location {
+    
+    private $latitude;
+    private $longitude;
+    private $timestamp;
+    
+    function __construct($latitude, $longitude, $timestamp){
+        
+        $this->latitude = $latitude;
+        $this->longitude = $longitude;
+        $this->timestamp = $timestamp;
+        
+    }
+    
 }
