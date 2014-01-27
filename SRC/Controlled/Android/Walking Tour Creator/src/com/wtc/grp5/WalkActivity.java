@@ -1,5 +1,7 @@
 package com.wtc.grp5;
 
+import java.io.File;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -21,7 +23,11 @@ import com.wtc.grp5.model.WTCTour;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -42,7 +48,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private LocationRequest locRequest;
 	private Marker selectedMarker; // The marker the user clicked on
 	private Menu tourMenu; // A handle to the options menu for the walk
-
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -83,8 +90,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         if(requestCode == 100){
             if (resultCode == RESULT_OK) {
                 // Image captured and saved to fileUri specified in the Intent
-                Toast.makeText(this, "Image saved to:\n" +
-                               data.getData(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Image saved to:\n" + data.getData(), Toast.LENGTH_LONG).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
             } else {
@@ -128,6 +134,12 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
 		removeLocItem.setEnabled(true);
 		selectedMarker = marker;
+		
+		// Enable add / remove photo buttons
+		MenuItem addPhoto = tourMenu.findItem(R.id.action_addPhoto);
+		addPhoto.setEnabled(true);
+		MenuItem removePhoto = tourMenu.findItem(R.id.action_remPhoto);
+		removePhoto.setEnabled(true);
 		return false;
 	}
 
@@ -150,7 +162,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			removeLocation(selectedMarker);
 			return true;
 		case R.id.action_addPhoto:
-			
+			addPhoto();
 			return true;
 		case R.id.action_remPhoto:
 			
@@ -214,14 +226,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	* @param marker the marker being removed from the map; also used to identify which location to remove.
 	*/
 	public void removeLocation(Marker marker) {
-//		for(int i = 0; i < tour.getLocations().size(); i++){
-//			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
-//					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
-//					!tour.getLocations().isEmpty()){
-//				tour.removeLocation(i);
-//				break;
-//			}
-//		}
+		for(int i = 0; i < tour.getLocations().size(); i++){
+			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
+					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
+					!tour.getLocations().isEmpty()){
+				tour.removeLocation(i);
+				break;
+			}
+		}
 		marker.remove();
 		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
 		removeLocItem.setEnabled(false);
@@ -230,7 +242,13 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	
 	public void addPhoto() {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+        File storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "WTC");
+        if(!storageDir.exists()){
+			storageDir.mkdirs();
+		}
+		File photoPath = new File(storageDir.getPath() + File.separator + "test.jpg");
+		Uri fileUri = Uri.fromFile(photoPath);
+		Log.d("WILLIAM", fileUri.toString());
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
         startActivityForResult(intent, 100);
 	}
@@ -244,7 +262,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	*/
 	private void saveToServer() {
 		String[] data = {"http://users.aber.ac.uk/wia2/WTC/upload.php"};
-		new SendData(this).execute(data);
+		new SendData(this, tour).execute(data);
 	}
 	
 	/**
