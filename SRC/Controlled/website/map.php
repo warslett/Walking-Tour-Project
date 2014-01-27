@@ -38,8 +38,7 @@ function displayContent() {
     global $tour;
     global $footer;
     $footer='
-<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
-';
+<script type="text/javascript">initmap(' . $tour->getID() . ')</script>';
     
     ?>
 

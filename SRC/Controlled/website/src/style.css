@@ -1,6 +1,6 @@
 #main
 {
-   background: #973902 url('images/page.jpeg') scroll;
+   background: #973902 url('../images/page.jpeg') scroll;
    margin:0 auto;
    font-size: 13px;
    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -404,7 +404,7 @@ li p, .postcontent li p, .blockcontent li p
     top: 40px;
     width: 226px;
     height: 270px;
-    background-image: url('images/object1388086240.png');
+    background-image: url('../images/object1388086240.png');
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 1;
@@ -440,7 +440,7 @@ li p, .postcontent li p, .blockcontent li p
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
     overflow: hidden;
-      background-image: url('images/object557410578.png');
+      background-image: url('../images/object557410578.png');
   background-position: 0px 0px;
   background-repeat: no-repeat;
     z-index: 2;
@@ -598,20 +598,20 @@ text-decoration: none;
    background-repeat: no-repeat;
    height: 350px;
    position:relative;
-   background-image: url('images/header.jpg');
+   background-image: url('../images/header.jpg');
    background-position: center top;
 }
 
 .custom-responsive .header
 {
-   background-image: url('images/header.jpg');
+   background-image: url('../images/header.jpg');
    background-position: center top;
 }
 
 .default-responsive .header,
 .default-responsive #header-bg
 {
-   background-image: url('images/header.jpg');
+   background-image: url('../images/header.jpg');
    background-position: center center;
    background-size: cover;
 }
@@ -631,13 +631,13 @@ text-decoration: none;
 
 .nav
 {
-   background: #34220E url('images/nav.png') scroll;
-   background: -webkit-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), -webkit-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
-   background: -moz-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), -moz-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
-   background: -o-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), -o-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
-   background: -ms-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), -ms-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
-   -svg-background: linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
-   background: linear-gradient(to bottom, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('images/nav.png'), linear-gradient(to bottom, #593A18 0, #140D05 100%) no-repeat;
+   background: #34220E url('../images/nav.png') scroll;
+   background: -webkit-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), -webkit-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
+   background: -moz-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), -moz-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
+   background: -o-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), -o-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
+   background: -ms-linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), -ms-linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
+   -svg-background: linear-gradient(top, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), linear-gradient(top, #593A18 0, #140D05 100%) no-repeat;
+   background: linear-gradient(to bottom, rgba(106, 70, 28, 0.21) 0, rgba(3, 2, 1, 0.14) 100%) no-repeat, url('../images/nav.png'), linear-gradient(to bottom, #593A18 0, #140D05 100%) no-repeat;
    padding:9px 10px;
    margin:0 auto;
    position: relative;
@@ -764,13 +764,13 @@ ul.hmenu>li:last-child, ul.hmenu>li.last-child {
 
 ul.hmenu>li>a
 {
-   background: #957941 url('images/menuitem.png') scroll;
-   background: -webkit-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), -webkit-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
-   background: -moz-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), -moz-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
-   background: -o-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), -o-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
-   background: -ms-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), -ms-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
-   -svg-background: linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
-   background: linear-gradient(to bottom, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('images/menuitem.png'), linear-gradient(to bottom, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   background: #957941 url('../images/menuitem.png') scroll;
+   background: -webkit-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), -webkit-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   background: -moz-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), -moz-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   background: -o-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), -o-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   background: -ms-linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), -ms-linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   -svg-background: linear-gradient(top, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), linear-gradient(top, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
+   background: linear-gradient(to bottom, rgba(181, 150, 87, 0.11) 0, rgba(112, 91, 49, 0.05) 100%) no-repeat, url('../images/menuitem.png'), linear-gradient(to bottom, rgba(174, 141, 76, 0.6) 0, rgba(124, 101, 54, 0.6) 100%) no-repeat;
    -webkit-border-radius:6px;
    -moz-border-radius:6px;
    border-radius:6px;
@@ -804,13 +804,13 @@ ul.hmenu>li>a
 
 ul.hmenu>li>a.active
 {
-   background: #D95F02 url('images/menuactiveitem.png') scroll;
-   background: -webkit-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), -webkit-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
-   background: -moz-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), -moz-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
-   background: -o-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), -o-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
-   background: -ms-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), -ms-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
-   -svg-background: linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
-   background: linear-gradient(to bottom, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('images/menuactiveitem.png'), linear-gradient(to bottom, #FC6F03 0, #B65002 100%) no-repeat;
+   background: #D95F02 url('../images/menuactiveitem.png') scroll;
+   background: -webkit-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), -webkit-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
+   background: -moz-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), -moz-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
+   background: -o-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), -o-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
+   background: -ms-linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), -ms-linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
+   -svg-background: linear-gradient(top, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), linear-gradient(top, #FC6F03 0, #B65002 100%) no-repeat;
+   background: linear-gradient(to bottom, rgba(253, 121, 20, 0.18) 0, rgba(164, 72, 2, 0.09) 100%) no-repeat, url('../images/menuactiveitem.png'), linear-gradient(to bottom, #FC6F03 0, #B65002 100%) no-repeat;
    -webkit-border-radius:6px;
    -moz-border-radius:6px;
    border-radius:6px;
@@ -829,13 +829,13 @@ ul.hmenu>li:hover>a {
 
 ul.hmenu>li>a:hover, .desktop ul.hmenu>li:hover>a
 {
-   background: #FE901B url('images/menuhovereditem.png') scroll;
-   background: -webkit-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), -webkit-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
-   background: -moz-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), -moz-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
-   background: -o-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), -o-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
-   background: -ms-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), -ms-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
-   -svg-background: linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
-   background: linear-gradient(to bottom, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('images/menuhovereditem.png'), linear-gradient(to bottom, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   background: #FE901B url('../images/menuhovereditem.png') scroll;
+   background: -webkit-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), -webkit-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   background: -moz-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), -moz-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   background: -o-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), -o-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   background: -ms-linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), -ms-linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   -svg-background: linear-gradient(top, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), linear-gradient(top, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
+   background: linear-gradient(to bottom, rgba(254, 170, 80, 0.18) 0, rgba(241, 125, 1, 0.08) 86%, rgba(226, 117, 1, 0.09) 100%) no-repeat, url('../images/menuhovereditem.png'), linear-gradient(to bottom, #FEA13E 0, #FE8401 86%, #F47E01 100%) no-repeat;
    -webkit-border-radius:6px;
    -moz-border-radius:6px;
    border-radius:6px;
@@ -858,7 +858,7 @@ ul.hmenu>li:before
    left:  -3px;
    width:3px;
    height: 31px;
-   background: url('images/menuseparator.png') center center no-repeat;
+   background: url('../images/menuseparator.png') center center no-repeat;
 }
 ul.hmenu>li:first-child:before{
    display:none;
@@ -978,7 +978,7 @@ ul.hmenu ul
    z-index: 10;
    left: 0;
    top: 0;
-   background-image: url('images/spacer.gif');
+   background-image: url('../images/spacer.gif');
 }
 
 .desktop ul.hmenu>li>ul
@@ -1139,13 +1139,13 @@ div.block img
 
 .blockheader
 {
-   background: #FD6812 url('images/blockheader.png') scroll;
-   background: -webkit-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), -webkit-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
-   background: -moz-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), -moz-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
-   background: -o-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), -o-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
-   background: -ms-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), -ms-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
-   -svg-background: linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
-   background: linear-gradient(to bottom, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('images/blockheader.png'), linear-gradient(to bottom, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   background: #FD6812 url('../images/blockheader.png') scroll;
+   background: -webkit-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), -webkit-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   background: -moz-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), -moz-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   background: -o-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), -o-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   background: -ms-linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), -ms-linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   -svg-background: linear-gradient(top, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), linear-gradient(top, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
+   background: linear-gradient(to bottom, rgba(253, 138, 71, 0.18) 0, rgba(245, 91, 2, 0.07) 71%, rgba(215, 80, 2, 0.09) 100%) no-repeat, url('../images/blockheader.png'), linear-gradient(to bottom, #FD7E35 0, #FC5E03 71%, #E85702 100%) no-repeat;
    -webkit-border-radius:6px;
    -moz-border-radius:6px;
    border-radius:6px;
@@ -1212,7 +1212,7 @@ div.block img
 }
 .block ul>li:before
 {
-   content:url('images/blockbullets.png');
+   content:url('../images/blockbullets.png');
    margin-right:6px;
    bottom: 2px;
    position:relative;
@@ -2050,7 +2050,7 @@ pre
 
 .postpdficon:before
 {
-   content:url('images/postpdficon.png');
+   content:url('../images/postpdficon.png');
    margin-right:6px;
    position:relative;
    display:inline-block;
@@ -2067,7 +2067,7 @@ pre
 
 .postprinticon:before
 {
-   content:url('images/postprinticon.png');
+   content:url('../images/postprinticon.png');
    margin-right:6px;
    bottom: 2px;
    position:relative;
@@ -2084,7 +2084,7 @@ pre
 
 .postemailicon:before
 {
-   content:url('images/postemailicon.png');
+   content:url('../images/postemailicon.png');
    margin-right:6px;
    position:relative;
    display:inline-block;
@@ -2101,7 +2101,7 @@ pre
 
 .postcontent ul>li:before,  .post ul>li:before,  .textblock ul>li:before
 {
-   content:url('images/postbullets.png');
+   content:url('../images/postbullets.png');
    margin-right:6px;
    bottom: 2px;
    position:relative;
@@ -2169,7 +2169,7 @@ pre
 
 blockquote
 {
-   background: #FEDFCD url('images/postquote.png') no-repeat scroll;
+   background: #FEDFCD url('../images/postquote.png') no-repeat scroll;
    padding:10px 10px 10px 38px;
    margin:10px 10px 10px 50px;
    color: #230D00;
@@ -2346,7 +2346,7 @@ blockquote p,
 
 .rss-tag-icon
 {
-   background:  url('images/footerrssicon.png') no-repeat scroll;
+   background:  url('../images/footerrssicon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2363,7 +2363,7 @@ blockquote p,
 
 .facebook-tag-icon
 {
-   background:  url('images/footerfacebookicon.png') no-repeat scroll;
+   background:  url('../images/footerfacebookicon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2380,7 +2380,7 @@ blockquote p,
 
 .twitter-tag-icon
 {
-   background:  url('images/footertwittericon.png') no-repeat scroll;
+   background:  url('../images/footertwittericon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2397,7 +2397,7 @@ blockquote p,
 
 .tumblr-tag-icon
 {
-   background:  url('images/tumblricon.png') no-repeat scroll;
+   background:  url('../images/tumblricon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2414,7 +2414,7 @@ blockquote p,
 
 .pinterest-tag-icon
 {
-   background:  url('images/pinteresticon.png') no-repeat scroll;
+   background:  url('../images/pinteresticon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2431,7 +2431,7 @@ blockquote p,
 
 .vimeo-tag-icon
 {
-   background:  url('images/vimeoicon.png') no-repeat scroll;
+   background:  url('../images/vimeoicon.png') no-repeat scroll;
    margin:0 auto;
    min-height:33px;
    min-width:32px;
@@ -2448,7 +2448,7 @@ blockquote p,
 
 .youtube-tag-icon
 {
-   background:  url('images/youtubeicon.png') no-repeat scroll;
+   background:  url('../images/youtubeicon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2465,7 +2465,7 @@ blockquote p,
 
 .linkedin-tag-icon
 {
-   background:  url('images/linkedinicon.png') no-repeat scroll;
+   background:  url('../images/linkedinicon.png') no-repeat scroll;
    margin:0 auto;
    min-height:32px;
    min-width:32px;
@@ -2564,7 +2564,7 @@ blockquote p,
 
 .lightbox-wrapper .loading
 {
-   background: #fff url('images/preloader-01.gif') center center no-repeat;
+   background: #fff url('../images/preloader-01.gif') center center no-repeat;
    border: 1px solid #b4b4b4;
    border-radius: 10px;
    box-shadow: 0 2px 5px #333;

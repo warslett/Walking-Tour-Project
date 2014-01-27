@@ -51,7 +51,7 @@ ul.hmenu>li>span.hmenu-separator
    left:  -3px;
    width: 3px;
    height: 31px;
-   background: url('images/menuseparator.png') center center no-repeat;
+   background: url('../images/menuseparator.png') center center no-repeat;
 }
 ul.hmenu>li:first-child>span.hmenu-separator
 {

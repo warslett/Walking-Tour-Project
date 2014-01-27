@@ -6,11 +6,12 @@
 
         <title>Group 5: Walking Tour Creator</title>
         <meta content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" name="viewport" /><!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        <link href="style.css" media="screen" rel="stylesheet" /><!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
-        <link href="style.responsive.css" media="all" rel="stylesheet" />
-        <script src="jquery.js"></script>
-        <script src="script.js"></script>
-        <script src="script.responsive.js"></script>
+        <link href="src/style.css" media="screen" rel="stylesheet" /><!--[if lte IE 7]>
+        <link rel="stylesheet" href="src/style.ie7.css" media="screen"/><![endif]-->
+        <link href="src/style.responsive.css" media="all" rel="stylesheet" />
+        <script src="src/jquery.js"></script>
+        <script src="src/script.js"></script>
+        <script src="src/script.responsive.js"></script>
         <?
         if(isset($header)){
             echo $header;
