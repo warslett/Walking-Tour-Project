@@ -77,6 +77,21 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		locClient.disconnect();
 		super.onStop();
 	}
+        
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 100){
+            if (resultCode == RESULT_OK) {
+                // Image captured and saved to fileUri specified in the Intent
+                Toast.makeText(this, "Image saved to:\n" +
+                               data.getData(), Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_CANCELED) {
+                // User cancelled the image capture
+            } else {
+                // Image capture failed, advise user
+            }
+        }
+    }
 	
 	@Override
 	public void onLocationChanged(Location location) {
@@ -214,7 +229,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 	
 	public void addPhoto() {
-		
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+        startActivityForResult(intent, 100);
 	}
 	
 	public void removePhoto() {
