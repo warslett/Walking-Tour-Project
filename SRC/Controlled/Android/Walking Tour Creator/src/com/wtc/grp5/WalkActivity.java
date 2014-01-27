@@ -1,7 +1,5 @@
 package com.wtc.grp5;
 
-import java.io.File;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -24,8 +22,6 @@ import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +43,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private LocationRequest locRequest;
 	private Marker selectedMarker; // The marker the user clicked on
 	private Menu tourMenu; // A handle to the options menu for the walk
-	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -241,19 +236,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	
 	public void addPhoto() {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File storageDir = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "WTC");
-        if(!storageDir.exists()){
-			storageDir.mkdirs();
-		}
-		File photoPath = new File(storageDir.getPath() + File.separator + "test.jpg");
 		
-        
+		
+
         startActivityForResult(intent, 100);
 	}
 	
 	public void removePhoto() {
 		
 	}
+	
+
 	
 	/**
 	* Saves the tour to the server.
