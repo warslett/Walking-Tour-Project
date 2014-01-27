@@ -1,6 +1,6 @@
 <?php
 
-include_once 'connection.php';
+include_once 'src/connection.php';
 
 $database = new dbConnection();
 

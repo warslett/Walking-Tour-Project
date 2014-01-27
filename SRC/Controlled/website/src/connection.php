@@ -1,5 +1,5 @@
 <?php
-
+require'tour.php';
 /**
  * connection.php defines a PHP class for a database connection object.
  * This allows the webdeveloper to access data on the database as objects.
@@ -19,11 +19,12 @@ class dbConnection {
                 'wia2',
                 't6y7u8i9o0p',
                 'wia2');
-        
-        if (!$this->connection) {
-            die('Could not connect to database: ' . mysqli_error());
+
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
-        
+        mysqli_close($this);
     }
     
     function getTour($tourID){

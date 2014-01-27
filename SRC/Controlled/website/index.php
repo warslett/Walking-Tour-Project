@@ -1,7 +1,7 @@
-<?
+<?php
+require_once 'src/template.php';
 function displayContent() {
 ?>
-
     <article class="post article">
         <div class="postcontent postcontent-0 clearfix">
             <div class="content-layout">
@@ -53,7 +53,10 @@ function displayContent() {
 
                         <p><img alt="" height="99" src="images/003.jpg" style="float: left;" width="100" /></p>
 
-                        <p>Fusce ornare elit nisl, feugiat bibendum lorem. Vivamus pretium dictum sem vel laoreet. In fringilla pharetra purus, semper vulputate ligula cursus in. Donec at nunc nec dui laoreet porta eu eu ipsum. Sed eget lacus sit amet risus elementum dictum.</p>
+                        <p>Fusce ornare elit nisl, feugiat bibendum lorem. Vivamus pretium dictum sem vel laoreet.
+                           In fringilla pharetra purus, semper vulputate ligula cursus in.
+                           Donec at nunc nec dui laoreet porta eu eu ipsum.
+                           Sed eget lacus sit amet risus elementum dictum.</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +81,6 @@ function displayContent() {
         </div>
     </article>
 
-<?
+<?php
 }
-require_once 'template.html';
 ?>

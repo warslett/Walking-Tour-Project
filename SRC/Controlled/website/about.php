@@ -1,5 +1,6 @@
-<?
-function displayContent() {
+<?php
+require_once 'src/template.php';
+function displayContent(){
     ?>
 
     <article class="post article">
@@ -10,8 +11,6 @@ function displayContent() {
         </div>
     </article>
 
-    <?
+<?php
 }
-
-require_once 'template.html';
 ?>
