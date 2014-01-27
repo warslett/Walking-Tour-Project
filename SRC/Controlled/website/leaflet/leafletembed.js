@@ -1,5 +1,5 @@
 var map;
-var ajaxRequest;
+var ajaxRequest = new XMLHttpRequest();
 var plotlist;
 var plotlayers=[];
 
@@ -11,18 +11,18 @@ function initmap() {
 	// create the tile layer with correct attribution
 	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib='Map data © OpenStreetMap contributors';
-	var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});		
+	var osm = new L.TileLayer(osmUrl, {minZoom: 10, maxZoom: 20, attribution: osmAttrib});		
 
 	// start the map in South-East England
 	map.setView(new L.LatLng(51.3, 0.7),9);
 	map.addLayer(osm);
 	
 	// set up AJAX request
-	ajaxRequest=getXmlHttpObject();
-	if (ajaxRequest==null) {
-		alert ("This browser does not support HTTP Request");
-	return;
-	}
+//	ajaxRequest=getXmlHttpObject();
+//	if (ajaxRequest==null) {
+//		alert ("This browser does not support HTTP Request");
+//	return;
+//	}
 	
 	askForPlots();
 	map.on('moveend', onMapMove);
