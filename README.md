@@ -1,19 +1,14 @@
 Group 05 Project:
 ==================
-TODO
+Will A and Steve's TODO list
 --------------
-1. WIll A. to create the database tables by Friday Afternoon.
-2. Will L. to look into making the locations work. (Done)
-3. Neil V. to look into implementing the Leaflet API on the site.
-4. Steve C. to provide a list of references for any work he's done on the site.
-5. Steve C. to finish intergrating the leaflet API.
-6. Ben O. to look into changing the icons colours as they have been said to be not clear on the screen.
-7. Harvey C. to look into getting the time stamps for the locations in the tour.
-8. Harvey C. to check if the JSON methods are complete and look into sending the data to the server.
-9. Ben O. We need an add photo and a remove photo icon for the app.
-
-Notes
--------------
-Steve C. Removed the Drupal SQL. Was left over rubbish :)
-
-Harvey C. Look at the SendData class - that is where the data gets sent to the server
+1. refactor code (without breaking it!) - Steve
+2. implement dynamic map on homepage with ajax - Will/Steve
+3. implement upload system including images - Will/Steve
+4. design/ implement solution for thumbnailing images -Will/Steve
+5. refactor code - Steve
+6. update design - Steve/Will + Ben (Quality control)
+7. begin module testing - Steve/Will + Neil
+8. begin system testing - Steve/Will + Neil
+9. write maintenance documentation - Steve/Will + Ben (Quality control)
+10. acceptance testing - Steve/Will + Sev
