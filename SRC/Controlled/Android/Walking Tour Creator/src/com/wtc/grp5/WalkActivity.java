@@ -235,10 +235,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 	
 	public void addPhoto() {
-		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 		
 		
-
         startActivityForResult(intent, 100);
 	}
 	
