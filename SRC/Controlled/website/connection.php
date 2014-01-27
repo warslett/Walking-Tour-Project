@@ -38,7 +38,8 @@ class dbConnection {
                 $db_record['shortDesc'],
                 $db_record['longDesc'],
                 $db_record['hours'],
-                $db_record['distance']);
+                $db_record['distance'],
+                $this->getLocations($tourID));
         
     }
     
@@ -91,6 +92,7 @@ class Tour {
     private $longDesc;
     private $hours;
     private $distance;
+    private $locations;
     
     function __construct(
             $id,
@@ -98,7 +100,8 @@ class Tour {
             $shortDesc,
             $longDesc,
             $hours,
-            $distance) {
+            $distance,
+            $locations) {
         
         $this->id=$id;
         $this->title=$title;
@@ -106,6 +109,7 @@ class Tour {
         $this->longDesc=$longDesc;
         $this->hours=$hours;
         $this->distance=$distance;
+        $this->location=$locations;
         
     }
     
@@ -123,6 +127,10 @@ class Tour {
     
     function getLongDesc(){
         return $this->longDesc;
+    }
+    
+    function getLocations(){
+        return $this->locations;
     }
 
 }
