@@ -52,10 +52,30 @@ class dbConnection {
             ");
         
         while($db_record=mysqli_fetch_array($db_result)){
+            
+            $place_query=$this->connection->query("
+            SELECT * FROM placeDescription WHERE 
+            `placeDescription`.`locationID`=" . $db_record['id'] . " 
+            LIMIT 1");
+            
+            if(!$place_record=mysqli_fetch_array($place_query)){
+                $place=NULL;
+            } else {
+                $photo_array=array();
+                $photo_query=$this->connection->query("
+            SELECT * FROM photoUsage WHERE 
+            `photoUsage`.`placeID`=" . $place_record['id']);
+                while($photo_record=mysqli_fetch_array($photo_query)){
+                    $photo_array[]=$photo_record['photoName'];
+                }
+                $place=new Place($place_record['shortDesc'], $photo_array);
+            }
+            
             $locations[]=new Location(
                     $db_record['latitude'], 
                     $db_record['longitude'],
-                    $db_record['timestamp']);
+                    $db_record['timestamp'],
+                    $place);
         }
         
         return $locations;
@@ -141,12 +161,15 @@ class Location {
     private $latitude;
     private $longitude;
     private $timestamp;
+    private $place;
     
-    function __construct($latitude, $longitude, $timestamp){
+    function __construct($latitude, $longitude, $timestamp, $place){
         
         $this->latitude = $latitude;
         $this->longitude = $longitude;
         $this->timestamp = $timestamp;
+        $this->place=$place;
+        
         
     }
     
@@ -156,6 +179,20 @@ class Location {
     
     function getLongitude(){
         return $this->longitude;
+    }
+    
+}
+
+class Place{
+    
+    private $shortDesc;
+    private $photos;
+    
+    public function __construct($shortDesc, $photos) {
+        
+        $this->shortDesc=$shortDesc;
+        $this->photos=$photos;
+        
     }
     
 }
