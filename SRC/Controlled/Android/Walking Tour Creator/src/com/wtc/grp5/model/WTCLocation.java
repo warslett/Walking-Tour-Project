@@ -85,7 +85,7 @@ public class WTCLocation {
 	*/
 	public String toJSON(){
 		String out;
-		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp+"\"}";
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\"}";
 		//ADD timestamp to toJSON uses toString() gives YYYYMMDDTHHMMSS format
 		return out;
 	}

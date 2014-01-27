@@ -17,7 +17,7 @@ public class Communication implements Link {
 	 * Constructs a blank Communication object.
 	 */
 	public Communication(){
-		// Does nothing
+		// Does nothing, no really does nothing
 	}
 	
 	/**
