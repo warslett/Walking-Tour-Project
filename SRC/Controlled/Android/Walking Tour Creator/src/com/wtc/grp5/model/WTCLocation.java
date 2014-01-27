@@ -1,5 +1,6 @@
 package com.wtc.grp5.model;
 //Include Time class java
+import android.text.format.Time;
 
 public class WTCLocation {
 
