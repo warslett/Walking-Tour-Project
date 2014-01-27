@@ -23,11 +23,9 @@ import com.wtc.grp5.model.WTCTour;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -242,14 +240,13 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	
 	public void addPhoto() {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "WTC");
+        File storageDir = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "WTC");
         if(!storageDir.exists()){
 			storageDir.mkdirs();
 		}
 		File photoPath = new File(storageDir.getPath() + File.separator + "test.jpg");
-		Uri fileUri = Uri.fromFile(photoPath);
-		Log.d("WILLIAM", fileUri.toString());
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+		
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoPath.toURI());
         startActivityForResult(intent, 100);
 	}
 	
