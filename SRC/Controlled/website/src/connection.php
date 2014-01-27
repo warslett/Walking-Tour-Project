@@ -24,7 +24,6 @@ class dbConnection {
         {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
-        mysqli_close($this);
     }
     
     function getTour($tourID){

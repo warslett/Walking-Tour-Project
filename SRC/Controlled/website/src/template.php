@@ -6,12 +6,12 @@
 
         <title>Group 5: Walking Tour Creator</title>
         <meta content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" name="viewport" /><!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        <link href="style.css" media="screen" rel="stylesheet" /><!--[if lte IE 7]>
-        <link rel="stylesheet" href="style.ie7.css" media="screen"/><![endif]-->
-        <link href="style.responsive.css" media="all" rel="stylesheet" />
-        <script src="jquery.js"></script>
-        <script src="script.js"></script>
-        <script src="script.responsive.js"></script>
+        <link href="src/style.css" media="screen" rel="stylesheet" /><!--[if lte IE 7]>
+        <link rel="src/stylesheet" href="style.ie7.css" media="screen"/><![endif]-->
+        <link href="src/style.responsive.css" media="all" rel="stylesheet" />
+        <script src="src/jquery.js"></script>
+        <script src="src/script.js"></script>
+        <script src="src/script.responsive.js"></script>
         <?
         if(isset($header)){
             echo $header;
@@ -40,11 +40,11 @@
             <nav class="nav">
                 <div class="nav-inner">
                     <ul class="hmenu">
-                        <li><a class="" href="../index.php">Home</a></li>
+                        <li><a class="" href="index.php">Home</a></li>
 
-                        <li><a class="" href="../list.php">List of Tours</a></li>
+                        <li><a class="" href="list.php">List of Tours</a></li>
 
-                        <li><a href="../about.php">About</a></li>
+                        <li><a href="about.php">About</a></li>
                     </ul>
                 </div>
             </nav>
@@ -93,7 +93,7 @@
 
                     <p><br /></p>
 
-                    <p class="page-footer"><span id="footnote-links">Designed by <a href="polyspotstudios.co.uk" target="_blank">Stephen Clasby</a>.</span></p>
+                    <p class="page-footer"><span id="footnote-links">Designed by <a href="http://polyspotstudios.co.uk" target="_blank">Stephen Clasby</a>.</span></p>
                 </div>
             </footer>
         </div>

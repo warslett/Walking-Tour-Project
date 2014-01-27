@@ -2,6 +2,7 @@
 
 require_once 'src/connection.php';
 require_once 'src/template.php';
+require_once 'src/tour.php';
 
 $database = new dbConnection();
 
