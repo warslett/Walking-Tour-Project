@@ -1,9 +1,4 @@
 package com.wtc.grp5.model;
-<<<<<<< HEAD
-
-=======
-//Include Time class java
->>>>>>> 0e93059dbef521451ca8673559f9700a1908f809
 import android.text.format.Time;
 
 public class WTCLocation {
