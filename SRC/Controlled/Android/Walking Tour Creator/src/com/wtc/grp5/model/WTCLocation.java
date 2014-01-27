@@ -1,4 +1,5 @@
 package com.wtc.grp5.model;
+//Include Time class java
 
 public class WTCLocation {
 
@@ -78,7 +79,7 @@ public class WTCLocation {
 		return timeStamp;
 	}
 	
-	/*
+	/**
 	* Converts the data stored in this object to a JSON string.
 	* 
 	* @return the JSON String.
@@ -86,7 +87,6 @@ public class WTCLocation {
 	public String toJSON(){
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\"}";
-		//ADD timestamp to toJSON uses toString() gives YYYYMMDDTHHMMSS format
 		return out;
 	}
 
