@@ -286,5 +286,4 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public long getSampleRate() {
 		return sampleRate;
 	}
-	
 }
