@@ -98,7 +98,7 @@ public class WTCTour {
 	* @param tourName the new value for this.tourName.
 	*/
 	public void setTourName(String tourName){
-		this.tourName = tourName;
+		this.tourName = tourName.substring(0,50);//Hard redundent limit on Tour name length
 	}
 	
 	/**
@@ -114,7 +114,7 @@ public class WTCTour {
 	* @param shortDesc the new value for this.shortDesc.
 	*/
 	public void setShortDesc(String shortDesc){
-		this.shortDesc = shortDesc;
+		this.shortDesc = shortDesc.substring(0,100);//hard redundent limit on short description
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class WTCTour {
 	* @param longDesc the new value for this.longDesc.
 	*/
 	public void setLongDesc(String longDesc){
-		this.longDesc = longDesc;
+		this.longDesc = longDesc.substring(0,1000);//hard redundant limit on long description
 	}
 
 	/**
