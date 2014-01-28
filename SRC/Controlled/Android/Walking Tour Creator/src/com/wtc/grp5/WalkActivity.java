@@ -276,9 +276,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		
 	}
 	
-	private File createImageFile(){
-	}
-	
 	/**
 	* Saves the tour to the server.
 	*/
