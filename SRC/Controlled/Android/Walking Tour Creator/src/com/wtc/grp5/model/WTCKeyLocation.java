@@ -2,7 +2,7 @@
 
 public class WTCKeyLocation extends WTCLocation {
 
-	private String[] photos; // Might be changed to ArrayList
+	private list <String> photos = new ArrayList<String>();
 	private String locName;
 	private String locDesc;
 
@@ -35,7 +35,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void addPhoto(String path){
-		//TODO needs implementing
+		photos.add(path);
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void removePhoto(String path){
-		//TODO needs implementing
+		photos.remove(path);
 	}
 
 	/**
@@ -77,10 +77,10 @@ public class WTCKeyLocation extends WTCLocation {
 	public String toJSON(){
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
-		for(int i=0;i<photos.getLength()-1;i++){
+		for(int i=0;i<photos.size()-1;i++){
 			out += "\""+"Photo"+i+"\":\""+photo[i]+"\",";
 		}
-			out +="\""+"Photo"+photos.getLength()+"\"]}";
+			out +="\""+"Photo"+photos.size()+"\"]}";
                 return out;
         }
 
