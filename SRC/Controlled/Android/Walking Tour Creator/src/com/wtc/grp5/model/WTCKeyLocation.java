@@ -38,7 +38,9 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void addPhoto(String path){
-		photos.add(path);
+		if(photos.size() < 5){
+			photos.add(path);
+		}
 	}
 
 	/**
@@ -47,7 +49,9 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void removePhoto(String path){
-		photos.remove(path);
+		if(!photos.isEmpty()){
+			photos.remove(path);
+		}
 	}
 
 	/**

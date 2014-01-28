@@ -38,6 +38,8 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener,
 	LocationListener, OnMarkerClickListener, LocationDetailsFragment.LocationDetailsListener{
@@ -95,12 +97,30 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         super.onActivityResult(requestCode, resultCode, data);
     	if(requestCode == 200){
             if (resultCode == RESULT_OK) {
-                // Image captured and saved to fileUri specified in the Intent
-            	Toast.makeText(this, "Image saved to:\n" + data.getData(), Toast.LENGTH_LONG).show();
+            	for(int i = 0; i < tour.getLocations().size(); i++){
+            		if(tour.getLocations().get(i).getLatitude() == selectedMarker.getPosition().latitude &&
+            				tour.getLocations().get(i).getLongitude() == selectedMarker.getPosition().longitude &&
+            				tour.getLocations().get(i).getClass() == WTCKeyLocation.class){
+            				WTCKeyLocation temp = (WTCKeyLocation) tour.getLocations().get(i);
+            				temp.addPhoto(mCurrentPhotoPath);
+            		}
+            	}
+            	
+        		selectedMarker = null;
+        		
+        		// Enable add / remove photo buttons
+        		MenuItem addPhoto = tourMenu.findItem(R.id.action_addPhoto);
+        		addPhoto.setEnabled(false);
+        		MenuItem removePhoto = tourMenu.findItem(R.id.action_remPhoto);
+        		removePhoto.setEnabled(false);
+            	
+                Toast.makeText(this, "saved image", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
+            	Toast.makeText(this, "Cancelled save image", Toast.LENGTH_SHORT).show();
             } else {
                 // Image capture failed, advise user
+            	Toast.makeText(this, "Failed to save image", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -254,14 +274,13 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         	File photoFile = null;
         	try {
             	photoFile = createImageFile();
-            	fileUri = Uri.fromFile(photoFile);
+            	
         	} catch (IOException ex) {
             	// Error occurred while creating the File
-            
         	}
         	// Continue only if the File was successfully created
         	if (photoFile != null) {
-            	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+            	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
             	startActivityForResult(takePictureIntent, 200);
         	}
     	}

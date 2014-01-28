@@ -42,6 +42,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 			Log.d("WILLIAM", "Entity set");
 			client.execute(post);
 			Log.d("WILLIAM", "Data sent");
+			Log.d("WILLIAM", tour.toJSON());
 		}catch(ClientProtocolException e){
 			
 		}catch(IOException e){
