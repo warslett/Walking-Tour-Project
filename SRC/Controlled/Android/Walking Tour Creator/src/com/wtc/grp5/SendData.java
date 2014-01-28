@@ -15,7 +15,6 @@ import com.wtc.grp5.model.WTCTour;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 public class SendData extends AsyncTask<String, Void, Void> {
@@ -34,15 +33,10 @@ public class SendData extends AsyncTask<String, Void, Void> {
 		try{
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(params[0]);
-			Log.d("WILLIAM", "Client and POST setup");
 			ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
 			data.add(new BasicNameValuePair("message", tour.toJSON()));
-			Log.d("WILLIAM", "Data specified");
 			post.setEntity(new UrlEncodedFormEntity(data));
-			Log.d("WILLIAM", "Entity set");
 			client.execute(post);
-			Log.d("WILLIAM", "Data sent");
-			Log.d("WILLIAM", tour.toJSON());
 		}catch(ClientProtocolException e){
 			
 		}catch(IOException e){
