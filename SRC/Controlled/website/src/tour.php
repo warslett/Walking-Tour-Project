@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * tour.php defines the classes that make up the data structure for the tours.
+ * This file forms part of the Model-View-Controller
+ * 
+ * @author William Arslett <wia2@aber.ac.uk>, Stephen Clasby <spc3@aber.ac.uk>
+ */
+
 class Tour {
 
     private $id;
@@ -50,25 +57,41 @@ class Tour {
     }
 
     function getLocationsJSON(){
+        
+        //store the required data as an associative array
 
         $assocarray = array();
+        
         foreach($this->locations as $location){
+            
             if($location->getPlace()!=null){
+                
+                //if there is a place attached to location get the data for it
+                
                 $place=array(
                     "shortDesc" => $location->getPlace()->getShortDesc(),
                     "photos" => $location->getPlace()->getPhotos(),
                 );
+                
             } else {
+                
+                //otherwise set it to null to be implicit
+                
                 $place = NULL;
+                
             }
+            
             $assocarray[]=array(
                 "latitude" => $location->getLatitude(),
                 "longitude" => $location->getLongitude(),
                 "timestamp" => $location->getTimeStamp(),
                 "place" => $place,
             );
+            
         }
-
+        
+        //encode the array as json so that it can be parsed to javascript
+        
         return json_encode($assocarray);
 
     }
@@ -87,7 +110,6 @@ class Location {
         $this->longitude = $longitude;
         $this->timestamp = $timestamp;
         $this->place=$place;
-
 
     }
 
@@ -109,11 +131,10 @@ class Location {
 
 }
 
-class Place
-{
+class Place {
 
     private $shortDesc;
-    private $photos;
+    private $photos; //photos should store an array of photo locations
 
     public function __construct($shortDesc, $photos) {
 
@@ -127,6 +148,6 @@ class Place
     }
 
     public function getPhotos(){
-        return $this->photos;
+        return $this->photos; //returns an array
     }
 }
