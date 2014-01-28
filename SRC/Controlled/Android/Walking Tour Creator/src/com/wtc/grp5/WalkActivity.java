@@ -42,7 +42,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	LocationListener, OnMarkerClickListener, LocationDetailsFragment.LocationDetailsListener{
 
 	private WTCTour tour;
-	private long sampleRate = 5000; // 5000 millis (5 seconds)
+	private long sampleRate = 10000; // 10000 millis (10 seconds)
 	
 	private GoogleMap map;
 	private LocationClient locClient;
@@ -177,15 +177,15 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			finishWalk();
 			return true;
 		case R.id.action_sample_five:
-			this.setSameRate(5000);
-			locRequest.setInterval(sampleRate);
-			return true;
-		case R.id.action_sample_ten:
 			this.setSameRate(10000);
 			locRequest.setInterval(sampleRate);
 			return true;
-		case R.id.action_sample_fifteen:
+		case R.id.action_sample_ten:
 			this.setSameRate(15000);
+			locRequest.setInterval(sampleRate);
+			return true;
+		case R.id.action_sample_fifteen:
+			this.setSameRate(20000);
 			locRequest.setInterval(sampleRate);
 			return true;
 		default:
