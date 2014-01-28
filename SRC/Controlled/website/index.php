@@ -2,11 +2,35 @@
 require_once 'src/template.php';
 function displayContent() {
 ?>
+    <div class="layout-cell sidebar1">
+        <div class="block clearfix">
+            <div class="blockheader">
+                <h3 class="t">Reasons to Travel Green</h3>
+            </div>
+
+            <div class="blockcontent" style="width: 30%">
+                <ol>
+                    <li>Vivamus bibendum nibh sit amet enim fermentum vehicula. <a href="#">more</a></li>
+
+                    <li>Cum sociis natoque penatibus et magnis dis parturient montes. <a href="#">more</a></li>
+
+                    <li>Nascetur ridiculus mus. In eget viverra libero. <a href="#">more</a></li>
+
+                    <li>Duis nisi urna, placerat id vehicula at, rhoncus vel eros. <a href="#">more</a></li>
+
+                    <li>Proin pellentesque rhoncus suscipit. <a href="#">more</a></li>
+
+                    <li>Aliquam diam tortor, dictum nec iaculis sed, dignissim et mauris. <a href="#">more</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
     <article class="post article">
         <div class="postcontent postcontent-0 clearfix">
             <div class="content-layout">
                 <div class="content-layout-row">
-                    <div class="layout-cell layout-item-1" style="width: 100%">
+                    <div class="layout-cell layout-item-1" style="width: 70%">
                         <h3>Welcome</h3>
 
                         <p><img alt="" class="" height="200" src="images/shutterstock_3608177.jpg" style="float:left;" width="300" /></p>
@@ -30,55 +54,8 @@ function displayContent() {
                 </div>
             </div>
 
-            <div class="content-layout">
-                <div class="content-layout-row">
-                    <div class="layout-cell layout-item-1" style="width: 33%">
-                        <h4>Fishing</h4>
 
-                        <p><img alt="" class="" height="99" src="images/001.jpg" style="float: left;" width="100" /></p>
 
-                        <p>Pellentesque urna libero, rhoncus sed sodales quis, vehicula eu dolor. Vivamus id nisl in nulla faucibus bibendum a quis nibh. Sed eget lacus sit amet risus elementum dictum. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
-                    </div>
-
-                    <div class="layout-cell layout-item-1" style="width: 34%">
-                        <h4>Hiking</h4>
-
-                        <p><img alt="" height="99" src="images/002.jpg" style="float: left;" width="100" /></p>
-
-                        <p>Donec vel neque in neque porta venenatis sed sit amet lectus. Suspendisse pharetra auctor pharetra. Nunc a sollicitudin est. Curabitur ullamcorper gravida felis, sit amet scelerisque lorem iaculis sed. Sed eget lacus sit amet risus elementum dictum.&nbsp;</p>
-                    </div>
-
-                    <div class="layout-cell layout-item-1" style="width: 33%">
-                        <h4>More Activities</h4>
-
-                        <p><img alt="" height="99" src="images/003.jpg" style="float: left;" width="100" /></p>
-
-                        <p>Fusce ornare elit nisl, feugiat bibendum lorem. Vivamus pretium dictum sem vel laoreet.
-                           In fringilla pharetra purus, semper vulputate ligula cursus in.
-                           Donec at nunc nec dui laoreet porta eu eu ipsum.
-                           Sed eget lacus sit amet risus elementum dictum.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-layout-br layout-item-0"></div>
-
-            <div class="content-layout">
-                <div class="content-layout-row">
-                    <div class="layout-cell layout-item-1" style="width: 100%">
-                        <h3>Testimonials</h3>
-
-                        <blockquote>
-                            Suspendisse pharetra auctor pharetra. Nunc a sollicitudin est. Curabitur ullamcorper gravida felis, sit amet scelerisque lorem iaculis sed. Donec vel neque in neque porta venenatis sed sit amet lectus. Fusce ornare elit nisl, feugiat bibendum lorem.<br />
-                            -- John Smith, manager<br />
-                            <br />
-                            Vivamus pretium dictum sem vel laoreet. In fringilla pharetra purus, semper vulputate ligula cursus in. Donec at nunc nec dui laoreet porta eu eu ipsum. Sed eget lacus sit amet risus elementum dictum.<br />
-                            -- Jane White, manager
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
     </article>
 
 <?php

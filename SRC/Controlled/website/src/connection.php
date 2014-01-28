@@ -1,12 +1,14 @@
 <?php
-include 'tour.php';
+
 /**
  * connection.php defines a PHP class for a database connection object.
  * This allows the webdeveloper to access data on the database as objects.
  * This file forms the basis of the Model-View-Controller
  * 
- * @author William Arslett <wia2@aber.ac.uk>
+ * @author William Arslett <wia2@aber.ac.uk>, Stephen Clasby <spc3@aber.ac.uk>
  */
+
+include_once 'tour.php';
 
 class dbConnection {
 
@@ -15,19 +17,25 @@ class dbConnection {
 
     function __construct() {
         
+        //connection is made upon initialisation
+        
         $this->connection = new mysqli(
                 'db.dcs.aber.ac.uk', 
                 'wia2',
                 't6y7u8i9o0p',
                 'wia2');
 
+        //failure to connect will produce an unfriendly error
 
         if (!$this->connection) {
-            die('Could not connect to database: ' . mysqli_error());
+            die('Could not connect to database: ' . 
+                    mysqli_error($this->connection));
         }
     }
     
     function getTour($tourID){
+        
+        //return a single tour from an ID
         
         $db_record= mysqli_fetch_array($this->connection->query(
                 "SELECT * FROM listOfWalks WHERE id=" . $tourID . ";"
@@ -45,6 +53,8 @@ class dbConnection {
     }
     
     function getLocations($tourID){
+        
+        //return an array of locations from a tour ID
         
         $locations = array();
         
@@ -84,6 +94,8 @@ class dbConnection {
     }
     
     function getListOfTours(){
+        
+        //get a list of tours
         
         $list = array();
         
