@@ -30,6 +30,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private Menu tourMenu; // A handle to the options menu for the walk
 	
 	String mCurrentPhotoPath;
+	Uri fileUri;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,10 +92,11 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == 100){
+        super.onActivityResult(requestCode, resultCode, data);
+    	if(requestCode == 200){
             if (resultCode == RESULT_OK) {
                 // Image captured and saved to fileUri specified in the Intent
-                Toast.makeText(this, "Image saved to:\n" + data.getData(), Toast.LENGTH_LONG).show();
+            	Toast.makeText(this, "Image saved to:\n" + data.getData(), Toast.LENGTH_LONG).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
             } else {
@@ -257,8 +260,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         	}
         	// Continue only if the File was successfully created
         	if (photoFile != null) {
-            	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-                	    Uri.fromFile(photoFile));
+            	
             	startActivityForResult(takePictureIntent, 200);
         	}
     	}
