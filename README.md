@@ -22,5 +22,5 @@ Harvey & Will L's TODO list
 4. Calculate length/distance?
 5. Fix JSON transferred form the phone.
 6. Photos for the locations.
-7. Increase sample rate.
+7. Increase sample rate. // Done
 8. POI Names?
