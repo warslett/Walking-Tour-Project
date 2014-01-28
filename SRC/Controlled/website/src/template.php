@@ -53,29 +53,7 @@
                 <div class="layout-wrapper">
                     <div class="content-layout">
                         <div class="content-layout-row">
-                            <div class="layout-cell sidebar1">
-                                <div class="block clearfix">
-                                    <div class="blockheader">
-                                        <h3 class="t">Reasons to Travel Green</h3>
-                                    </div>
 
-                                    <div class="blockcontent">
-                                        <ol>
-                                            <li>Vivamus bibendum nibh sit amet enim fermentum vehicula. <a href="#">more</a></li>
-
-                                            <li>Cum sociis natoque penatibus et magnis dis parturient montes. <a href="#">more</a></li>
-
-                                            <li>Nascetur ridiculus mus. In eget viverra libero. <a href="#">more</a></li>
-
-                                            <li>Duis nisi urna, placerat id vehicula at, rhoncus vel eros. <a href="#">more</a></li>
-
-                                            <li>Proin pellentesque rhoncus suscipit. <a href="#">more</a></li>
-
-                                            <li>Aliquam diam tortor, dictum nec iaculis sed, dignissim et mauris. <a href="#">more</a></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="layout-cell content">
                                 <?
