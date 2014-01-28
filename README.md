@@ -18,9 +18,9 @@ Harvey & Will L's TODO list
 ---------------
 1. Confirmation on exit!
 2. Change the icons.
-3. Set character limits on fields.
+3. Set character limits on fields. //Done in model
 4. Calculate length/distance?
-5. Fix JSON transferred form the phone.
+5. Fix JSON transferred form the phone. More detail needed, fixed the missing "
 6. Photos for the locations.
 7. Increase sample rate. // Done
-8. POI Names?
+8. POI Names? Clarification needed, Key Location names, or names for each photograph?
