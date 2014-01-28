@@ -1,8 +1,11 @@
 package com.wtc.grp5.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WTCKeyLocation extends WTCLocation {
 
-	private String[] photos; // Might be changed to ArrayList
+	private List<String> photos;
 	private String locName;
 	private String locDesc;
 
@@ -11,7 +14,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public WTCKeyLocation(){
 		super();
-		photos = new String[5];
+		photos = new ArrayList<String>(5);
 		locName = new String();
 		locDesc = new String();
 	}
@@ -24,7 +27,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public WTCKeyLocation(double longitude, double latitude){
 		super(longitude, latitude);
-		photos = new String[5];
+		photos = new ArrayList<String>(5);
 		locName = new String();
 		locDesc = new String();
 	}
@@ -35,7 +38,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void addPhoto(String path){
-		//TODO needs implementing
+		photos.add(path);
 	}
 
 	/**
@@ -44,7 +47,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 * @param path the file path.
 	 */
 	public void removePhoto(String path){
-		//TODO needs implementing
+		photos.remove(path);
 	}
 
 	/**
@@ -73,6 +76,16 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public void setLocDesc(String locDesc) {
 		this.locDesc = locDesc;
+	}
+	public String toJSON(){
+		String out;
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
+		for(int i=0;i<photos.size()-1;i++){
+			out += "\""+"Photo"+i+"\":\""+photos.get(i)+"\",";
+		}
+		
+		out +="\""+"Photo"+photos.size()+"\"]}";
+		return out;
 	}
 
 }

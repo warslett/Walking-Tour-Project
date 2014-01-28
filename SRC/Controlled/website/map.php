@@ -50,7 +50,7 @@ function displayContent() {
             
            <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
             
-           <div id="map">
+           <div class="mapmp" id="map">
 		   
 		   
 		   

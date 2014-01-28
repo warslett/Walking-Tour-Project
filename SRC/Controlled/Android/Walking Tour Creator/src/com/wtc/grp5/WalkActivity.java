@@ -1,5 +1,10 @@
 package com.wtc.grp5;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -21,7 +26,9 @@ import com.wtc.grp5.model.WTCTour;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,6 +50,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private LocationRequest locRequest;
 	private Marker selectedMarker; // The marker the user clicked on
 	private Menu tourMenu; // A handle to the options menu for the walk
+	
+	String mCurrentPhotoPath;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -235,17 +244,44 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 	
 	public void addPhoto() {
-		Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-		
-		
-        startActivityForResult(intent, 100);
+		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    	// Ensure that there's a camera activity to handle the intent
+    	if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+        	// Create the File where the photo should go
+        	File photoFile = null;
+        	try {
+            	photoFile = createImageFile();
+        	} catch (IOException ex) {
+            	// Error occurred while creating the File
+            
+        	}
+        	// Continue only if the File was successfully created
+        	if (photoFile != null) {
+            	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                	    Uri.fromFile(photoFile));
+            	startActivityForResult(takePictureIntent, 200);
+        	}
+    	}
+	}
+	
+	private File createImageFile() throws IOException {
+    	// Create an image file name
+    	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+    	String imageFileName = "JPEG_" + timeStamp + "_";
+    	File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+    	File image = File.createTempFile(
+    		imageFileName,  /* prefix */
+        	".jpg",         /* suffix */
+        	storageDir);    /* directory */
+
+    	// Save a file: path for use with ACTION_VIEW intents
+    	mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+    	return image;
 	}
 	
 	public void removePhoto() {
 		
 	}
-	
-
 	
 	/**
 	* Saves the tour to the server.

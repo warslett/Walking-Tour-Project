@@ -3,10 +3,10 @@ import android.text.format.Time;
 
 public class WTCLocation {
 
-	private double longitude;
-	private double latitude;
+	protected double longitude;
+	protected double latitude;
 	//private String timeStamp; // Easier if we use times as below
-	private Time timeStamp;
+	protected Time timeStamp;
 	
 	/**
 	 * Constructs a blank location.
