@@ -254,13 +254,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         	File photoFile = null;
         	try {
             	photoFile = createImageFile();
+            	fileUri = Uri.fromFile(photoFile);
         	} catch (IOException ex) {
             	// Error occurred while creating the File
             
         	}
         	// Continue only if the File was successfully created
         	if (photoFile != null) {
-            	
+            	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
             	startActivityForResult(takePictureIntent, 200);
         	}
     	}

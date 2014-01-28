@@ -77,7 +77,8 @@ public class WTCKeyLocation extends WTCLocation {
 	public void setLocDesc(String locDesc) {
 		this.locDesc = locDesc;
 	}
-	@overide
+	
+	@Override
 	public String toJSON(){
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
