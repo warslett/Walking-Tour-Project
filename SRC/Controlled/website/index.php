@@ -4,30 +4,24 @@ include_once 'src/connection.php';
 
 $database = new dbConnection();
 
-if(isset($_GET['id'])){
-    $tour = $database->getTour($_GET['id']);
-} else {
-    header("Location: list.php");
-}
+$tour = $database->getTour(1);
 
-$footer;
+$footer='
+<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
+';
 $header='
 <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
 <script type="text/javascript" src="leaflet/leaflet.js"></script>
 <script type="text/javascript" src="leaflet/leafletembed.js"></script>
 ';
 function displayContent() {
-    global $tour;
-    global $footer;
-    $footer='
-<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
-';
+		global $tour;
 ?>
 
 
-    <article class="post article">
+    <article class="post article indexpositions">
 
-        <div class="layout-cell sidebar1">
+        <div class=" sidebar2">
             <div class="block clearfix">
                 <div class="blockheader">
                     <h3 class="t">List of routes </h3>
@@ -46,7 +40,7 @@ function displayContent() {
 
             <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
 
-            <div id="map">
+            <div class="mapfp" id="map">
 
 
 
@@ -60,16 +54,6 @@ function displayContent() {
             </div>
 
         </div>
-
-            <div class="content-layout-br layout-item-0"></div>
-
-            <div class="content-layout">
-                <div class="content-layout-row">
-                    <div class="layout-cell layout-item-1" style="width: 100%">
-                        <h3>Popular Routes</h3>
-                    </div>
-                </div>
-            </div>
 
 
 
