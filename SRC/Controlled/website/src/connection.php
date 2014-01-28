@@ -33,6 +33,32 @@ class dbConnection {
         }
     }
     
+    function insertTour($data){
+        
+        $this->connection->query("
+                 INSERT INTO listOfWalks (
+                    title,
+                    shortDesc,
+                    longDesc,
+                    hours,
+                    distance
+                 ) 
+	         VALUES (
+                    '" . $data->title . "',
+                    '" . $data->shortDesc . "',
+                    '" . $data->longDesc . "',
+                    NULL,
+                    NULL);    
+");
+        
+        $tourid=  mysqli_fetch_assoc($this->connection->query(
+                "SELECT LAST_INSERT_ID();"
+                ))['LAST_INSERT_ID()'];
+        
+        
+        
+    }
+    
     function getTour($tourID){
         
         //return a single tour from an ID
