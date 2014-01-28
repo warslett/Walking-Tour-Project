@@ -78,8 +78,9 @@ public class WTCKeyLocation extends WTCLocation {
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
 		for(int i=0;i<photos.getLength()-1;i++){
-			out += "\"";
+			out += "\""+"Photo"+i+"\":\""+photo[i]+"\",";
 		}
+			out +="\""+"Photo"+photos.getLength()+"\"]}";
                 return out;
         }
 
