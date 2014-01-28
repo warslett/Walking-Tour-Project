@@ -55,6 +55,23 @@ class dbConnection {
                 "SELECT LAST_INSERT_ID();"
                 ))['LAST_INSERT_ID()'];
         
+        foreach($data->locations as $curloc){
+            
+            $this->connection->query("
+                 INSERT INTO location (
+                    walkID,
+                    latitude,
+                    longitude,
+                    timestamp
+                 ) 
+	         VALUES (
+                    " . $tourid . ",
+                    " . $curloc->Latitude . ",
+                    " . $curloc->Longitude . ",
+                    " . $curloc->TimeStamp . ");    
+");
+            
+        }
         
         
     }
