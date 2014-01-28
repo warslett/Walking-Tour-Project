@@ -38,11 +38,9 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 public class WalkActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener,
-	LocationListener, OnMarkerClickListener, LocationDetailsFragment.LocationDetailsListener{
+	LocationListener, OnMarkerClickListener, WTCDialogCallbacks{
 
 	private WTCTour tour;
 	private long sampleRate = 10000; // 10000 millis (10 seconds)
@@ -224,6 +222,22 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		keyLoc.setLocDesc(frag.getTfLocDesc().getText().toString());
 		addKeyLocation(keyLoc);
 	}
+
+	@Override
+	public void onCancelWalkSelection(DialogFragment fragment) {
+		EndWalkFragment frag = (EndWalkFragment) fragment;
+		
+		
+	}
+	
+	
+
+	@Override
+	public void onFinishWalkSelection(DialogFragment fragment) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 	/**
 	* Adds a location to the tour.

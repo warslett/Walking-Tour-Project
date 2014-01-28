@@ -13,17 +13,18 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.wtc.grp5.model.WTCTour;
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
 public class SendData extends AsyncTask<String, Void, Void> {
 	
-	private Context context;
+	private Activity activity;
     private WTCTour tour;
 	
-	public SendData(Context context, WTCTour tour){
-		this.context = context;
+	public SendData(Activity activity, WTCTour tour){
+		this.activity = activity;
         this.tour = tour;
 	}
 	
@@ -47,7 +48,12 @@ public class SendData extends AsyncTask<String, Void, Void> {
 
 	@Override
 	protected void onPostExecute(Void result) {
-		Toast.makeText(context, "Tour sent to server", Toast.LENGTH_LONG).show();
+		Toast.makeText(activity, "Tour sent to server", Toast.LENGTH_LONG).show();
+		tour.getLocations().clear();
+		tour = null;
+		Intent homeScreen = new Intent(activity, MainActivity.class);
+		activity.startActivity(homeScreen);
+		activity.finish();
 	}
 	
 	
