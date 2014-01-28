@@ -1,7 +1,6 @@
-<?php
+<?
 
-require_once 'src/connection.php';
-require_once 'src/template.php';
+include_once 'src/connection.php';
 
 $database = new dbConnection();
 
@@ -17,7 +16,7 @@ function displayContent() {
         
         <div class="postcontent postcontent-0 clearfix">
             
-            <?php
+            <?
             
             $list=$database->getListOfTours();
             
@@ -41,6 +40,9 @@ function displayContent() {
         
     </article>
 
-<?php
+        <?
+        
 }
-?>
+
+require_once 'src/template.php';
+

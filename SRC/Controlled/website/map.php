@@ -1,8 +1,6 @@
-<?php
+<?
 
-require_once 'src/connection.php';
-require_once 'src/template.php';
-require_once 'src/tour.php';
+include_once 'src/connection.php';
 
 $database = new dbConnection();
 
@@ -40,7 +38,8 @@ function displayContent() {
     global $tour;
     global $footer;
     $footer='
-<script type="text/javascript">initmap(' . $tour->getID() . ')</script>';
+<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
+';
     
     ?>
 
@@ -50,7 +49,7 @@ function displayContent() {
         
         <div class="postcontent postcontent-0 clearfix">
             
-           <?php echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
+           <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
             
            <div id="map">
 		   
@@ -69,6 +68,10 @@ function displayContent() {
         
     </article>
 
-<?php
+    <?
+    
 }
+
+require_once 'src/template.php';
+
 ?>

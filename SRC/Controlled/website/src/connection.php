@@ -1,5 +1,5 @@
 <?php
-require'tour.php';
+include 'tour.php';
 /**
  * connection.php defines a PHP class for a database connection object.
  * This allows the webdeveloper to access data on the database as objects.
@@ -12,6 +12,7 @@ class dbConnection {
 
     private $connection;
 
+
     function __construct() {
         
         $this->connection = new mysqli(
@@ -20,9 +21,9 @@ class dbConnection {
                 't6y7u8i9o0p',
                 'wia2');
 
-        if (mysqli_connect_errno())
-        {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+
+        if (!$this->connection) {
+            die('Could not connect to database: ' . mysqli_error());
         }
     }
     
@@ -87,7 +88,6 @@ class dbConnection {
         $list = array();
         
         $db_result = $this->connection->query("SELECT * FROM listOfWalks");
-        
         while($db_record=mysqli_fetch_array($db_result)){
             $list[]=new Tour(
                     $db_record['id'],
@@ -104,8 +104,3 @@ class dbConnection {
     }
 
 }
-
-
-
-
-
