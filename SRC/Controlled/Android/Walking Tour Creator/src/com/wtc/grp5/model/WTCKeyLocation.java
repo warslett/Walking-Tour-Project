@@ -77,9 +77,10 @@ public class WTCKeyLocation extends WTCLocation {
 	public void setLocDesc(String locDesc) {
 		this.locDesc = locDesc;
 	}
+	@overide
 	public String toJSON(){
 		String out;
-		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
 		for(int i=0;i<photos.size()-1;i++){
 			out += "\""+"Photo"+i+"\":\""+photos.get(i)+"\",";
 		}
