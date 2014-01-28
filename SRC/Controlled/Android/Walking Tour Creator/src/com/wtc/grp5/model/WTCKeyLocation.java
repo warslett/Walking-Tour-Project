@@ -1,8 +1,11 @@
-	package com.wtc.grp5.model;
+package com.wtc.grp5.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WTCKeyLocation extends WTCLocation {
 
-	private list <String> photos = new ArrayList<String>();
+	private List<String> photos;
 	private String locName;
 	private String locDesc;
 
@@ -11,7 +14,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public WTCKeyLocation(){
 		super();
-		photos = new String[5];
+		photos = new ArrayList<String>(5);
 		locName = new String();
 		locDesc = new String();
 	}
@@ -24,7 +27,7 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public WTCKeyLocation(double longitude, double latitude){
 		super(longitude, latitude);
-		photos = new String[5];
+		photos = new ArrayList<String>(5);
 		locName = new String();
 		locDesc = new String();
 	}
@@ -78,15 +81,10 @@ public class WTCKeyLocation extends WTCLocation {
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
 		for(int i=0;i<photos.size()-1;i++){
-			out += "\""+"Photo"+i+"\":\""+photo[i]+"\",";
+			out += "\""+"Photo"+i+"\":\""+photos.get(i)+"\",";
 		}
-			out +="\""+"Photo"+photos.size()+"\"]}";
-                return out;
-        }
-
-}
-
-
+		
+		out +="\""+"Photo"+photos.size()+"\"]}";
 		return out;
 	}
 
