@@ -1,5 +1,10 @@
 package com.wtc.grp5;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -21,7 +26,9 @@ import com.wtc.grp5.model.WTCTour;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -252,7 +259,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         	if (photoFile != null) {
             	takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
                 	    Uri.fromFile(photoFile));
-            	startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            	startActivityForResult(takePictureIntent, 200);
         	}
     	}
 	}
