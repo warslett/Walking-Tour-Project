@@ -1,4 +1,4 @@
-package com.wtc.grp5.model;
+	package com.wtc.grp5.model;
 
 public class WTCKeyLocation extends WTCLocation {
 
@@ -73,6 +73,20 @@ public class WTCKeyLocation extends WTCLocation {
 	 */
 	public void setLocDesc(String locDesc) {
 		this.locDesc = locDesc;
+	}
+	public String toJSON(){
+		String out;
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\"Time Stamp\": \""+timeStamp.toString()+"\",\"Images:[\"";
+		for(int i=0;i<photos.getLength()-1;i++){
+			out += "\"";
+		}
+                return out;
+        }
+
+}
+
+
+		return out;
 	}
 
 }
