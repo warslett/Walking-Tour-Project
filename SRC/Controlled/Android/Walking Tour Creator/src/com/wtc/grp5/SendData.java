@@ -22,6 +22,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 	
 	private Activity activity;
     private WTCTour tour;
+    private final String boundary = "part"
 	
 	public SendData(Activity activity, WTCTour tour){
 		this.activity = activity;
@@ -32,10 +33,21 @@ public class SendData extends AsyncTask<String, Void, Void> {
 	@Override
 	protected Void doInBackground(String... params) {
 		try{
+
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(params[0]);
+            post.addHeader("Content-Type", "multipart/mixed; boundary=" + boundary);
+
 			ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
 			data.add(new BasicNameValuePair("message", tour.toJSON()));
+
+            for(int i = 0; i < tour.getLocations.size(); i++){
+                if(tour.getLocations.get(i).getClass() == WTCKeyLocation.class){
+                    WTCKeyLocation keyLoc = (WTCKeyLocation) tour.getLocations.get(i);
+                    if(!keyLoc.getPhotos().isEmpty()){}
+                }
+            }
+
 			post.setEntity(new UrlEncodedFormEntity(data));
 			client.execute(post);
 		}catch(ClientProtocolException e){
