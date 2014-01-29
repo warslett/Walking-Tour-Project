@@ -118,8 +118,8 @@ $sample_data = '
 
 $data = json_decode($sample_data);
 
-$database->insertTour($data);
+//$database->insertTour($data);
 
-//mail('wia2@aber.ac.uk, wjl3@aber.ac.uk', 'Test Success', $_POST['message']);
+mail('wia2@aber.ac.uk, wjl3@aber.ac.uk', 'Test Success', $_POST['message']);
 
 ?>
