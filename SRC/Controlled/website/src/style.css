@@ -428,7 +428,7 @@ li p, .postcontent li p, .blockcontent li p {
   border              : transparent solid 1px;
   margin              : 0 auto;
   background-repeat   : no-repeat;
-  height              : 350px;
+  height              : 250px;
   position            : relative;
   background-image    : url('../images/header.jpg');
   background-position : center top;
