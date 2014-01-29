@@ -32,7 +32,7 @@ $header = '
  * map.
  */
 $footer = '
-<script type="text/javascript">initmap(' . $tour->getID() . ')</script>
+<script type="text/javascript">initmap(); loadTour(' . $tour->getID() . ');</script>
 ';
 
 function displayContent()

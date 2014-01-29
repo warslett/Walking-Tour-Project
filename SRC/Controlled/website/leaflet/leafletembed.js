@@ -12,8 +12,9 @@
 
 var map;
 var ajaxRequest = new XMLHttpRequest();
+var tour;
 
-function initmap(id) {
+function initmap() {
 
     // set up the map
     map = new L.Map('map');
@@ -22,18 +23,31 @@ function initmap(id) {
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib = 'Map data � OpenStreetMap contributors';
     var osm = new L.TileLayer(
-        osmUrl,
-        {
-            minZoom: 13,
-            maxZoom: 17,
-            attribution: osmAttrib
-        }
+            osmUrl,
+            {
+                minZoom: 13,
+                maxZoom: 17,
+                attribution: osmAttrib
+            }
     );
+        
+    // start the map in South-East England
+    map.setView(new L.LatLng(52.412, -4.07), 14);
 
     map.addLayer(osm);
 
+}
+
+function loadTour(id) {
+
+    if (typeof(tour) != "undefined"){
+        map.removeLayer(tour);
+    }
+
+    tour = new L.layerGroup();
+
     //when the plot data is recieved from the server...
-    ajaxRequest.onreadystatechange = function () {
+    ajaxRequest.onreadystatechange = function() {
 
         if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
 
@@ -46,9 +60,9 @@ function initmap(id) {
 
                 //for every location in the object create a new leaflet coord
                 langlongs.push(new L.LatLng(
-                    data[i].latitude,
-                    data[i].longitude
-                ));
+                        data[i].latitude,
+                        data[i].longitude
+                        ));
 
                 /* if the location has a place description attached, generate a
                  * new marker and popup for that leaflet coord and add it to the
@@ -56,14 +70,14 @@ function initmap(id) {
                  */
                 if (data[i].place !== null) {
 
-                    var location = L.marker(
-                        [data[i].latitude, data[i].longitude]
-                    ).addTo(map);
-
-                    location.bindPopup("<h3>" +
-                        data[i].place.shortDesc +
-                        "</h3>"
-                    );
+                    tour.addLayer(
+                            L.marker([data[i].latitude, data[i].longitude])
+                              .bindPopup(
+                                "<h3>" +
+                                  data[i].place.shortDesc +
+                                "</h3>"
+                              )
+                            )
 
                 }
 
@@ -72,14 +86,16 @@ function initmap(id) {
             /* generate a new polyline based on the array of leaflet coords and
              * add it to the map.
              */
-            var polyline = L.polyline(langlongs,
-                {
-                    color: 'red',
-                    weight: 3,
-                    opacity: 0.5,
-                    smoothFactor: 1
-                }
-            ).addTo(map);
+            var polyline = new L.polyline(langlongs,
+                    {
+                        color: 'red',
+                        weight: 3,
+                        opacity: 0.5,
+                        smoothFactor: 1
+                    }
+            );
+            
+            tour.addLayer(polyline).addTo(map);
 
             //resize/zoom the map 
             map.fitBounds(polyline.getBounds());
