@@ -7,36 +7,28 @@
  *
  * @author William Arslett <wia2@aber.ac.uk>, Stephen Clasby <spc3@aber.ac.uk>
  */
-
 include_once 'tour.php';
 
-class dbConnection
-{
+class dbConnection {
 
     private $connection;
 
-
-    function __construct()
-    {
+    function __construct() {
 
         //connection is made upon initialisation
 
         $this->connection = new mysqli(
-            'db.dcs.aber.ac.uk',
-            'wia2',
-            't6y7u8i9o0p',
-            'wia2');
+                'db.dcs.aber.ac.uk', 'wia2', 't6y7u8i9o0p', 'wia2');
 
         //failure to connect will produce an unfriendly error
 
         if (!$this->connection) {
             die('Could not connect to database: ' .
-                mysqli_error($this->connection));
+                    mysqli_error($this->connection));
         }
     }
 
-    function insertTour($data)
-    {
+    function insertTour($data) {
 
         $this->connection->query("
                  INSERT INTO listOfWalks (
@@ -55,8 +47,8 @@ class dbConnection
 ");
 
         $tourid = mysqli_fetch_assoc($this->connection->query(
-            "SELECT LAST_INSERT_ID();"
-        ))['LAST_INSERT_ID()'];
+                                "SELECT LAST_INSERT_ID();"
+                ))['LAST_INSERT_ID()'];
 
         foreach ($data->locations as $curloc) {
 
@@ -71,36 +63,43 @@ class dbConnection
                     " . $tourid . ",
                     " . $curloc->Latitude . ",
                     " . $curloc->Longitude . ",
-                    " . $curloc->TimeStamp . ");    
-");
+                    " . $curloc->TimeStamp . ");
+            ");
 
+            print_r($curloc->Place);
+            
+            if ($curloc->Place != NULL) {
+
+                $locid = mysqli_fetch_assoc($this->connection->query(
+                                        "SELECT LAST_INSERT_ID();"
+                        ))['LAST_INSERT_ID()'];
+
+                $this->connection->query("
+                 INSERT INTO placeDescription (
+                    locationID,
+                    shortDesc
+                 ) 
+	         VALUES (
+                    " . $locid . ",
+                    '" . $curloc->Place->description . "');
+            ");
+            }
         }
-
-
     }
 
-    function getTour($tourID)
-    {
+    function getTour($tourID) {
 
         //return a single tour from an ID
 
         $db_record = mysqli_fetch_array($this->connection->query(
-            "SELECT * FROM listOfWalks WHERE id=" . $tourID . ";"
+                        "SELECT * FROM listOfWalks WHERE id=" . $tourID . ";"
         ));
 
         return new Tour(
-            $tourID,
-            $db_record['title'],
-            $db_record['shortDesc'],
-            $db_record['longDesc'],
-            $db_record['hours'],
-            $db_record['distance'],
-            $this->getLocations($tourID));
-
+                $tourID, $db_record['title'], $db_record['shortDesc'], $db_record['longDesc'], $db_record['hours'], $db_record['distance'], $this->getLocations($tourID));
     }
 
-    function getLocations($tourID)
-    {
+    function getLocations($tourID) {
 
         //return an array of locations from a tour ID
 
@@ -131,18 +130,13 @@ class dbConnection
             }
 
             $locations[] = new Location(
-                $db_record['latitude'],
-                $db_record['longitude'],
-                $db_record['timestamp'],
-                $place);
+                    $db_record['latitude'], $db_record['longitude'], $db_record['timestamp'], $place);
         }
 
         return $locations;
-
     }
 
-    function getListOfTours()
-    {
+    function getListOfTours() {
 
         //get a list of tours
 
@@ -151,17 +145,10 @@ class dbConnection
         $db_result = $this->connection->query("SELECT * FROM listOfWalks");
         while ($db_record = mysqli_fetch_array($db_result)) {
             $list[] = new Tour(
-                $db_record['id'],
-                $db_record['title'],
-                $db_record['shortDesc'],
-                $db_record['longDesc'],
-                $db_record['hours'],
-                $db_record['distance'],
-                $this->getLocations($db_record['id']));
+                    $db_record['id'], $db_record['title'], $db_record['shortDesc'], $db_record['longDesc'], $db_record['hours'], $db_record['distance'], $this->getLocations($db_record['id']));
         }
 
         return $list;
-
     }
 
 }
