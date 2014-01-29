@@ -180,13 +180,18 @@ public class WTCTour {
 		double lat_diff;
 		double lng_diff;
 		for(int i=1;i<locations.size();i++){
+			//use pythagorus to calculate the number of degrees distance between two points
 			lat_diff = locations.get(i-1).getLatitude()-locations.get(i).getLatitude();
 			lng_diff = locations.get(i-1).getLongitude()-locations.get(i).getLongitude();
+			//work in minuets for ease
 			lat_diff *= 60;
 			lng_diff *= 60;
 			dist+=Math.sqrt(Math.pow(lat_diff,2)+Math.pow(lng_diff,2));
 		}
+		
 		dist = Math.round(dist);
+		//luckily 1 minuet is roughly 1 nautical mile (at the equator) and there are 1852 meters in a nautical mile
+		dist *= 1852
 		return (long) dist;
 	}
 }
