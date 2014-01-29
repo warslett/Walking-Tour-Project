@@ -1,10 +1,10 @@
 <?php
 
-include_once 'src/connection.php';
+  include_once 'src/connection.php';
 
-$database = new dbConnection();
+  $database = new dbConnection();
 
-$sample_data = '
+  $sample_data = '
 {
     "title": "test",
     "longDesc": "long test description",
@@ -116,10 +116,10 @@ $sample_data = '
 }    
 ';
 
-$data = json_decode($sample_data);
+  $data = json_decode ( $sample_data );
 
 //$database->insertTour($data);
 
-mail('wia2@aber.ac.uk, wjl3@aber.ac.uk', 'Test Success', $_POST['message']);
+  mail ( 'wia2@aber.ac.uk, wjl3@aber.ac.uk', 'Test Success', $_POST[ 'message' ] );
 
 ?>
