@@ -30,6 +30,8 @@ class dbConnection {
 
     function insertTour($data) {
 
+        //insert the tour first
+        
         $this->connection->query("
                  INSERT INTO listOfWalks (
                     title,
@@ -46,12 +48,16 @@ class dbConnection {
                     NULL);    
 ");
 
+        //get the id of the tour so that we can link all locations to the tour
+        
         $tourid = mysqli_fetch_assoc($this->connection->query(
                                 "SELECT LAST_INSERT_ID();"
                 ))['LAST_INSERT_ID()'];
 
         foreach ($data->locations as $curloc) {
 
+            //insert every location
+            
             $this->connection->query("
                  INSERT INTO location (
                     walkID,
@@ -67,10 +73,16 @@ class dbConnection {
             ");
 
             if ($curloc->Place != NULL) {
+                
+                /*if the location has a place, load its id so that we can
+                 * assoicate it with the place in the database
+                 */
 
                 $locid = mysqli_fetch_assoc($this->connection->query(
                                         "SELECT LAST_INSERT_ID();"
                         ))['LAST_INSERT_ID()'];
+                
+                //insert the place to thed atabase
 
                 $this->connection->query("
                  INSERT INTO placeDescription (
@@ -82,11 +94,18 @@ class dbConnection {
                     '" . $curloc->Place->description . "');
                  ");
 
+                /* get the place id so that we can associate it with the
+                 * photographs
+                 */
+                
                 $placeid = mysqli_fetch_assoc($this->connection->query(
                                         "SELECT LAST_INSERT_ID();
                 "))['LAST_INSERT_ID()'];
 
                 foreach ($curloc->Place->photos as $photo) {
+                    
+                    //insert every photograph
+                    
                     $this->connection->query("
                  INSERT INTO photoUsage (
                     placeID,
@@ -96,9 +115,13 @@ class dbConnection {
                     " . $locid . ",
                     '" . $photo . "');
                  ");
+                    
                 }
+                
             }
+            
         }
+        
     }
 
     function getTour($tourID) {
@@ -110,7 +133,14 @@ class dbConnection {
         ));
 
         return new Tour(
-                $tourID, $db_record['title'], $db_record['shortDesc'], $db_record['longDesc'], $db_record['hours'], $db_record['distance'], $this->getLocations($tourID));
+                $tourID,
+                $db_record['title'],
+                $db_record['shortDesc'],
+                $db_record['longDesc'],
+                $db_record['hours'],
+                $db_record['distance'],
+                $this->getLocations($tourID));
+        
     }
 
     function getLocations($tourID) {
@@ -157,9 +187,18 @@ class dbConnection {
         $list = array();
 
         $db_result = $this->connection->query("SELECT * FROM listOfWalks");
+        
         while ($db_record = mysqli_fetch_array($db_result)) {
+            
             $list[] = new Tour(
-                    $db_record['id'], $db_record['title'], $db_record['shortDesc'], $db_record['longDesc'], $db_record['hours'], $db_record['distance'], $this->getLocations($db_record['id']));
+                    $db_record['id'],
+                    $db_record['title'],
+                    $db_record['shortDesc'],
+                    $db_record['longDesc'],
+                    $db_record['hours'],
+                    $db_record['distance'],
+                    $this->getLocations($db_record['id']));
+            
         }
 
         return $list;
