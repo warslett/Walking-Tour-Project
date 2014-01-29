@@ -1141,7 +1141,7 @@ jQuery(function () {
 
 if (typeof window.resizeData === 'undefined') window.resizeData = {};
 window.resizeData.headerPageWidth = true;
-if (typeof window.defaultResponsiveData === 'undefined') window.defaultResponsiveData = [false, true, true, true, true, ];
+if (typeof window.defaultResponsiveData === 'undefined') window.defaultResponsiveData = [false, true, true, true, true ];
 
 resizeData['object1388086240'] = {
   responsive: [
@@ -1149,7 +1149,7 @@ resizeData['object1388086240'] = {
     { left: -0.54, top: 0.5, visible: true },
     { left: -0.54, top: 0.5, visible: true },
     { left: -0.54, top: 0.5, visible: true },
-    { left: -0.54, top: 0.5, visible: true },
+    { left: -0.54, top: 0.5, visible: true }
   ],
   area: {
     x: 0,
@@ -1165,7 +1165,7 @@ resizeData['object557410578'] = {
     { left: 1.04, top: 0.66, visible: true },
     { left: 1.04, top: 0.66, visible: true },
     { left: 1.04, top: 0.66, visible: true },
-    { left: 1.04, top: 0.66, visible: true },
+    { left: 1.04, top: 0.66, visible: true }
   ],
   area: {
     x: 0,
@@ -1181,7 +1181,7 @@ resizeData['headline'] = {
     { left: 0.88, top: 0.35, visible: true },
     { left: 0.88, top: 0.35, visible: true },
     { left: 0.88, top: 0.35, visible: true },
-    { left: 0.88, top: 0.35, visible: true },
+    { left: 0.88, top: 0.35, visible: true }
   ],
   area: {
     x: 0,
@@ -1197,7 +1197,7 @@ resizeData['slogan'] = {
     { left: 0.88, top: 0.53, visible: true },
     { left: 0.88, top: 0.53, visible: true },
     { left: 0.88, top: 0.53, visible: true },
-    { left: 0.88, top: 0.53, visible: true },
+    { left: 0.88, top: 0.53, visible: true }
   ],
   area: {
     x: 0,

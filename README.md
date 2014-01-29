@@ -5,16 +5,19 @@ Will A and Steve's TODO list
 1. refactor code (without breaking it!) - Steve DONE
 2. implement dynamic map on homepage with AJAX - Steve/ Will DONE
 3. implement upload system including images - Will in progress
-4. fix CSS bugs - Steve - just header css to be played with //NEED information from people with normal sized screens..
-*not laptops....
-5. tidy up the site make it easier to read - Steve - In Progress - should be finished in a bit..
-6. design/ implement solution for thumb-nailing images -Will/Steve
-7. refactor code - Steve
-8. update design - Steve/Will + Ben (Quality control)
-9. begin module testing - Steve/Will + Neil
-10. begin system testing - Steve/Will + Neil
-11. write maintenance documentation - Steve/Will + Ben (Quality control)
-12. acceptance testing - Steve/Will + Sev
+4. fix CSS bugs - Steve - DONE
+4a. re-impliment responsivness - Steve //needs 4ai - DONE
+4ai. Upgrade to jQuery 2.1.0 - Steve - DONE
+5. Add more information to the pages - Steve - DONE
+6. tidy up the site make it easier to read - Steve - DONE
+7. Tidy the design make it look shinier - Steve - DONE
+8. design/ implement solution for thumb-nailing images -Will/Steve
+9. refactor code - Steve //Requires all the tasks above to be complete.
+10. update design - Steve/Will + Ben (Quality control)
+11. begin module testing - Steve/Will + Neil
+12. begin system testing - Steve/Will + Neil
+13. write maintenance documentation - Steve/Will + Ben (Quality control)
+14. acceptance testing - Steve/Will + Sev
 
 *WIll here is a library we could use for the image handling:
 http://www.white-hat-web-design.co.uk/blog/resizing-images-with-php/

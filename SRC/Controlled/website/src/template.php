@@ -13,6 +13,8 @@
   <link rel = "src/stylesheet" href = "style.ie7.css" media = "screen"/><![endif]-->
   <link href = "src/style.responsive.css" media = "all" rel = "stylesheet"/>
   <script src = "src/jquery.js"></script>
+  <script src = "src/script.js"></script>
+  <script src = "src/script.responsive.js"></script>
   <?
     if ( isset( $header ) ) {
       echo $header;

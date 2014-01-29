@@ -1,14 +1,14 @@
 <?php
-  require_once 'src/template.php';
+
   function displayContent ()
   {
     ?>
 
-    <article class = "article">
-      <div class = "block clearfix">
-        <h2 class = "blockheader">About this Project</h2>
-
+    <article class = "block article">
+      <article class = "block clearfix">
         <div class = "clearfix block">
+          <h2 class = "blockheader">About this Project</h2>
+
           <p class = "blockcontent">
 
             The android application works using a GPS or mobile data connection to determine the user’s
@@ -30,28 +30,25 @@
 
           <h2 class = "blockheader">Group 05 Project Members:</h2>
 
-          <p class = "blockcontent clearfix">
-          <ul class = "block">
+          <ul class = "blockcontent">
             <li><strong>Web Development Team:</strong> <em>William Arslett & Stephen Paul Clasby</em></li>
             <li><strong> Android Development Team:</strong> <em>Harvey Clark & William Lea</em></li>
             <li><strong>Quality assurance and Testing:</strong> <em>Neil Vicker & Benjamin O'Donovan</em></li>
             <li><strong>Deputy project leader:</strong> <em>Benjamin O’Donovan</em></li>
             <li><strong>Project leader:</strong> <em>Sevastiyan Raychev</em>
-            <li>
           </ul>
 
-          <h3><strong>Contact e-mail address:</strong><em>
-              <a href = "cs-group-05@aber.ac.uk">cs-group-05@aber.ac.uk</a>
-            </em></h3>
+          <h3><strong>Contact e-mail address:</strong><em><a href = "mailto:cs-group-05@aber.ac.uk">cs-group-05@aber.ac.uk</a></em></h3>
 
-          </p>
 
         </div>
-      </div>
-      </div>
+
+      </article>
+
     </article>
 
   <?php
   }
 
+  require_once 'src/template.php';
 ?>

@@ -220,7 +220,7 @@ body {
   padding   : 0;
   margin    : 0;
   min-width : 920px;
-  color     : #bfa46e;
+  color     : #000000;
 }
 
 .header:before, #header-bg:before, .layout-cell:before, .layout-wrapper:before, .footer:before, .nav:before, #hmenu-bg:before, .sheet:before {
