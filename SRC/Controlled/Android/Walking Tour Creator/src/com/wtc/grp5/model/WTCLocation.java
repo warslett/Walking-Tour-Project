@@ -1,12 +1,14 @@
 package com.wtc.grp5.model;
 import android.text.format.Time;
+import java.util.Date;
 
 public class WTCLocation {
 
 	protected double longitude;
 	protected double latitude;
 	//private String timeStamp; // Easier if we use times as below
-	protected Time timeStamp;
+	protected Date oldTime;
+	protected long timeStamp; //number of seconds since tour start
 	
 	/**
 	 * Constructs a blank location.
@@ -15,7 +17,7 @@ public class WTCLocation {
 		longitude = 0;
 		latitude = 0;
 		// timeStamp will implemented later...
-		timeStamp = new Time();
+		oldTime = new Date();
 	}
 	
 	/**
@@ -28,8 +30,7 @@ public class WTCLocation {
 		this.longitude = longitude;
 		this.latitude = latitude;
 		// timeStamp will implemented later...
-		timeStamp = new Time();
-		timeStamp.setToNow();
+		oldTime = new Date();
 	}
 	
 	/**
@@ -69,15 +70,22 @@ public class WTCLocation {
 	 * 
 	 * The time stamp is set completely by the method and therefore takes no parameters.
 	 */
-	public void setTimeStamp(){
-		// Will be implemented later...
+	public void setTimeStamp(long newTime){
+
+		timeStamp = newTime;
 	}
 
 	/**
 	 * @return the time stamp for when this location was recorded
 	 */
 	public String getTimeStamp(){
-		return timeStamp.toString();
+		return Long.toString(TimeStamp); //this might be broken now hac22, oops
+	}
+	//Part of some magic code to convert a TIME into a number of seconds since the first time
+	public Date getOldTime(){
+
+
+		return oldTime;
 	}
 	
 	/**
@@ -87,7 +95,7 @@ public class WTCLocation {
 	*/
 	public String toJSON(){
 		String out;
-		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+timeStamp.toString()+"\"}";
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+Long.toString(timeStamp)+"\"}";
 		return out;
 	}
 
