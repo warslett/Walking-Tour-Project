@@ -44,7 +44,12 @@ public class SendData extends AsyncTask<String, Void, Void> {
             for(int i = 0; i < tour.getLocations.size(); i++){
                 if(tour.getLocations.get(i).getClass() == WTCKeyLocation.class){
                     WTCKeyLocation keyLoc = (WTCKeyLocation) tour.getLocations.get(i);
-                    if(!keyLoc.getPhotos().isEmpty()){}
+                    if(!keyLoc.getPhotos().isEmpty()){
+                        for(int j = 0; j < keyLoc.getPhotos().size(); i++){
+                            Uri targetFile = Uri.fromFile(tour.getPhotos().get(j));
+                            
+                        }
+                    }
                 }
             }
 
