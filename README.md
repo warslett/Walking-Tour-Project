@@ -13,6 +13,9 @@ Will A and Steve's TODO list
 9. write maintenance documentation - Steve/Will + Ben (Quality control)
 10. acceptance testing - Steve/Will + Sev
 
+*WIll here is a library we could use for the image handling:
+http://www.white-hat-web-design.co.uk/blog/resizing-images-with-php/
+http://www.abeautifulsite.net/blog/2011/11/the-simple-image-class-for-php/
 ==================
 Harvey & Will L's TODO list
 ---------------
