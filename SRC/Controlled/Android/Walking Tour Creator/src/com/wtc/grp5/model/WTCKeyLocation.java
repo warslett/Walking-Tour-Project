@@ -55,7 +55,7 @@ public class WTCKeyLocation extends WTCLocation {
 	}
 	
 	public List<String> getPhotos(){
-		retutn photos;
+		return photos;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class WTCKeyLocation extends WTCLocation {
 	@Override
 	public String toJSON(){
 		String out;
-		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+timeStamp.toString()+"\",\"name\":\""+locName+"\",\"images:[\"";
+		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+Long.toString(timeStamp)+"\",\"name\":\""+locName+"\",\"images:[\"";
 		for(int i=0;i<photos.size()-1;i++){
 			out += "\""+"photo"+i+"\":\""+photos.get(i)+"\",";
 		}
