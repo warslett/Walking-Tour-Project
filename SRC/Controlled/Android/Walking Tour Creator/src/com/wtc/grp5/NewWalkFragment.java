@@ -47,6 +47,8 @@ public class NewWalkFragment extends DialogFragment implements OnClickListener{
 		if(which == DialogInterface.BUTTON_POSITIVE){
 			if(tfTourName.getText().toString().equals("")){
 				Toast.makeText(getActivity(), "Enter a Walk Name", Toast.LENGTH_SHORT).show();
+			}else if(tfTourName.getText().toString().contains(" ")){
+				Toast.makeText(getActivity(), "Walk Name may not contain spaces", Toast.LENGTH_LONG).show();
 			}else{
 				Intent intent = new Intent(this.getActivity(), WalkActivity.class);
 				intent.putExtra("TourTitle", tfTourName.getText().toString());

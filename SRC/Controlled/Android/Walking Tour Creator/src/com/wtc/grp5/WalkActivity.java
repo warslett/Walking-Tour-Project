@@ -82,6 +82,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 
 	@Override
+	protected void onPause() {
+		
+		super.onPause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
+	@Override
 	protected void onStop() {
 		locClient.removeLocationUpdates(this);
 		locClient.disconnect();
@@ -101,9 +112,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
             				temp.addPhoto(mCurrentPhotoPath);
             		}
             	}
-            	
+            	// De-select the marker
         		selectedMarker = null;
-            	
                 Toast.makeText(this, "Picture saveed", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
@@ -225,14 +235,11 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onCancelWalkSelection(DialogFragment fragment) {
 		cancelWalk();	
 	}
-	
-	
 
 	@Override
 	public void onFinishWalkSelection(DialogFragment fragment) {
 		finishWalk();
 	}
-	
 
 	/**
 	* Adds a location to the tour.
