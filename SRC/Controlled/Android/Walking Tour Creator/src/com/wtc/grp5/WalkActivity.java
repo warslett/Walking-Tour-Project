@@ -49,7 +49,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	private Location currentLoc;
 	private LocationRequest locRequest;
 	private Marker selectedMarker; // The marker the user clicked on
-	private Menu tourMenu; // A handle to the options menu for the walk
 	
 	String mCurrentPhotoPath;
 	Uri fileUri;
@@ -104,17 +103,11 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
             	}
             	
         		selectedMarker = null;
-        		
-        		// Enable add / remove photo buttons
-        		MenuItem addPhoto = tourMenu.findItem(R.id.action_addPhoto);
-        		addPhoto.setEnabled(false);
-        		MenuItem removePhoto = tourMenu.findItem(R.id.action_remPhoto);
-        		removePhoto.setEnabled(false);
             	
-                Toast.makeText(this, "saved image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Picture saveed", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
-            	Toast.makeText(this, "Cancelled save image", Toast.LENGTH_SHORT).show();
+            	//Toast.makeText(this, "Cancelled save image", Toast.LENGTH_SHORT).show();
             } else {
                 // Image capture failed, advise user
             	Toast.makeText(this, "Failed to save image", Toast.LENGTH_SHORT).show();
@@ -153,23 +146,13 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public boolean onMarkerClick(Marker marker) {
-		// Make sure the user can only delete a location when they select a marker to remove.
-		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
-		removeLocItem.setEnabled(true);
 		selectedMarker = marker;
-		
-		// Enable add / remove photo buttons
-		MenuItem addPhoto = tourMenu.findItem(R.id.action_addPhoto);
-		addPhoto.setEnabled(true);
-		MenuItem removePhoto = tourMenu.findItem(R.id.action_remPhoto);
-		removePhoto.setEnabled(true);
 		return false;
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.map, menu);
-		tourMenu = menu;
 		return true;
 	}
 	
@@ -182,13 +165,25 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			locDetailsFrag.show(getFragmentManager(), "LocDetails");
 			return true;
 		case R.id.action_remLoc:
-			removeLocation(selectedMarker);
+			if(selectedMarker == null){
+				Toast.makeText(this, "You must select a location to remove.", Toast.LENGTH_LONG).show();
+			}else{
+				removeLocation(selectedMarker);
+			}
 			return true;
 		case R.id.action_addPhoto:
-			addPhoto();
+			if(selectedMarker == null){
+				Toast.makeText(this, "You must select a location to add a photo for.", Toast.LENGTH_LONG).show();
+			}else{
+				addPhoto();
+			}
 			return true;
 		case R.id.action_remPhoto:
-			
+			if(selectedMarker == null){
+				Toast.makeText(this, "You must select a location to remove a photo from.", Toast.LENGTH_LONG).show();
+			}else{
+				
+			}
 			return true;
 		case R.id.action_cancel:
 			//cancelWalk();
@@ -275,9 +270,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			}
 		}
 		marker.remove();
-		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
 		selectedMarker = null;
-		removeLocItem.setEnabled(false);
 		Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}
 	
