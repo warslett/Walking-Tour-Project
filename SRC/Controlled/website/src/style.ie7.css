@@ -1,101 +1,101 @@
 .textblock > div {
-    display: block;
-    line-height: normal;
+  display     : block;
+  line-height : normal;
 }
 
 .header {
-    z-index: 1;
+  z-index : 1;
 }
 
 #header-bg {
-    display: none;
+  display : none;
 }
 
 .hmenu > li, .hmenu > li > a {
-    display: inline !important;
-    float: none !important;
-    vertical-align: top;
+  display        : inline !important;
+  float          : none !important;
+  vertical-align : top;
 }
 
 #hmenu-bg {
-    display: none;
+  display : none;
 }
 
 ul.hmenu > li:first-child {
-    padding-right: 3px;
+  padding-right : 3px;
 }
 
 ul.hmenu > li > span.hmenu-separator {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -3px;
-    width: 3px;
-    height: 31px;
-    background: url('../images/menuseparator.png') center center no-repeat;
+  position   : absolute;
+  display    : block;
+  top        : 0;
+  left       : -3px;
+  width      : 3px;
+  height     : 31px;
+  background : url('../images/menuseparator.png') center center no-repeat;
 }
 
 ul.hmenu > li:first-child > span.hmenu-separator {
-    display: none;
+  display : none;
 }
 
 ul.hmenu ul {
-    background-color: #FD6812 !important;
+  background-color : #fd6812 !important;
 }
 
 .content-layout, .content-layout-row, .layout-cell {
-    display: block;
+  display : block;
 }
 
 .layout-cell {
-    position: relative;
-    float: left;
-    clear: right;
+  position : relative;
+  float    : left;
+  clear    : right;
 }
 
 input[type="text"] {
-    margin: 0 0 0 -3px;
+  margin : 0 0 0 -3px;
 }
 
 * html input[type="text"] {
-    margin: 0;
+  margin : 0;
 }
 
 form.search > input[type="text"] {
-    margin: 0 0 0 -3px;
+  margin : 0 0 0 -3px;
 }
 
 form.search div > input[type="text"] {
-    width: 100%;
+  width : 100%;
 }
 
 * html form.search > input[type="text"] {
-    margin: 0;
+  margin : 0;
 }
 
 .postcontent {
-    height: 1%;
+  height : 1%;
 }
 
 .close-alt, .arrow-right-alt, .arrow-left-alt {
-    display: block !important;
+  display : block !important;
 }
 
 .cw, .ccw {
-    display: none !important;
+  display : none !important;
 }
 
 .content {
-    width: auto;
-    float: none;
+  width : auto;
+  float : none;
 }
 
 .mapfp {
-    height: 180px;
-    width: 180px;
+  height : 180px;
+  width  : 180px;
 }
 
 .mapmp {
-    height: 180px;
-    width: 180px
+  height : 180px;
+  width  : 180px
 }
