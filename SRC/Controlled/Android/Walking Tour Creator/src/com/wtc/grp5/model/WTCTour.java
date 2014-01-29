@@ -83,7 +83,7 @@ public class WTCTour {
 	*/
 	public String toJSON(){
 		String out;
-		out = "{\"Tour Name\": \""+tourName+"\",\"Long Description\": \""+longDesc+"\",\"Short Description\": \""+shortDesc+"\",\"Locations\": [";
+		out = "{\"title\": \""+tourName+"\",\"ldescription\": \""+longDesc+"\",\"sdescription\": \""+shortDesc+"\",\"distance\":\""+Long.toString(calcDist())+"\",\"locations\": [";
 		for(int i=0;i<locations.size()-1;i++){
 			out += locations.get(i).toJSON()+",";		
 		}
