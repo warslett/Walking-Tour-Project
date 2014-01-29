@@ -30,7 +30,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -277,6 +276,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 		marker.remove();
 		MenuItem removeLocItem = tourMenu.findItem(R.id.action_remLoc);
+		selectedMarker = null;
 		removeLocItem.setEnabled(false);
 		Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}

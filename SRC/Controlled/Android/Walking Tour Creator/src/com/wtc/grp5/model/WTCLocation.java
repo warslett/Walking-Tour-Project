@@ -1,13 +1,13 @@
 package com.wtc.grp5.model;
-import android.text.format.Time;
-import java.util.Date;
+
+import java.util.Calendar;
 
 public class WTCLocation {
 
 	protected double longitude;
 	protected double latitude;
 	//private String timeStamp; // Easier if we use times as below
-	protected Date oldTime;
+	protected Calendar oldTime;
 	protected long timeStamp; //number of seconds since tour start
 	
 	/**
@@ -17,7 +17,7 @@ public class WTCLocation {
 		longitude = 0;
 		latitude = 0;
 		// timeStamp will implemented later...
-		oldTime = new Date();
+		oldTime = Calendar.getInstance();
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class WTCLocation {
 		this.longitude = longitude;
 		this.latitude = latitude;
 		// timeStamp will implemented later...
-		oldTime = new Date();
+		oldTime = Calendar.getInstance();
 	}
 	
 	/**
@@ -79,11 +79,10 @@ public class WTCLocation {
 	 * @return the time stamp for when this location was recorded
 	 */
 	public String getTimeStamp(){
-		return Long.toString(TimeStamp); //this might be broken now hac22, oops
+		return Long.toString(timeStamp); //this might be broken now hac22, oops
 	}
 	//Part of some magic code to convert a TIME into a number of seconds since the first time
-	public Date getOldTime(){
-
+	public Calendar getOldTime(){
 
 		return oldTime;
 	}

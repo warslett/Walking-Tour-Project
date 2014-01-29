@@ -1,7 +1,10 @@
 package com.wtc.grp5.model;
 
+import java.util.Date;
+import java.util.Calendar;
 import java.util.LinkedList;
-import java.lang.Math.*
+import java.lang.Math.*;
+
 public class WTCTour {
 
 	private String tourName;
@@ -155,35 +158,35 @@ public class WTCTour {
 	public LinkedList<WTCLocation> getLocations(){
 		return locations;
 	}
+	
 	public void fixTime(){
 		WTCLocation start;
-		WTCLocation current;
-		Date startTime;
+		Calendar startTime;
 		start = locations.get(0);
 		startTime = start.getOldTime();
 		for(int i=0;i<locations.size();i++){
 			try{
-				long diff = locations.get(i).getTimeInMillis() - startTime.getTimeInMillis();
+				long diff = locations.get(i).oldTime.getTimeInMillis() - startTime.getTimeInMillis();
 				long sec = diff/1000;
 				locations.get(i).setTimeStamp(sec); 
 			}catch (Exception e){
 				//do stuff
 			}
-			
 		}		
 	}
+	
 	public long calcDist(){
 		double dist=0;
 		double lat_diff;
 		double lng_diff;
 		for(int i=1;i<locations.size();i++){
-			lat_diff = locations.get(i-1).getlatitude()-locations.get(i).getlatitude();
-			lng_diff = locations.get(i-1).getLongitude()-locations.geti().getLongitude();
+			lat_diff = locations.get(i-1).getLatitude()-locations.get(i).getLatitude();
+			lng_diff = locations.get(i-1).getLongitude()-locations.get(i).getLongitude();
 			lat_diff *= 60;
 			lng_diff *= 60;
 			dist+=Math.sqrt(Math.pow(lat_diff,2)+Math.pow(lng_diff,2));
 		}
 		dist = Math.round(dist);
-		return dist;		
+		return (long) dist;
 	}
 }
