@@ -78,9 +78,8 @@ public class WTCLocation {
 	/**
 	 * @return the time stamp for when this location was recorded
 	 */
-	//TODO fix this
 	public String getTimeStamp(){
-		return timeStamp.toString(); //this might be broken now hac22, oops
+		return Long.toString(TimeStamp); //this might be broken now hac22, oops
 	}
 	//Part of some magic code to convert a TIME into a number of seconds since the first time
 	public Date getOldTime(){
@@ -94,10 +93,9 @@ public class WTCLocation {
 	* 
 	* @return the JSON String.
 	*/
-	//TODO fix timestamp tostring
 	public String toJSON(){
 		String out;
-		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+timeStamp.toString()+"\"}";
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+Long.toString(timeStamp)+"\"}";
 		return out;
 	}
 
