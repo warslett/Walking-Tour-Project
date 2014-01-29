@@ -112,7 +112,7 @@ class dbConnection {
                     photoName
                  ) 
 	         VALUES (
-                    " . $locid . ",
+                    " . $placeid . ",
                     '" . $photo . "');
                  ");
                     

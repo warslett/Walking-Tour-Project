@@ -69,15 +69,32 @@ function loadTour(id) {
                  * map
                  */
                 if (data[i].place !== null) {
+                    
+                    var imgstr="";
+                    
+                    for(x=0; x<data[i].place.photos.length; x++){
+                        imgstr+='<a href="photos/';
+                        imgstr+=id;
+                        imgstr+="/";
+                        imgstr+=data[i].place.photos[x];
+                        imgstr+='.jpg" target="_blank">';
+                        imgstr+='<img width="70px" height="70px" src="photos/';
+                        imgstr+=id;
+                        imgstr+='/thumbs/';
+                        imgstr+=data[i].place.photos[x];
+                        imgstr+='.jpg"></a>';
+                    }
 
                     tour.addLayer(
                             L.marker([data[i].latitude, data[i].longitude])
                               .bindPopup(
-                                "<h3>" +
+                                '<div style="display: inline; width:3000px;"><h3>' +
                                   data[i].place.shortDesc +
-                                "</h3>"
+                                "</h3>" +
+                                imgstr +
+                                "</div>"
                               )
-                            )
+                            );
 
                 }
 
