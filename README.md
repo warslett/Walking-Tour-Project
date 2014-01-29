@@ -30,3 +30,5 @@ Harvey & Will L's TODO list
 8. POI Names? Clarification needed, Key Location names, or names for each photograph? // Done
 9. Turn on GPS as soon as the app starts to a void waiting.
 10. Limit character length on location name and description 50 chars and 100 respectively
+11. With respect to the Design Spec, Bernie has asked for Comments not only for the Methods but for the Classes and Interfaces also. 
+12. Again, in respect to the Design Spec, there are some general comments missing from the JavaDoc in some methods, for example the getLongDesc() method in the Tour Class.
