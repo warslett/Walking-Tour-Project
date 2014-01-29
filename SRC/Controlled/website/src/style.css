@@ -2149,16 +2149,16 @@ blockquote p, .postcontent blockquote p, .blockcontent blockquote p, .footer blo
 }
 
 .routefl {
-    margin-top:0px;
+    margin-top: 0px;
     width: 250px;
     float: left;
     overflow: scroll;
-    height:585px;
+    height: 585px;
 }
 
 .mapmp {
     margin-left: auto;
     margin-right: auto;
-    width:100% !important;
+    width: 100% !important;
 }
 

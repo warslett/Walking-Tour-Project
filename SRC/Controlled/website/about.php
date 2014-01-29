@@ -25,13 +25,14 @@ function displayContent()
             <h2 class="blockheader">Group 05 Project Members:</h2>
 
             <p class="blockcontent">
-                <ul class="block">
-                    <li><strong>Web Development Team:</strong> <em>William Arslett & Stephen Paul Clasby</em></li>
-                    <li><strong> Android Development Team:</strong> <em>Harvey Clark & William Lea</em></li>
-                    <li><strong>Quality assurance and Testing:</strong> <em>Neil Vicker & Benjamin O'Donovan</em></li>
-                    <li><strong>Deputy project leader:</strong> <em>Benjamin O’Donovan</em></li>
-                <li><strong>Project leader:</strong> <em>Sevastiyan Raychev</em>li>
-                </ul>
+            <ul class="block">
+                <li><strong>Web Development Team:</strong> <em>William Arslett & Stephen Paul Clasby</em></li>
+                <li><strong> Android Development Team:</strong> <em>Harvey Clark & William Lea</em></li>
+                <li><strong>Quality assurance and Testing:</strong> <em>Neil Vicker & Benjamin O'Donovan</em></li>
+                <li><strong>Deputy project leader:</strong> <em>Benjamin O’Donovan</em></li>
+                <li><strong>Project leader:</strong> <em>Sevastiyan Raychev</em>
+                <li>
+            </ul>
 
 
             <h3><strong>Contact e-mail address:</strong><em><a href="cs-group-05@aber.ac.uk">cs-group-05@aber.ac.uk</a>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="leafletembed.js" server="central.aber.ac.uk/public_html/" local="130354861229346101" remote="130354873930000000" Dst="1" />
-<file name="leaflet.js" server="central.aber.ac.uk/public_html/" local="130354352484924462" remote="130354364410000000" Dst="1" />
-<file name="leaflet.css" server="central.aber.ac.uk/public_html/" local="130354861229276049" remote="130354873940000000" Dst="1" />
-<file name="plots.php" server="central.aber.ac.uk/public_html/" local="130354352485014536" remote="130354364420000000" Dst="1" />
+    <file name="leafletembed.js" server="central.aber.ac.uk/public_html/" local="130354861229346101"
+          remote="130354873930000000" Dst="1"/>
+    <file name="leaflet.js" server="central.aber.ac.uk/public_html/" local="130354352484924462"
+          remote="130354364410000000" Dst="1"/>
+    <file name="leaflet.css" server="central.aber.ac.uk/public_html/" local="130354861229276049"
+          remote="130354873940000000" Dst="1"/>
+    <file name="plots.php" server="central.aber.ac.uk/public_html/" local="130354352485014536"
+          remote="130354364420000000" Dst="1"/>
 </dwsync>

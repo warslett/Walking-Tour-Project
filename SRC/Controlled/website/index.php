@@ -15,14 +15,14 @@ $footer = '
 
 function displayContent()
 {
-    
+
     global $database;
     ?>
 
 
-    <article class="post article">
-        <div>
-            <h1 class="postheader">
+    <article class="article">
+        <div class="block">
+            <h1 class="blockheader">
                 Welcome to Group 05’s second year project website.
             </h1>
 
@@ -39,6 +39,7 @@ function displayContent()
 
         </div>
         <br>
+
         <div>
             <div class="block clearfix routefl">
                 <div class="blockheader">

@@ -43,19 +43,41 @@ function displayContent()
 
     ?>
 
-    <article class="post article">
+    <article class="article">
+        <div class="block clearfix">
+            <h2 class="blockheader">The Map Page!</h2>
 
-        <h2 class="postheader"><? echo $tour->getTitle(); ?></h2>
+            <div class="blockcontent">
+                <p>
+                    The map page using the leaflet API and OpenStreetMap tiles; we are able to edit the look of the
+                    API map with plot markers, editable polylines and media support.
+                    Leaflet also allows us to use <em>'layers'</em>for different map data, tile overlays e.g. traffic
+                    overlay.
+                </p>
 
-        <div class="postcontent postcontent-0 clearfix">
-
-            <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
-
-            <div class="mapmp" id="map">
+                <p>
+                    The Map controls are simple; zoom in and out using the + and - buttons in the top left corner and
+                    drag the map to navigate around also clicking on the Points of Interest markers will trigger them to
+                    open up and display the available information and relevant media files.
+                </p>
 
 
             </div>
 
+            <div class="block">
+                <h3 class="blockheader"><? echo $tour->getTitle(); ?></h3>
+
+                <div class="blockcontent clearfix">
+
+                    <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
+
+                    <div class="mapmp" id="map">
+
+
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </article>

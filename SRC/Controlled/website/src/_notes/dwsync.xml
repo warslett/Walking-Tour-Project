@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="tour.php" server="central.aber.ac.uk/public_html/" local="130354352485845088" remote="130354364500000000" Dst="1" />
-<file name="connection.php" server="central.aber.ac.uk/public_html/" local="130354861229456152" remote="130354872990000000" Dst="1" />
-<file name="template.php" server="central.aber.ac.uk/public_html/" local="130354873907234225" remote="130354873930000000" Dst="1" />
-<file name="script.responsive.js" server="central.aber.ac.uk/public_html/" local="130354352483623605" remote="130354364480000000" Dst="1" />
-<file name="script.js" server="central.aber.ac.uk/public_html/" local="130354352486885765" remote="130354364470000000" Dst="1" />
-<file name="jquery.js" server="central.aber.ac.uk/public_html/" local="130354360425078151" remote="130354364460000000" Dst="1" />
-<file name="style.responsive.css" server="central.aber.ac.uk/public_html/" local="130354352485314755" remote="130354364500000000" Dst="1" />
-<file name="style.css" server="central.aber.ac.uk/public_html/" local="130354861229506199" remote="130354873960000000" Dst="1" />
-<file name="style.ie7.css" server="central.aber.ac.uk/public_html/" local="130354352484264041" remote="130354364490000000" Dst="1" />
+    <file name="tour.php" server="central.aber.ac.uk/public_html/" local="130354352485845088"
+          remote="130354364500000000" Dst="1"/>
+    <file name="connection.php" server="central.aber.ac.uk/public_html/" local="130354861229456152"
+          remote="130354872990000000" Dst="1"/>
+    <file name="template.php" server="central.aber.ac.uk/public_html/" local="130354873907234225"
+          remote="130354873930000000" Dst="1"/>
+    <file name="script.responsive.js" server="central.aber.ac.uk/public_html/" local="130354352483623605"
+          remote="130354364480000000" Dst="1"/>
+    <file name="script.js" server="central.aber.ac.uk/public_html/" local="130354352486885765"
+          remote="130354364470000000" Dst="1"/>
+    <file name="jquery.js" server="central.aber.ac.uk/public_html/" local="130354360425078151"
+          remote="130354364460000000" Dst="1"/>
+    <file name="style.responsive.css" server="central.aber.ac.uk/public_html/" local="130354352485314755"
+          remote="130354364500000000" Dst="1"/>
+    <file name="style.css" server="central.aber.ac.uk/public_html/" local="130354861229506199"
+          remote="130354873960000000" Dst="1"/>
+    <file name="style.ie7.css" server="central.aber.ac.uk/public_html/" local="130354352484264041"
+          remote="130354364490000000" Dst="1"/>
 </dwsync>

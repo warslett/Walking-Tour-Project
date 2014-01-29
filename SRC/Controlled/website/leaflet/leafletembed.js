@@ -23,14 +23,14 @@ function initmap() {
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib = 'OpenStreetMap';
     var osm = new L.TileLayer(
-            osmUrl,
-            {
-                minZoom: 13,
-                maxZoom: 17,
-                attribution: osmAttrib
-            }
+        osmUrl,
+        {
+            minZoom: 13,
+            maxZoom: 17,
+            attribution: osmAttrib
+        }
     );
-        
+
     // start the map in Aberystwyth
     map.setView(new L.LatLng(52.412, -4.07), 14);
 
@@ -40,14 +40,14 @@ function initmap() {
 
 function loadTour(id) {
 
-    if (typeof(tour) != "undefined"){
+    if (typeof(tour) != "undefined") {
         map.removeLayer(tour);
     }
 
     tour = new L.layerGroup();
 
     //when the plot data is recieved from the server...
-    ajaxRequest.onreadystatechange = function() {
+    ajaxRequest.onreadystatechange = function () {
 
         if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
 
@@ -60,41 +60,41 @@ function loadTour(id) {
 
                 //for every location in the object create a new leaflet coord
                 langlongs.push(new L.LatLng(
-                        data[i].latitude,
-                        data[i].longitude
-                        ));
+                    data[i].latitude,
+                    data[i].longitude
+                ));
 
                 /* if the location has a place description attached, generate a
                  * new marker and popup for that leaflet coord and add it to the
                  * map
                  */
                 if (data[i].place !== null) {
-                    
-                    var imgstr="";
-                    
-                    for(x=0; x<data[i].place.photos.length; x++){
-                        imgstr+='<a href="photos/';
-                        imgstr+=id;
-                        imgstr+="/";
-                        imgstr+=data[i].place.photos[x];
-                        imgstr+='.jpg" target="_blank">';
-                        imgstr+='<img width="85px" height="85px" src="photos/';
-                        imgstr+=id;
-                        imgstr+='/thumbs/';
-                        imgstr+=data[i].place.photos[x];
-                        imgstr+='.jpg"></a>';
+
+                    var imgstr = "";
+
+                    for (x = 0; x < data[i].place.photos.length; x++) {
+                        imgstr += '<a href="photos/';
+                        imgstr += id;
+                        imgstr += "/";
+                        imgstr += data[i].place.photos[x];
+                        imgstr += '.jpg" target="_blank">';
+                        imgstr += '<img width="85px" height="85px" src="photos/';
+                        imgstr += id;
+                        imgstr += '/thumbs/';
+                        imgstr += data[i].place.photos[x];
+                        imgstr += '.jpg"></a>';
                     }
 
                     tour.addLayer(
-                            L.marker([data[i].latitude, data[i].longitude])
-                              .bindPopup(
+                        L.marker([data[i].latitude, data[i].longitude])
+                            .bindPopup(
                                 '<div style="display: inline; width:3000px;"><h3>' +
-                                  data[i].place.shortDesc +
-                                "</h3>" +
-                                imgstr +
-                                "</div>"
-                              )
-                            );
+                                    data[i].place.shortDesc +
+                                    "</h3>" +
+                                    imgstr +
+                                    "</div>"
+                            )
+                    );
 
                 }
 
@@ -104,14 +104,14 @@ function loadTour(id) {
              * add it to the map.
              */
             var polyline = new L.polyline(langlongs,
-                    {
-                        color: 'red',
-                        weight: 3,
-                        opacity: 0.5,
-                        smoothFactor: 1
-                    }
+                {
+                    color: 'red',
+                    weight: 3,
+                    opacity: 0.5,
+                    smoothFactor: 1
+                }
             );
-            
+
             tour.addLayer(polyline).addTo(map);
 
             //resize/zoom the map 
