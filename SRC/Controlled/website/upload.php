@@ -116,7 +116,7 @@ $sample_data = '
 }    
 ';
 
-$data=  json_decode($sample_data);
+$data = json_decode($sample_data);
 
 print_r($data);
 

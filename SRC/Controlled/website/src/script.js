@@ -27,7 +27,7 @@ browser = function ($) {
         }
     }
     return result;
-} (jQuery);
+}(jQuery);
 
 jQuery(function ($) {
     if (typeof responsiveDesign === "undefined") {
@@ -267,7 +267,9 @@ jQuery(function ($) {
 
 jQuery(function ($) {
     "use strict";
-    $(window).bind("resize", function () { navigatorResizeHandler($("html").hasClass("responsive")); });
+    $(window).bind("resize", function () {
+        navigatorResizeHandler($("html").hasClass("responsive"));
+    });
 });
 
 var navigatorResizeHandler = (function ($) {
@@ -328,9 +330,9 @@ if (browser.opera) {
     });
 }
 
-jQuery(function($) {
+jQuery(function ($) {
     "use strict";
-     $(window).bind("resize", function () {
+    $(window).bind("resize", function () {
         /*global responsiveDesign */
         "use strict";
         if (typeof responsiveDesign !== "undefined" && responsiveDesign.isResponsive)
@@ -343,7 +345,7 @@ jQuery(function($) {
     });
 });
 
-jQuery(function($) {
+jQuery(function ($) {
     "use strict";
     $('nav.nav').addClass("desktop-nav");
 });
@@ -354,12 +356,16 @@ jQuery(function ($) {
     if (!browser.ie || browser.version > 7) {
         return;
     }
-    $('ul.hmenu>li:not(:first-child)').each(function () { $(this).prepend('<span class="hmenu-separator"> </span>'); });
+    $('ul.hmenu>li:not(:first-child)').each(function () {
+        $(this).prepend('<span class="hmenu-separator"> </span>');
+    });
 });
 
 jQuery(function ($) {
     "use strict";
-    $("ul.hmenu a:not([href])").attr('href', '#').click(function (e) { e.preventDefault(); });
+    $("ul.hmenu a:not([href])").attr('href', '#').click(function (e) {
+        e.preventDefault();
+    });
 });
 
 
@@ -370,8 +376,8 @@ jQuery(function ($) {
     }
 
     /* Fix width of submenu items.
-    * The width of submenu item calculated incorrectly in IE6-7. IE6 has wider items, IE7 display items like stairs.
-    */
+     * The width of submenu item calculated incorrectly in IE6-7. IE6 has wider items, IE7 display items like stairs.
+     */
     $.each($("ul.hmenu ul"), function () {
         var maxSubitemWidth = 0;
         var submenu = $(this);
@@ -406,7 +412,7 @@ jQuery(function () {
 
 var setHMenuOpenDirection = (function ($) {
     "use strict";
-    return (function(menuInfo) {
+    return (function (menuInfo) {
         var defaultContainer = $(menuInfo.defaultContainer);
         defaultContainer = defaultContainer.length > 0 ? defaultContainer = $(defaultContainer[0]) : null;
 
@@ -437,8 +443,12 @@ var setHMenuOpenDirection = (function ($) {
 })(jQuery);
 
 jQuery(function ($) {
-    $("ul.hmenu ul li").hover(function () { $(this).prev().children("a").addClass("hmenu-before-hovered"); }, 
-        function () { $(this).prev().children("a").removeClass("hmenu-before-hovered"); });
+    $("ul.hmenu ul li").hover(function () {
+            $(this).prev().children("a").addClass("hmenu-before-hovered");
+        },
+        function () {
+            $(this).prev().children("a").removeClass("hmenu-before-hovered");
+        });
 });
 
 jQuery(function ($) {
@@ -449,12 +459,12 @@ jQuery(function ($) {
         var c = $('div.content');
         c.removeAttr('style');
 
-        $('#main').children().each(function() {
+        $('#main').children().each(function () {
             if ($(this).css('position') !== 'absolute') {
                 mh += $(this).outerHeight(true);
             }
         });
-        
+
         if (mh < bh) {
             var r = bh - mh;
             c.css('height', (c.parent().outerHeight(true) + r) + 'px');
@@ -462,13 +472,16 @@ jQuery(function ($) {
     });
 
     if (browser.ie && browser.version < 8) {
-        $(window).bind('resize', function() {
+        $(window).bind('resize', function () {
             var c = $('div.content');
             var s = c.parent().children('.layout-cell:not(.content)');
             var w = 0;
             c.hide();
-            s.each(function() { w += $(this).outerWidth(true); });
-            c.w = c.parent().width(); c.css('width', c.w - w + 'px');
+            s.each(function () {
+                w += $(this).outerWidth(true);
+            });
+            c.w = c.parent().width();
+            c.css('width', c.w - w + 'px');
             c.show();
         });
     }
@@ -514,30 +527,30 @@ jQuery(function () {
 var Control = (function ($) {
     'use strict';
     return (function () {
-        this.init = function(label, type, callback) {
-            var chAttr = label.find('input[type="' +type + '"]').attr('checked');
+        this.init = function (label, type, callback) {
+            var chAttr = label.find('input[type="' + type + '"]').attr('checked');
             if (chAttr === 'checked') {
-              label.addClass('checked');
+                label.addClass('checked');
             }
 
             label.mouseleave(function () {
-              $(this).removeClass('hovered').removeClass('active');
+                $(this).removeClass('hovered').removeClass('active');
             });
             label.mouseover(function () {
-              $(this).addClass('hovered').removeClass('active');
+                $(this).addClass('hovered').removeClass('active');
             });
             label.mousedown(function (event) {
-              if (event.which !== 1) {
-                  return;
-              }
-              $(this).addClass('active').removeClass('hovered');
+                if (event.which !== 1) {
+                    return;
+                }
+                $(this).addClass('active').removeClass('hovered');
             });
             label.mouseup(function (event) {
-              if (event.which !== 1) {
-                  return;
-              }
-              callback.apply(this);
-              $(this).removeClass('active').addClass('hovered');
+                if (event.which !== 1) {
+                    return;
+                }
+                callback.apply(this);
+                $(this).removeClass('active').addClass('hovered');
             });
         };
     });
@@ -562,7 +575,7 @@ var fixRssIconLineHeight = (function ($) {
 jQuery(function ($) {
     "use strict";
     var rssIcons = $(".rss-tag-icon");
-    if (rssIcons.length){
+    if (rssIcons.length) {
         fixRssIconLineHeight("rss-tag-icon");
         if (browser.ie && browser.version < 9) {
             rssIcons.each(function () {
@@ -591,10 +604,10 @@ var ThemeLightbox = (function ($) {
                 var imgContainer = $('.lightbox-wrapper');
                 if (imgContainer.length === 0) {
                     imgContainer = $('<div class="lightbox-wrapper">').css('line-height', $(window).height() + "px")
-                    .appendTo($("body"));
+                        .appendTo($("body"));
 
                     var closeBtn = $('<div class="close"><div class="cw"> </div><div class="ccw"> </div><div class="close-alt">&#10007;</div></div>')
-                .click(close);
+                        .click(close);
                     closeBtn.appendTo(imgContainer);
                     showArrows();
                 }
@@ -685,7 +698,7 @@ var ThemeLightbox = (function ($) {
         function showError(enable) {
             if (enable) {
                 $(".lightbox-wrapper").append($('<div class="lightbox-error">The requested content cannot be loaded.<br/>Please try again later.</div>')
-                        .css({ "top": $(window).height() / 2 - 60, "left": $(window).width() / 2 - 170 }));
+                    .css({ "top": $(window).height() / 2 - 60, "left": $(window).width() / 2 - 170 }));
             } else {
                 $(".lightbox-wrapper .lightbox-error").remove();
             }
@@ -705,7 +718,7 @@ var ThemeLightbox = (function ($) {
         };
 
         function bindMouse(img) {
-            img.bind('mousewheel DOMMouseScroll', function (e) {
+            img.bind('mousewheel DOMMouseScroll',function (e) {
                 var orgEvent = window.event || e.originalEvent;
                 var delta = (orgEvent.wheelDelta ? orgEvent.wheelDelta : orgEvent.detail * -1) > 0 ? 1 : -1;
                 move(current + delta);
@@ -955,11 +968,17 @@ jQuery(function () {
 
             active = true;
 
-            if (moving) { this.stop(true); }
+            if (moving) {
+                this.stop(true);
+            }
 
             if (!nextItem.length) {
                 nextItem = element.find(".slide-item")[reset]();
-                if (!this.settings.repeat) { last = true; active = false; return; }
+                if (!this.settings.repeat) {
+                    last = true;
+                    active = false;
+                    return;
+                }
             }
 
             if ($.support.transition) {
@@ -994,7 +1013,9 @@ jQuery(function () {
 
             this.navigate(nextItem);
 
-            if (moving) { this.start(); }
+            if (moving) {
+                this.start();
+            }
         };
 
         this.navigate = function (position) {
@@ -1027,14 +1048,20 @@ jQuery(function () {
 
         this.next = function () {
             if (!active) {
-                if (last) { this.stop(); return; }
+                if (last) {
+                    this.stop();
+                    return;
+                }
                 this.move("next");
             }
         };
 
         this.prev = function () {
             if (!active) {
-                if (last) { this.stop(); return; }
+                if (last) {
+                    this.stop();
+                    return;
+                }
                 this.move("prev");
             }
         };
@@ -1078,11 +1105,15 @@ jQuery(function () {
         if (this.settings.hover) {
             var slider = this;
             element.add(this.settings.navigator)
-                   .add(element.siblings(".shapes")).hover(function () {
-                       if (element.is(":visible") && !last) { slider.stop(true); }
-                   }, function () {
-                       if (element.is(":visible") && !last) { slider.start(); }
-                   });
+                .add(element.siblings(".shapes")).hover(function () {
+                    if (element.is(":visible") && !last) {
+                        slider.stop(true);
+                    }
+                }, function () {
+                    if (element.is(":visible") && !last) {
+                        slider.start();
+                    }
+                });
         }
     };
 
@@ -1108,75 +1139,73 @@ jQuery(function () {
 })(jQuery);
 
 
-
-
 if (typeof window.resizeData === 'undefined') window.resizeData = {};
 window.resizeData.headerPageWidth = true;
 if (typeof window.defaultResponsiveData === 'undefined') window.defaultResponsiveData = [false, true, true, true, true, ];
 
 resizeData['object1388086240'] = {
-   responsive: [
-                  { left: -0.54, top: 0.5, visible: true }, 
-                  { left: -0.54, top: 0.5, visible: true }, 
-                  { left: -0.54, top: 0.5, visible: true }, 
-                  { left: -0.54, top: 0.5, visible: true }, 
-                  { left: -0.54, top: 0.5, visible: true }, 
-               ],
-   area: {
-       x: 0,
-       y: 0
-   },
-   width: 226,
-   height: 270,
-   autoWidth: false};
+    responsive: [
+        { left: -0.54, top: 0.5, visible: true },
+        { left: -0.54, top: 0.5, visible: true },
+        { left: -0.54, top: 0.5, visible: true },
+        { left: -0.54, top: 0.5, visible: true },
+        { left: -0.54, top: 0.5, visible: true },
+    ],
+    area: {
+        x: 0,
+        y: 0
+    },
+    width: 226,
+    height: 270,
+    autoWidth: false};
 
 resizeData['object557410578'] = {
-   responsive: [
-                  { left: 1.04, top: 0.66, visible: true }, 
-                  { left: 1.04, top: 0.66, visible: true }, 
-                  { left: 1.04, top: 0.66, visible: true }, 
-                  { left: 1.04, top: 0.66, visible: true }, 
-                  { left: 1.04, top: 0.66, visible: true }, 
-               ],
-   area: {
-       x: 0,
-       y: 0
-   },
-   width: 423,
-   height: 280,
-   autoWidth: false};
+    responsive: [
+        { left: 1.04, top: 0.66, visible: true },
+        { left: 1.04, top: 0.66, visible: true },
+        { left: 1.04, top: 0.66, visible: true },
+        { left: 1.04, top: 0.66, visible: true },
+        { left: 1.04, top: 0.66, visible: true },
+    ],
+    area: {
+        x: 0,
+        y: 0
+    },
+    width: 423,
+    height: 280,
+    autoWidth: false};
 
 resizeData['headline'] = {
-   responsive: [
-                  { left: 0.88, top: 0.35, visible: true }, 
-                  { left: 0.88, top: 0.35, visible: true }, 
-                  { left: 0.88, top: 0.35, visible: true }, 
-                  { left: 0.88, top: 0.35, visible: true }, 
-                  { left: 0.88, top: 0.35, visible: true }, 
-               ],
-   area: {
-       x: 0,
-       y: 0
-   },
-   width: 300,
-   height: 68,
-   autoWidth: true};
+    responsive: [
+        { left: 0.88, top: 0.35, visible: true },
+        { left: 0.88, top: 0.35, visible: true },
+        { left: 0.88, top: 0.35, visible: true },
+        { left: 0.88, top: 0.35, visible: true },
+        { left: 0.88, top: 0.35, visible: true },
+    ],
+    area: {
+        x: 0,
+        y: 0
+    },
+    width: 300,
+    height: 68,
+    autoWidth: true};
 
 resizeData['slogan'] = {
-   responsive: [
-                  { left: 0.88, top: 0.53, visible: true }, 
-                  { left: 0.88, top: 0.53, visible: true }, 
-                  { left: 0.88, top: 0.53, visible: true }, 
-                  { left: 0.88, top: 0.53, visible: true }, 
-                  { left: 0.88, top: 0.53, visible: true }, 
-               ],
-   area: {
-       x: 0,
-       y: 0
-   },
-   width: 215,
-   height: 21,
-   autoWidth: true};
+    responsive: [
+        { left: 0.88, top: 0.53, visible: true },
+        { left: 0.88, top: 0.53, visible: true },
+        { left: 0.88, top: 0.53, visible: true },
+        { left: 0.88, top: 0.53, visible: true },
+        { left: 0.88, top: 0.53, visible: true },
+    ],
+    area: {
+        x: 0,
+        y: 0
+    },
+    width: 215,
+    height: 21,
+    autoWidth: true};
 
 // used to apply compicated values in style like '!important!
 function applyCss(object, param, value) {
@@ -1236,7 +1265,7 @@ function sheetLeftFunc(sheet, object) {
 }
 
 var headerObjectResizer = {
-    
+
     postInit: false,
 
     resize: (function ($) {
@@ -1251,9 +1280,9 @@ var headerObjectResizer = {
             // if we don't use full custom responsive so we MUST cleanup all styles
             var cleanUpStyles = false;
             // when use default respo so while in desktop mode always use 0-type, in other case cleanup our styles
-            if (typeof responsiveDesign !== 'undefined' && 
-                    defaultResponsiveData[responsiveDesign.responsiveTypeIdx] &&
-                    responsiveDesign.isResponsive) {
+            if (typeof responsiveDesign !== 'undefined' &&
+                defaultResponsiveData[responsiveDesign.responsiveTypeIdx] &&
+                responsiveDesign.isResponsive) {
                 cleanUpStyles = true;
             }
 
@@ -1411,7 +1440,9 @@ var headerObjectResizer = {
             var self = this;
             $(window).on("resize", function () {
                 clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(function () { self.resize(); }, 25);
+                resizeTimeout = setTimeout(function () {
+                    self.resize();
+                }, 25);
             });
         }
     }

@@ -77,7 +77,7 @@ var responsiveDesign = {
 
             if (triggerEvent || prevResponsiveIndx !== this.responsiveTypeIdx) {
                 triggerEvent = true;
-                
+
                 if (this.isResponsive && this.defaultResponsive[ this.responsiveTypeIdx ]) {
                     this.isCurrentDefaultResponsive = true;
                     html.removeClass('custom-responsive').addClass('default-responsive');
@@ -232,7 +232,9 @@ var responsiveTextblocks = (function ($) {
                     "width": tbWidth * c
                 });
                 tb.css("top", tbTop * c);
-                tb.attr("style", function (i, s) { return s + "margin-left: " + (tbMargin * c) + "px !important"; });
+                tb.attr("style", function (i, s) {
+                    return s + "margin-left: " + (tbMargin * c) + "px !important";
+                });
             }
         });
     };
@@ -276,8 +278,7 @@ var responsiveSlider = (function ($) {
                         $.each(inner.children(), function () {
                             $(this).css(
                                 "background-position",
-                                -Math.floor(initialWidth / 2 - parseInt(inner.outerWidth(), 10) / 2) + "px" +
-                                -Math.floor(initialHeight / 2 - parseInt(inner.outerHeight(), 10) / 2) + "px "
+                                -Math.floor(initialWidth / 2 - parseInt(inner.outerWidth(), 10) / 2) + "px" + -Math.floor(initialHeight / 2 - parseInt(inner.outerHeight(), 10) / 2) + "px "
                             );
                         });
                     } else {
@@ -343,7 +344,7 @@ var responsiveNavigator = (function ($) {
         $(".slider").each(function () {
             var currentSlider = $(this);
             var currentSliderWidth = currentSlider.width();
-            
+
             var sliderNavigator = currentSlider.siblings(".slidenavigator");
             if (sliderNavigator.length) {
                 var off = sheetLeftFunc(sheet, sliderNavigator);
@@ -403,7 +404,7 @@ jQuery(function ($) {
     var timeout;
     $(window).on("resize", function () {
         clearTimeout(timeout);
-        timeout = setTimeout(function() {
+        timeout = setTimeout(function () {
             responsiveCollages(responsiveDesign);
             responsiveNavigator(responsiveDesign);
         }, 25);
@@ -414,7 +415,7 @@ jQuery(function ($) {
 
 var responsiveHeader = (function ($) {
     "use strict";
-    return function(responsiveDesign) {
+    return function (responsiveDesign) {
         var header = $("header.header");
         var headerSlider = header.find(".slider");
 
@@ -469,18 +470,16 @@ jQuery(window).bind("responsiveResize", (function ($) {
 })(jQuery));
 
 
-
-
 jQuery(function ($) {
     "use strict";
     $(".hmenu a")
-        .click(function(e) {
+        .click(function (e) {
             var link = $(this);
             if ($(".responsive").length === 0)
                 return;
 
             var item = link.parent("li");
-            
+
             if (item.hasClass("active")) {
                 item.removeClass("active").children("a").removeClass("active");
             } else {
@@ -490,13 +489,13 @@ jQuery(function ($) {
             if (item.children("ul").length > 0) {
                 var href = link.attr("href");
                 link.attr("href", "#");
-                setTimeout(function () { 
+                setTimeout(function () {
                     link.attr("href", href);
                 }, 300);
                 e.preventDefault();
             }
         })
-        .each(function() {
+        .each(function () {
             var link = $(this);
             if (link.get(0).href === location.href) {
                 link.addClass("active").parents("li").addClass("active");
@@ -506,15 +505,15 @@ jQuery(function ($) {
 });
 
 
-jQuery(function($) {
-    $("<a href=\"#\" class=\"menu-btn\"><span></span><span></span><span></span></a>").insertBefore(".hmenu").click(function(e) {
+jQuery(function ($) {
+    $("<a href=\"#\" class=\"menu-btn\"><span></span><span></span><span></span></a>").insertBefore(".hmenu").click(function (e) {
         var menu = $(this).next();
         if (menu.is(":visible")) {
-            menu.slideUp("fast", function() {
+            menu.slideUp("fast", function () {
                 $(this).removeClass("visible").css("display", "");
             });
         } else {
-            menu.slideDown("fast", function() {
+            menu.slideDown("fast", function () {
                 $(this).addClass("visible").css("display", "");
             });
         }
@@ -597,7 +596,6 @@ jQuery(window).bind("responsive", function (event, responsiveDesign) {
     "use strict";
     responsiveLayoutCell(responsiveDesign);
 });
-
 
 
 //setTimeout(function () { $("html").addClass("desktop") }, 0);

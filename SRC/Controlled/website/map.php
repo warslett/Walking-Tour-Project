@@ -9,7 +9,7 @@ $database = new dbConnection();
  * If the parameter is not set, the server will redirect to the list page.
  */
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $tour = $database->getTour($_GET['id']);
 } else {
     header("Location: list.php");
@@ -20,7 +20,7 @@ if(isset($_GET['id'])){
  * it is declared. The following header contains scripts and stylesheets for
  * the leaflet map.
  */
-$header='
+$header = '
 <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
 <script type="text/javascript" src="leaflet/leaflet.js"></script>
 <script type="text/javascript" src="leaflet/leafletembed.js"></script>
@@ -31,44 +31,37 @@ $header='
  * it is declared. The following footer contains a function to initialise the
  * map.
  */
-$footer='
+$footer = '
 <script type="text/javascript">initmap(' . $tour->getID() . ')</script>
 ';
 
-function displayContent() {
-    
+function displayContent()
+{
+
     global $tour;
-    
-    
+
+
     ?>
 
     <article class="post article">
-        
+
         <h2 class="postheader"><? echo $tour->getTitle(); ?></h2>
-        
+
         <div class="postcontent postcontent-0 clearfix">
-            
-           <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
-            
-           <div class="mapmp" id="map">
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-			
-		   </div>
-           
+
+            <? echo "<p>" . $tour->getLongDesc() . "</p>"; ?>
+
+            <div class="mapmp" id="map">
+
+
+            </div>
+
         </div>
-        
+
     </article>
 
-    <?
-    
+<?
+
 }
 
 require_once 'src/template.php';
