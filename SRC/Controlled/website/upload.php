@@ -26,25 +26,25 @@ $sample_data = '
             "Longitude": "-4.0656098",
             "Latitude": "52.4163347",
             "TimeStamp": "10",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656285",
             "Latitude": "52.416353",
             "Time Stamp": "15",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656281",
             "Latitude": "52.4163935",
             "TimeStamp": "20",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656301",
             "Latitude": "52.416437",
             "Time Stamp": "25",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656496",
@@ -62,43 +62,43 @@ $sample_data = '
             "Longitude": "-4.065644",
             "Latitude": "52.416469",
             "TimeStamp": "35",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.065644",
             "Latitude": "52.416469",
             "TimeStamp": "40",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656434",
             "Latitude": "52.4164622",
             "TimeStamp": "45",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656491",
             "Latitude": "52.4164701",
             "TimeStamp": "50",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656598",
             "Latitude": "52.4164401",
             "Time Stamp": "20140128T114631Europe/London",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656383",
             "Latitude": "52.4163946",
             "TimeStamp": "55",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656174",
             "Latitude": "52.4163567",
             "Time Stamp": "60",
-            "Place": "NULL"
+            "Place": null
         },
         {
             "Longitude": "-4.0656174",
@@ -107,8 +107,8 @@ $sample_data = '
             "Place": {
                 "description": "Last point of interest",
                 "photos": [
-                    "img1",
-                    "img2"
+                    "img5",
+                    "img6"
                 ]
             }
         }
@@ -118,9 +118,7 @@ $sample_data = '
 
 $data = json_decode($sample_data);
 
-print_r($data);
-
-//$database->insertTour($data);
+$database->insertTour($data);
 
 //mail('wia2@aber.ac.uk, wjl3@aber.ac.uk', 'Test Success', $_POST['message']);
 
