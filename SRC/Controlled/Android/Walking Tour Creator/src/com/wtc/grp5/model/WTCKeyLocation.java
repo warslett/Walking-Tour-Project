@@ -90,13 +90,14 @@ public class WTCKeyLocation extends WTCLocation {
 	public String toJSON(){
 		String out;
 		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+Long.toString(timeStamp)+"\",\"Place\":\""+locName+"\",\"Photos:[\"";
-		for(int i=0;i<photos.size()-1;i++){
-			if(!photos.isEmpty()){
-				out+=photos.get(i)+",";
-			}
-		}
 		if(!photos.isEmpty()){
-			out+=photos.get(photos.size())+"]}";
+			for(int i=0;i<photos.size()-1;i++){
+					out+=photos.get(i)+",";
+			}
+				out+=photos.get(photos.size())+"]}";
+			}
+		else{
+			out+="]}";
 		}
 		return out;
 	}
