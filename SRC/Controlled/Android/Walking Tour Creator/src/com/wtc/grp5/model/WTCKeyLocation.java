@@ -53,6 +53,10 @@ public class WTCKeyLocation extends WTCLocation {
 			photos.remove(path);
 		}
 	}
+	
+	public List<String> getPhotos(){
+		retutn photos;
+	}
 
 	/**
 	 * @return the locName
