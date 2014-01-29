@@ -91,9 +91,13 @@ public class WTCKeyLocation extends WTCLocation {
 		String out;
 		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+Long.toString(timeStamp)+"\",\"Place\":\""+locName+"\",\"Photos:[\"";
 		for(int i=0;i<photos.size()-1;i++){
-			out+=photos.get(i)+",";
+			if(!photos.isEmpty()){
+				out+=photos.get(i)+",";
+			}
 		}
-		out+=photos.get(photos.size())+"]}";	
+		if(!photos.isEmpty()){
+			out+=photos.get(photos.size())+"]}";
+		}
 		return out;
 	}
 
