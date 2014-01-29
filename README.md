@@ -27,3 +27,4 @@ Harvey & Will L's TODO list
 6. Photos for the locations. // Done
 7. Increase sample rate. // Done
 8. POI Names? Clarification needed, Key Location names, or names for each photograph? // Done
+9. Turn on GPS as soon as the app starts to a void waiting.
