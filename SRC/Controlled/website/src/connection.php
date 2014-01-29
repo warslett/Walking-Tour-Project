@@ -174,7 +174,10 @@ class dbConnection {
             }
 
             $locations[] = new Location(
-                    $db_record['latitude'], $db_record['longitude'], $db_record['timestamp'], $place);
+                    $db_record['latitude'],
+                    $db_record['longitude'],
+                    $db_record['timestamp'],
+                    $place);
         }
 
         return $locations;
