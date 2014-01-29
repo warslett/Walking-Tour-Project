@@ -192,10 +192,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			
 			return true;
 		case R.id.action_cancel:
-			cancelWalk();
+			//cancelWalk();
+			EndWalkFragment endWalkFrag = new EndWalkFragment();
+			endWalkFrag.show(getFragmentManager(), "EndWalk");
 			return true;
 		case R.id.action_finish:
-			finishWalk();
+			//finishWalk();
+			FinishWalkFragment finishWalkFrag = new FinishWalkFragment();
+			finishWalkFrag.show(getFragmentManager(), "FinishWalk");
 			return true;
 		case R.id.action_sample_five:
 			this.setSameRate(10000);
@@ -225,17 +229,14 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public void onCancelWalkSelection(DialogFragment fragment) {
-		EndWalkFragment frag = (EndWalkFragment) fragment;
-		
-		
+		cancelWalk();	
 	}
 	
 	
 
 	@Override
 	public void onFinishWalkSelection(DialogFragment fragment) {
-		// TODO Auto-generated method stub
-		
+		finishWalk();
 	}
 	
 

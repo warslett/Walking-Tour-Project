@@ -12,19 +12,15 @@ import android.view.View;
 import android.widget.EditText;
 
 public class LocationDetailsFragment extends DialogFragment implements OnClickListener{
-
-	public interface LocationDetailsListener{
-		public void onPositiveSelection(DialogFragment fragment);
-	}
 	
 	private EditText tfLocName;
 	private EditText tfLocDesc;
-	private LocationDetailsListener listener;
+	private WTCDialogCallbacks listener;
 	
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		listener = (LocationDetailsListener) activity;
+		listener = (WTCDialogCallbacks) activity;
 	}
 	
 	@Override
