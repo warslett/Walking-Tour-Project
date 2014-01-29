@@ -1,6 +1,7 @@
 package com.wtc.grp5.model;
 
 import java.util.Date;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.lang.Math.*;
 
@@ -160,19 +161,17 @@ public class WTCTour {
 	
 	public void fixTime(){
 		WTCLocation start;
-		WTCLocation current;
-		Date startTime;
+		Calendar startTime;
 		start = locations.get(0);
 		startTime = start.getOldTime();
 		for(int i=0;i<locations.size();i++){
 			try{
-				long diff = locations.get(i).getTimeInMillis() - startTime.getTimeInMillis();
+				long diff = locations.get(i).oldTime.getTimeInMillis() - startTime.getTimeInMillis();
 				long sec = diff/1000;
 				locations.get(i).setTimeStamp(sec); 
 			}catch (Exception e){
 				//do stuff
 			}
-			
 		}		
 	}
 	
