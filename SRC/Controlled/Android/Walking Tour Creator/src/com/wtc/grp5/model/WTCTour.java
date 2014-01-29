@@ -191,7 +191,7 @@ public class WTCTour {
 		
 		dist = Math.round(dist);
 		//luckily 1 minuet is roughly 1 nautical mile (at the equator) and there are 1852 meters in a nautical mile
-		dist *= 1852
+		dist *= 1852;
 		return (long) dist;
 	}
 }
