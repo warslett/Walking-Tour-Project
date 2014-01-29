@@ -4,7 +4,7 @@ function displayContent()
 {
     ?>
 
-    <article class="post article">
+    <article class="block article">
         <h2 class="blockheader">About this Project</h2>
 
         <div class="clearfix block">
@@ -25,11 +25,14 @@ function displayContent()
             <h2 class="blockheader">Group 05 Project Members:</h2>
 
             <p class="blockcontent">
-                <strong>Web Development Team:</strong> <em>William Arslett & Stephen Paul Clasby</em>
-                <strong> Android Development Team:</strong> <em>Harvey Clark & William Lea</em>
-                <strong>Quality assurance and Testing:</strong> <em>Neil Vicker & Benjamin O'Donovan</em>
-                <strong>Deputy project leader:</strong> <em>Benjamin O’Donovan</em>
-                <strong>Project leader:</strong> <em>Sevastiyan Raychev</em>
+                <ul class="block">
+                    <li><strong>Web Development Team:</strong> <em>William Arslett & Stephen Paul Clasby</em></li>
+                    <li><strong> Android Development Team:</strong> <em>Harvey Clark & William Lea</em></li>
+                    <li><strong>Quality assurance and Testing:</strong> <em>Neil Vicker & Benjamin O'Donovan</em></li>
+                    <li><strong>Deputy project leader:</strong> <em>Benjamin O’Donovan</em></li>
+                <li><strong>Project leader:</strong> <em>Sevastiyan Raychev</em>li>
+                </ul>
+
 
             <h3><strong>Contact e-mail address:</strong><em><a href="cs-group-05@aber.ac.uk">cs-group-05@aber.ac.uk</a>
                 </em></h3>
