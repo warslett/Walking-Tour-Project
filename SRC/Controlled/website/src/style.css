@@ -2148,24 +2148,17 @@ blockquote p, .postcontent blockquote p, .blockcontent blockquote p, .footer blo
     white-space: nowrap;
 }
 
-.mapmp {
-    height: 250px;
-    width: 250px;
-}
-
-.mapfp {
-    height: 400px;
-    width: 400px;
-
-}
-
 .routefl {
-    size: 100%;
+    margin-top:0px;
+    width: 250px;
     float: left;
+    overflow: scroll;
+    height:585px;
 }
 
-.mapfl {
-    float: left;
-
+.mapmp {
+    margin-left: auto;
+    margin-right: auto;
+    width:100% !important;
 }
 

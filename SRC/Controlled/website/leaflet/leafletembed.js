@@ -21,7 +21,7 @@ function initmap() {
 
     // create the tile layer with correct attribution
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib = 'Map data � OpenStreetMap contributors';
+    var osmAttrib = 'OpenStreetMap';
     var osm = new L.TileLayer(
             osmUrl,
             {
@@ -31,7 +31,7 @@ function initmap() {
             }
     );
         
-    // start the map in South-East England
+    // start the map in Aberystwyth
     map.setView(new L.LatLng(52.412, -4.07), 14);
 
     map.addLayer(osm);

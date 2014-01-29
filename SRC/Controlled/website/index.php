@@ -38,6 +38,7 @@ function displayContent()
             </p>
 
         </div>
+        <br>
         <div>
             <div class="block clearfix routefl">
                 <div class="blockheader">
@@ -58,7 +59,6 @@ function displayContent()
                         print($tour->getTitle());
                         print('</a>');
                         print("</p>");
-                        print("<hr>");
 
                     }
 
