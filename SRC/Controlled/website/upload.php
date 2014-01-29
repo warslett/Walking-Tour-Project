@@ -107,8 +107,8 @@ $sample_data = '
             "Place": {
                 "description": "Last point of interest",
                 "photos": [
-                    "img1",
-                    "img2"
+                    "img5",
+                    "img6"
                 ]
             }
         }

@@ -66,8 +66,6 @@ class dbConnection {
                     " . $curloc->TimeStamp . ");
             ");
 
-            print_r($curloc->Place);
-            
             if ($curloc->Place != NULL) {
 
                 $locid = mysqli_fetch_assoc($this->connection->query(
@@ -82,7 +80,23 @@ class dbConnection {
 	         VALUES (
                     " . $locid . ",
                     '" . $curloc->Place->description . "');
-            ");
+                 ");
+
+                $placeid = mysqli_fetch_assoc($this->connection->query(
+                                        "SELECT LAST_INSERT_ID();
+                "))['LAST_INSERT_ID()'];
+
+                foreach ($curloc->Place->photos as $photo) {
+                    $this->connection->query("
+                 INSERT INTO photoUsage (
+                    placeID,
+                    photoName
+                 ) 
+	         VALUES (
+                    " . $locid . ",
+                    '" . $photo . "');
+                 ");
+                }
             }
         }
     }
