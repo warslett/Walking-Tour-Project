@@ -24,11 +24,11 @@ Harvey & Will L's TODO list
 2. Change the icons.
 3. Set character limits on fields. //Done
 4. Calculate length/distance?
-5. Fix JSON transferred form the phone. More detail needed, fixed the missing " and took out some spaces
+5. Fix JSON transferred form the phone.//Done as far as I'm aware contact me for further changes hac22
 6. Photos for the locations. // Done
 7. Increase sample rate. // Done
 8. POI Names? Clarification needed, Key Location names, or names for each photograph? // Done
 9. Turn on GPS as soon as the app starts to a void waiting.
 10. Limit character length on location name and description 50 chars and 100 respectively
-11. Add general comments to classes themselves not just methods
+11. Add general comments to classes themselves not just methods 
 
