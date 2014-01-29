@@ -89,12 +89,12 @@ public class WTCKeyLocation extends WTCLocation {
 	@Override
 	public String toJSON(){
 		String out;
-		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+timeStamp.toString()+"\",\"LocationName\":\""+locName+"\",\"Images:[\"";
+		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+timeStamp.toString()+"\",\"name\":\""+locName+"\",\"images:[\"";
 		for(int i=0;i<photos.size()-1;i++){
-			out += "\""+"Photo"+i+"\":\""+photos.get(i)+"\",";
+			out += "\""+"photo"+i+"\":\""+photos.get(i)+"\",";
 		}
 		
-		out +="\""+"Photo"+photos.size()+"\"]}";
+		out +="\""+"photo"+photos.size()+"\"]}";
 		return out;
 	}
 

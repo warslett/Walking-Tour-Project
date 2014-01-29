@@ -23,6 +23,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 	private Activity activity;
     private WTCTour tour;
     private final String boundary = "part"
+    private String pictureData;
 	
 	public SendData(Activity activity, WTCTour tour){
 		this.activity = activity;
@@ -47,7 +48,18 @@ public class SendData extends AsyncTask<String, Void, Void> {
                     if(!keyLoc.getPhotos().isEmpty()){
                         for(int j = 0; j < keyLoc.getPhotos().size(); i++){
                             Uri targetFile = Uri.fromFile(tour.getPhotos().get(j));
-                            
+                            ContentResolver cr = getContentResolver();
+                            Bitmap bitmap = null;
+                            try{
+                                bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr, selectedImage);
+                                ByteArrayOutputStream bao = new ByteArrayOutputStream();
+                                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bao);
+                                byte[] imageBytes = bao.toByteArray();
+                                String imageString = Base64.encodeBytes(imageBytes);
+                            }catch(Exception e){
+
+                            }
+
                         }
                     }
                 }
