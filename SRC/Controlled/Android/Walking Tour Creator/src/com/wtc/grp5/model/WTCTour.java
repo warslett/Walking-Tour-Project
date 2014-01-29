@@ -174,14 +174,14 @@ public class WTCTour {
 	}
 	public long calcDist(){
 		double dist=0;
-		long lat_diff;
-		long lng_diff;
+		double lat_diff;
+		double lng_diff;
 		for(int i=1;i<locations.size();i++){
 			lat_diff = locations.get(i-1).getlatitude()-locations.get(i).getlatitude();
 			lng_diff = locations.get(i-1).getLongitude()-locations.geti().getLongitude();
 			lat_diff *= 60;
 			lng_diff *= 60;
-			dist+=Math.sqrt(Math.pow(lat_diff.doubleValue(),2)+Math.pow(lng_diff.doubleValue(),2));
+			dist+=Math.sqrt(Math.pow(lat_diff,2)+Math.pow(lng_diff,2));
 		}
 		dist = Math.round(dist);
 		return dist;		
