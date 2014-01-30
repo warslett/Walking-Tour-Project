@@ -11,8 +11,8 @@
 
     ?>
 
-    <article class = "post article">
-      <div class = "block">
+    <article class = "block article">
+      <article class = "block">
         <h2 class = "blockheader">Below is the list of tours on our server!</h2>
 
         <div class = "blockcontent clearfix">
@@ -58,6 +58,9 @@
           </div>
         </div>
 
+
+
+  </article>
     </article>
 
   <?

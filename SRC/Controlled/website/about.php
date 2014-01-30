@@ -38,7 +38,7 @@
             <li><strong>Project leader:</strong> <em>Sevastiyan Raychev</em>
           </ul>
 
-          <h4 blockheader>Contact e-mail address:<a href = "mailto:cs-group-05@aber.ac.uk" class = "blockcontent">cs-group-05@aber.ac.uk</a></h4>
+          <h4 class="blockheader">Contact e-mail address:<a href = "mailto:cs-group-05@aber.ac.uk" class = "blockcontent">cs-group-05@aber.ac.uk</a></h4>
 
 
         </div>

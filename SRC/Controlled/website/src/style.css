@@ -931,6 +931,13 @@ div.block img {
   text-decoration : underline;
 }
 
+.blockcontent#map, .blockcontent a, .blockcontent a:link {
+
+
+}
+
+
+
 .blockcontent a:visited, .blockcontent a.visited {
   color           : #fd862b;
   font-family     : Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -2152,8 +2159,10 @@ blockquote p, .postcontent blockquote p, .blockcontent blockquote p, .footer blo
   margin-top : 0px;
   width      : 250px;
   float      : left;
-  overflow   : scroll;
   height     : 585px;
+}
+.routefl .blockcontent {
+  overflow : scroll;
 }
 
 .mapmp {
