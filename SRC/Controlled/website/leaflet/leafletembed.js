@@ -25,7 +25,7 @@ function initmap() {
   var osm = new L.TileLayer(
       osmUrl,
       {
-        minZoom: 15,
+        minZoom: 13,
         maxZoom: 19,
         attribution: osmAttrib
       }
