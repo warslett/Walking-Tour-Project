@@ -93,8 +93,8 @@ public class WTCLocation {
 	* @return the JSON String.
 	*/
 	public String toJSON(){
-		String out;
-		out = "{\"longitude\": \""+Double.toString(longitude)+"\",\"latitude\": \""+Double.toString(latitude)+"\",\"timestamp\": \""+Long.toString(timeStamp)+"\"}";
+		String out;// construct a string "out" based on the contents of the WTCLocation object
+		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+Long.toString(timeStamp)+"\",\"Place\":null}";
 		return out;
 	}
 

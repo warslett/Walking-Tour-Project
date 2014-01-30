@@ -174,7 +174,10 @@ public class WTCTour {
 			}
 		}		
 	}
-	
+	/** Calculate a rough estimate for the distance 
+	 *
+	 *
+	 */
 	public long calcDist(){
 		double dist=0;
 		double lat_diff;
