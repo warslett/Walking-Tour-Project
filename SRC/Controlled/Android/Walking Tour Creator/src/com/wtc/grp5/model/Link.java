@@ -1,3 +1,8 @@
+/*
+ * @(#) Link.java Version 1.0
+ * Copyright(c) Group 5 @Aberystwyth University: Computer Science Dept yr 2 (2014)
+ * All Rights reserverd
+ */
 package com.wtc.grp5.model;
 
 import java.io.IOException;

@@ -1,3 +1,8 @@
+/*
+ * @(#) Communication.java Version 1.0
+ * Coppyright(c) Group 5 @Aberystwyth University: Computer Science Dept yr 2 (2014)
+ * All rights reserved
+ */
 package com.wtc.grp5.model;
 
 import java.io.BufferedOutputStream;

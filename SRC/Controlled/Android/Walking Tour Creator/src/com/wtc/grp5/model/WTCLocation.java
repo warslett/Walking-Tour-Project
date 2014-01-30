@@ -1,3 +1,8 @@
+/*
+ * @(#)WTCLocation.java Version 1.0
+ * Copyright(c) Group 5 @Aberystwyth University Computer Science Dept: Yr 2 (2014)
+ * All Rights Reserved
+ */
 package com.wtc.grp5.model;
 
 import java.io.Serializable;
@@ -7,9 +12,8 @@ public class WTCLocation implements Serializable{
 
 	protected double longitude;
 	protected double latitude;
-	//private String timeStamp; // Easier if we use times as below
 	protected Calendar oldTime;
-	protected long timeStamp; //number of seconds since tour start
+	protected long timeStamp; //number of minuets since tour start
 	
 	/**
 	 * Constructs a blank location.
@@ -17,7 +21,6 @@ public class WTCLocation implements Serializable{
 	public WTCLocation(){
 		longitude = 0;
 		latitude = 0;
-		// timeStamp will implemented later...
 		oldTime = Calendar.getInstance();
 	}
 	
@@ -30,7 +33,6 @@ public class WTCLocation implements Serializable{
 	public WTCLocation(double longitude, double latitude){
 		this.longitude = longitude;
 		this.latitude = latitude;
-		// timeStamp will implemented later...
 		oldTime = Calendar.getInstance();
 	}
 	

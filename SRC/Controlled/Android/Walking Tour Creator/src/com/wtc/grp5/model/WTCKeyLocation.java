@@ -1,3 +1,8 @@
+/*
+ * @(#) WTCKeyLocation.java Version 1.0
+ * Copyright(c) Group 5 @Aberystwyth University Computer Science Dept: Yr 2 (2014)
+ * All Rights Reserved
+ */
 package com.wtc.grp5.model;
 
 import java.util.ArrayList;
@@ -90,11 +95,11 @@ public class WTCKeyLocation extends WTCLocation {
 	public String toJSON(){
 		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+Long.toString(timeStamp)+"\",\"Place\":\""+locName+"\",\"Photos:[\"";
-		if(!photos.isEmpty()){ //incase the photographs are empty simply close the JSON array for photos
-			for(int i=0;i<photos.size()-1;i++){
+		if(!photos.isEmpty()){ //incase the photographs are empty simply close the JSON array of photos
+			for(int i=0;i<photos.size()-1;i++){// step though all but the last of the photographs appending the filepath to the JSON string seperating them with commas
 					out+=photos.get(i)+",";
 			}
-				out+=photos.get(photos.size())+"]}";
+				out+=photos.get(photos.size())+"]}";//append the last photograph file path and close the array
 			}
 		else{
 			out+="]}";

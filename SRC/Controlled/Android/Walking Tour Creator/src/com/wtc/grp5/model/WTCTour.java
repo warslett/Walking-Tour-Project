@@ -1,3 +1,9 @@
+/*
+ *  @(#) WTCTour.java Version 1.0
+ *
+ *  Copyright(c) Group 5 @Aberystwyth University
+ *  All rights reserved
+ */
 package com.wtc.grp5.model;
 
 import java.util.Calendar;
@@ -177,6 +183,7 @@ public class WTCTour implements Serializable{
 	 *
 	 *
 	 */
+	//TODO look at using great circle for more accuracy
 	public long calcDist(){
 		double dist=0;
 		double lat_diff;
