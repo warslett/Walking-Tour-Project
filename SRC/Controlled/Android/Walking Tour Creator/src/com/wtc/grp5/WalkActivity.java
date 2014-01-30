@@ -368,7 +368,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
-			Toast.makeText(this, "Saving walk...", Toast.LENGHT_SHORT).show();
+			Toast.makeText(this, "Saving walk...", Toast.LENGTH_SHORT).show();
 			saveToServer();
 		} else {
 			Toast.makeText(this, "Couldn't connect to server", Toast.LENGTH_LONG).show();

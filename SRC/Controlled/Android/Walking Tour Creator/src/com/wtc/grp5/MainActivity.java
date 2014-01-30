@@ -28,8 +28,6 @@ public class MainActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.activity_main);
 		btnNewWalk = (Button) findViewById(R.id.newWalk_btn);
 		btnAbout = (Button) findViewById(R.id.about_btn);
-		
-		// Make buttons respond to clicks
 		btnNewWalk.setOnClickListener(this);
 		btnAbout.setOnClickListener(this);
 	}

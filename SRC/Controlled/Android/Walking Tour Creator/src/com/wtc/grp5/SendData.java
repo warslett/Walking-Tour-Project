@@ -90,7 +90,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 
 	@Override
 	protected void onPostExecute(Void result) {
-		Toast.makeText(activity, "Tour sent to server", Toast.LENGTH_LONG).show();
+		Toast.makeText(activity, "Walk saved to server", Toast.LENGTH_LONG).show();
 		tour.getLocations().clear();
 		tour = null;
 		Intent homeScreen = new Intent(activity, MainActivity.class);
