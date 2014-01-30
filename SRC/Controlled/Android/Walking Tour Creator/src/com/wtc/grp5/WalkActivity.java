@@ -50,7 +50,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	private WTCTour tour;
 	private TourSave tourSave;
-	private long sampleRate = 10000; // 10000 millis (10 seconds)
+	private long sampleRate = 2000; // 2000 millis (2 seconds)
 	
 	private GoogleMap map;
 	private LocationClient locClient;
@@ -79,7 +79,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	@Override
 	protected void onStart() {
 		super.onStart();
-		File fileDir = new File(Environment.getExternalStorageDirectory(), "WTC");
+		File fileDir = new File(this.getExternalFilesDir("TourCache").getAbsolutePath());
         if(!fileDir.exists()){
         	fileDir.mkdir();
         }
@@ -105,6 +105,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 		locRequest = LocationRequest.create();
         locRequest.setInterval(sampleRate);
+        
+        // Prevent the screen from going off and pausing / stopping this activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
@@ -133,7 +135,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
             	}
             	// De-select the marker
         		selectedMarker = null;
-                Toast.makeText(this, "Picture saveed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Picture saved", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
             	//Toast.makeText(this, "Cancelled save image", Toast.LENGTH_SHORT).show();
@@ -159,11 +161,11 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onConnected(Bundle bundle) {
 		currentLoc = locClient.getLastLocation();
 		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
-		
-		WTCKeyLocation walkStart = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
-		walkStart.setLocName("Walk Start");
-		addKeyLocation(walkStart);
-		
+		if(tour.getLocations().isEmpty()){
+			WTCKeyLocation walkStart = new WTCKeyLocation(currentLoc.getLongitude(), currentLoc.getLatitude());
+			walkStart.setLocName("Walk Start");
+			addKeyLocation(walkStart);
+		}
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15));
 		locClient.requestLocationUpdates(locRequest, this);
 	}
@@ -215,25 +217,23 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			}
 			return true;
 		case R.id.action_cancel:
-			//cancelWalk();
 			EndWalkFragment endWalkFrag = new EndWalkFragment();
 			endWalkFrag.show(getFragmentManager(), "EndWalk");
 			return true;
 		case R.id.action_finish:
-			//finishWalk();
 			FinishWalkFragment finishWalkFrag = new FinishWalkFragment();
 			finishWalkFrag.show(getFragmentManager(), "FinishWalk");
 			return true;
-		case R.id.action_sample_five:
-			this.setSameRate(10000);
+		case R.id.action_sample_two:
+			this.setSameRate(2000);
 			locRequest.setInterval(sampleRate);
 			return true;
-		case R.id.action_sample_ten:
-			this.setSameRate(15000);
+		case R.id.action_sample_three:
+			this.setSameRate(3000);
 			locRequest.setInterval(sampleRate);
 			return true;
-		case R.id.action_sample_fifteen:
-			this.setSameRate(20000);
+		case R.id.action_sample_four:
+			this.setSameRate(4000);
 			locRequest.setInterval(sampleRate);
 			return true;
 		default:
@@ -320,11 +320,16 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
     	}
 	}
 	
+	/*
+	 * The following method was taken from the Android Developers Documents
+	 * 
+	 * URL: http://developer.android.com/training/camera/photobasics.html
+	 */
 	private File createImageFile() throws IOException {
     	// Create an image file name
     	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
     	String imageFileName = "JPEG_" + timeStamp + "_";
-    	File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+    	File storageDir = this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
     	File image = File.createTempFile(
     		imageFileName,  /* prefix */
         	".jpg",         /* suffix */

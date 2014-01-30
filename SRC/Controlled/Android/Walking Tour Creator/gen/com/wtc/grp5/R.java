@@ -227,9 +227,9 @@ containing a value of this type.
         public static final int action_remLoc=0x7f050013;
         public static final int action_remPhoto=0x7f050015;
         public static final int action_sampleRate=0x7f05000e;
-        public static final int action_sample_fifteen=0x7f050011;
-        public static final int action_sample_five=0x7f05000f;
-        public static final int action_sample_ten=0x7f050010;
+        public static final int action_sample_four=0x7f050011;
+        public static final int action_sample_three=0x7f050010;
+        public static final int action_sample_two=0x7f05000f;
         public static final int g_map=0x7f050008;
         public static final int hybrid=0x7f050004;
         public static final int image_title_logo=0x7f050006;
@@ -259,15 +259,15 @@ containing a value of this type.
     }
     public static final class string {
         public static final int action_add_loc=0x7f060021;
-        public static final int action_add_photo=0x7f060028;
+        public static final int action_add_photo=0x7f060025;
         public static final int action_cancel=0x7f060023;
         public static final int action_finish=0x7f060024;
         public static final int action_rem_loc=0x7f060022;
-        public static final int action_remove_photo=0x7f060029;
-        public static final int action_sample_fifteen=0x7f060027;
-        public static final int action_sample_five=0x7f060025;
+        public static final int action_remove_photo=0x7f060026;
+        public static final int action_sample_four=0x7f060031;
         public static final int action_sample_rate=0x7f060020;
-        public static final int action_sample_ten=0x7f060026;
+        public static final int action_sample_three=0x7f060030;
+        public static final int action_sample_two=0x7f06002f;
         public static final int app_details=0x7f06001b;
         public static final int app_name=0x7f06001a;
         /**   Title for notification shown when GooglePlayServices needs to be
@@ -293,8 +293,8 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f060014;
-        public static final int button_about=0x7f06002b;
-        public static final int button_new_walk=0x7f06002a;
+        public static final int button_about=0x7f060028;
+        public static final int button_new_walk=0x7f060027;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -366,12 +366,12 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int hint_loc_desc=0x7f060030;
-        public static final int hint_loc_name=0x7f06002f;
-        public static final int hint_long_desc=0x7f06002e;
-        public static final int hint_short_desc=0x7f06002d;
-        public static final int hint_walk_name=0x7f06002c;
-        public static final int image_title_logo=0x7f060031;
+        public static final int hint_loc_desc=0x7f06002d;
+        public static final int hint_loc_name=0x7f06002c;
+        public static final int hint_long_desc=0x7f06002b;
+        public static final int hint_short_desc=0x7f06002a;
+        public static final int hint_walk_name=0x7f060029;
+        public static final int image_title_logo=0x7f06002e;
         public static final int title_activity_about=0x7f06001e;
         public static final int title_activity_main=0x7f06001c;
         public static final int title_activity_map=0x7f06001f;
