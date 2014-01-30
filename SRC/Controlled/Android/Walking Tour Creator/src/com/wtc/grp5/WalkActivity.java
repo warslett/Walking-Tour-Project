@@ -36,9 +36,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Toast;
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -105,6 +105,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 		locRequest = LocationRequest.create();
         locRequest.setInterval(sampleRate);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
 	@Override
