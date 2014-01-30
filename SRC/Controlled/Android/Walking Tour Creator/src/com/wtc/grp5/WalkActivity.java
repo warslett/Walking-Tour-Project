@@ -80,9 +80,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	protected void onStart() {
 		super.onStart();
 		File fileDir = new File(Environment.getExternalStorageDirectory(), "WTC");
-        if(fileDir.exists()){
-        	tourSave = new TourSave(fileDir.getAbsolutePath() + "tour.ser");
+        if(!fileDir.exists()){
+        	fileDir.mkdir();
         }
+        tourSave = new TourSave(fileDir.getAbsolutePath() + "tour.ser");
 		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 		// If Google Play services is available
 		if (ConnectionResult.SUCCESS == resultCode) {
@@ -110,7 +111,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	protected void onStop() {
 		tourSave.saveTour(tour);
 		tour = null;
-		locClient.removeLocationUpdates(this);
 		locClient.disconnect();
 		super.onStop();
 	}
