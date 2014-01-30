@@ -9,7 +9,7 @@ package com.wtc.grp5.model;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.io.Serializable;
-
+import java.lang.Math;
 public class WTCTour implements Serializable{
 
 	private String tourName;
@@ -185,22 +185,40 @@ public class WTCTour implements Serializable{
 	 */
 	//TODO look at using great circle for more accuracy
 	public long calcDist(){
-		double dist=0;
-		double lat_diff;
-		double lng_diff;
 		for(int i=1;i<locations.size();i++){
-			//use pythagorus to calculate the number of degrees distance between two points
-			lat_diff = locations.get(i-1).getLatitude()-locations.get(i).getLatitude();
-			lng_diff = locations.get(i-1).getLongitude()-locations.get(i).getLongitude();
-			//work in minuets for ease
-			lat_diff *= 60;
-			lng_diff *= 60;
-			dist+=Math.sqrt(Math.pow(lat_diff,2)+Math.pow(lng_diff,2));
+		dist+=GreatCircle(locations.get(i-1),locations.geti);
 		}
 		
-		dist = Math.round(dist);
-		//luckily 1 minuet is roughly 1 nautical mile (at the equator) and there are 1852 meters in a nautical mile
-		dist *= 1852;
 		return (long) dist;
 	}
+
+	private static double GreatCircle(Location loc1, Location loc2){
+		double out;
+		double radius = 6371000;//The Radius in Meters of the rock we are on
+		double dLat = Math.toRadians(loc1.getLatitude() - loc2.getLatitude());
+		double dLng = Math.toRadians(loc1.getLongitude() - loc2.getLongitude());
+		double dSinLat = Math.sin(dLat/2);
+		double dSinLng = Math.sin(dLng/2);
+		double temp = Math.pow(dSinLat,2) + Math.pow(dSinLng,2)*Math.cos(Math.toRadians(loc1.getLatitude()))*Math.cos(Math.toRadians(loc2.getLatitude()));
+		double rawResult = 2*Math.atan2(Math.sqrt(temp),Math.sqrt(1-temp));
+		out = rawResult * radius;
+		return out;
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
