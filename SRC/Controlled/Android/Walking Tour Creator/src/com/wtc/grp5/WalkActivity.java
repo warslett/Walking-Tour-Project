@@ -118,6 +118,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // Get the tour back
+        tour = tourSave.loadTour();
     	if(requestCode == 200){
             if (resultCode == RESULT_OK) {
             	for(int i = 0; i < tour.getLocations().size(); i++){
@@ -366,6 +368,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
+			Toast.makeText(this, "Saving walk...", Toast.LENGHT_SHORT).show();
 			saveToServer();
 		} else {
 			Toast.makeText(this, "Couldn't connect to server", Toast.LENGTH_LONG).show();
