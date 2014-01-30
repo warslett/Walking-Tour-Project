@@ -14,7 +14,6 @@
   <link href = "src/style.responsive.css" media = "all" rel = "stylesheet"/>
   <script src = "src/jquery.js"></script>
   <script src = "src/script.js"></script>
-  <script src = "src/script.responsive.js"></script>
   <?
     if ( isset( $header ) ) {
       echo $header;
@@ -75,10 +74,9 @@
       <p><br/></p>
 
       <p class = "page-footer"><span id = "footnote-links">Designed by <a href = "http://polyspotstudios.co.uk"
-                                                                          target = "_blank">Stephen Clasby</a>.</span>
+                                                                          target = "_blank">Stephen Clasby</a>.</span></p>
       <h4>Copyright © Group 05 Aberystwyth University 2013</h4>
 
-      </p>
     </div>
   </footer>
 </div>
