@@ -1,3 +1,9 @@
+/*
+ * @(#) NewWalkFragment.java Version 1.0
+ * Copyright(c) Group 5 @Aberystwyth University Computer Science Dept: Yr 2 (2014)
+ * All Rights Reserved
+ */
+
 package com.wtc.grp5;
 
 import android.app.AlertDialog;
