@@ -43,7 +43,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 	@Override
 	protected Void doInBackground(String... params) {
 		try{
-
+			tour.fixTime();
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(params[0]);
 			

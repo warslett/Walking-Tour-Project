@@ -118,6 +118,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // Get the tour back
+        tour = tourSave.loadTour();
     	if(requestCode == 200){
             if (resultCode == RESULT_OK) {
             	for(int i = 0; i < tour.getLocations().size(); i++){
