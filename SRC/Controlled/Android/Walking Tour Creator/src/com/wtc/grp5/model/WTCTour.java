@@ -179,20 +179,19 @@ public class WTCTour implements Serializable{
 			}
 		}		
 	}
-	/** Calculate a rough estimate for the distance 
-	 *
-	 *
+	
+	/** 
+	 * Calculate a rough estimate for the distance 
 	 */
-	//TODO look at using great circle for more accuracy
 	public long calcDist(){
+		long dist = 0;
 		for(int i=1;i<locations.size();i++){
-		dist+=GreatCircle(locations.get(i-1),locations.geti);
+			dist+=GreatCircle(locations.get(i-1),locations.get(i));
 		}
-		
-		return (long) dist;
+		return dist;
 	}
 
-	private static double GreatCircle(Location loc1, Location loc2){
+	private static double GreatCircle(WTCLocation loc1, WTCLocation loc2){
 		double out;
 		double radius = 6371000;//The Radius in Meters of the rock we are on
 		double dLat = Math.toRadians(loc1.getLatitude() - loc2.getLatitude());
@@ -203,22 +202,5 @@ public class WTCTour implements Serializable{
 		double rawResult = 2*Math.atan2(Math.sqrt(temp),Math.sqrt(1-temp));
 		out = rawResult * radius;
 		return out;
-
-
-
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
