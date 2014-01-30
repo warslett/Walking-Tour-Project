@@ -91,7 +91,7 @@ public class WTCTour implements Serializable{
 	*/
 	public String toJSON(){
 		String out;
-		out = "{\"title\": \""+tourName+"\",\"longDesc\": \""+longDesc+"\",\"shortDesc\": \""+shortDesc+"\",\"distance\":\""+Long.toString(calcDist())+"\",\"locations\": [";
+		out = "{\"title\": \""+tourName+"\",\"longDesc\": \""+longDesc+"\",\"shortDesc\": \""+shortDesc+"\",\"distance\":\""+Double.toString(calcDist())+"\",\"locations\": [";
 		for(int i=0;i<locations.size()-1;i++){
 			out += locations.get(i).toJSON()+",";	
 		}
@@ -183,8 +183,8 @@ public class WTCTour implements Serializable{
 	/** 
 	 * Calculate a rough estimate for the distance 
 	 */
-	public long calcDist(){
-		long dist = 0;
+	public double calcDist(){
+		double dist = 0;
 		for(int i=1;i<locations.size();i++){
 			dist+=GreatCircle(locations.get(i-1),locations.get(i));
 		}
