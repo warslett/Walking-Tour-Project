@@ -61,9 +61,10 @@ Tasks:
 	Orchard - 08:00
 	Orchard - 08:00
 	Home (icons, revised Docs, Final Report template) - 07:00
+	Orchard - 08:00
 
 
-	ACCUMULATED HOURS: 57:50 
+	ACCUMULATED HOURS: 65:50 
 
 
 
