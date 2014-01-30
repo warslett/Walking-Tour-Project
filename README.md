@@ -13,7 +13,7 @@ Will A and Steve's TODO list
 7. Tidy the design make it look shinier - Steve - DONE
 8. design/ implement solution for thumb-nailing images -Will/Steve
 9. refactor code - Steve //Requires all the tasks above to be complete.
-10. update design - Steve/Will + Ben (Quality control)
+10. update design - Steve/Will + SpunkyPidgeon (Quality control)
 11. begin module testing - Steve/Will + Neil
 12. begin system testing - Steve/Will + Neil
 13. write maintenance documentation - Steve/Will + Ben (Quality control)
