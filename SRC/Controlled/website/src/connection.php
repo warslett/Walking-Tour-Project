@@ -103,7 +103,7 @@
                                             )
                                         VALUES (
                                                " . $locid . ",
-                    '" . $curloc->Place->description . "');
+                    '" . $curloc->Place . "');
                  "
           );
 
@@ -118,7 +118,7 @@
                          )
                      )[ 'LAST_INSERT_ID()' ];
 
-          foreach ( $curloc->Place->photos as $photo ) {
+          foreach ( $curloc->Photos as $photo ) {
 
             //insert every photograph
 

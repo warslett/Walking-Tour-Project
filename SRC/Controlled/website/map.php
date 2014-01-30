@@ -72,7 +72,7 @@
 
             <? echo "<p>" . $tour->getLongDesc () . "</p>"; ?>
 
-            <div class = "mapmp" id = "map">
+            <div class="mapmp" id="map">
 
 
             </div>
