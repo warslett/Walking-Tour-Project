@@ -1,11 +1,10 @@
 package com.wtc.grp5.model;
 
-import java.util.Date;
 import java.util.Calendar;
 import java.util.LinkedList;
-import java.lang.Math.*;
+import java.io.Serializable;
 
-public class WTCTour {
+public class WTCTour implements Serializable{
 
 	private String tourName;
 	private String shortDesc;

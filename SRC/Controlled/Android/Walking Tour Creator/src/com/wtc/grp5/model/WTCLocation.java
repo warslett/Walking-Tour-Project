@@ -1,8 +1,9 @@
 package com.wtc.grp5.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class WTCLocation {
+public class WTCLocation implements Serializable{
 
 	protected double longitude;
 	protected double latitude;

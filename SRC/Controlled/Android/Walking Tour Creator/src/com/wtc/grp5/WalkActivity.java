@@ -30,6 +30,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	LocationListener, OnMarkerClickListener, WTCDialogCallbacks{
 
 	private WTCTour tour;
+	private TourSave tourSave;
 	private long sampleRate = 10000; // 10000 millis (10 seconds)
 	
 	private GoogleMap map;
@@ -67,13 +69,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		
         locClient = new LocationClient(this, this, this);
         
-        locRequest = LocationRequest.create();
-        locRequest.setInterval(sampleRate);
+        
+        
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
+		File fileDir = new File(Environment.getExternalStorageDirectory(), "WTC");
+        if(fileDir.exists()){
+        	tourSave = new TourSave(fileDir.getAbsolutePath() + "tour.ser");
+        }
 		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 		// If Google Play services is available
 		if (ConnectionResult.SUCCESS == resultCode) {
@@ -83,13 +89,20 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	protected void onPause() {
-		
+		tourSave.saveTour(tour);
+		locClient.removeLocationUpdates(this);
+		tour = null;
 		super.onPause();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		if(tour == null){
+			tour = tourSave.loadTour();
+		}
+		locRequest = LocationRequest.create();
+        locRequest.setInterval(sampleRate);
 	}
 
 	@Override
@@ -192,7 +205,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			if(selectedMarker == null){
 				Toast.makeText(this, "You must select a location to remove a photo from.", Toast.LENGTH_LONG).show();
 			}else{
-				
+				// Will be implemented in future
 			}
 			return true;
 		case R.id.action_cancel:
