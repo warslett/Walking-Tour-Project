@@ -89,9 +89,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	protected void onPause() {
-		tourSave.saveTour(tour);
 		locClient.removeLocationUpdates(this);
-		tour = null;
 		super.onPause();
 	}
 
@@ -107,6 +105,8 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	protected void onStop() {
+		tourSave.saveTour(tour);
+		tour = null;
 		locClient.removeLocationUpdates(this);
 		locClient.disconnect();
 		super.onStop();
