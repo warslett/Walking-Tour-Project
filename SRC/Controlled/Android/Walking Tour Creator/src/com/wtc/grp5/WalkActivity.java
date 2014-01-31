@@ -8,6 +8,8 @@ package com.wtc.grp5;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,6 +38,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -118,7 +121,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		locClient.disconnect();
 		super.onStop();
 	}
-        
+	
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -127,11 +130,15 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
     	if(requestCode == 200){
             if (resultCode == RESULT_OK) {
             	for(int i = 0; i < tour.getLocations().size(); i++){
-            		if(tour.getLocations().get(i).getLatitude() == selectedMarker.getPosition().latitude &&
-            				tour.getLocations().get(i).getLongitude() == selectedMarker.getPosition().longitude &&
-            				tour.getLocations().get(i).getClass() == WTCKeyLocation.class){
-            				WTCKeyLocation temp = (WTCKeyLocation) tour.getLocations().get(i);
-            				temp.addPhoto(mCurrentPhotoPath);
+            		if((float) tour.getLocations().get(i).getLatitude() == (float) selectedMarker.getPosition().latitude){
+            			Log.d("WILLIAM", "latitudes equal");
+            				if((float) tour.getLocations().get(i).getLongitude() == (float) selectedMarker.getPosition().longitude){
+            					Log.d("WILLIAM", "longitudes equal");
+            					WTCKeyLocation temp = (WTCKeyLocation) tour.getLocations().get(i);
+                				temp.addPhoto(mCurrentPhotoPath);
+                				Log.d("WILLIAM", ((WTCKeyLocation) tour.getLocations().get(i)).getPhotos().get(i));
+                				break;
+            				}
             		}
             	}
             	// De-select the marker
@@ -337,7 +344,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         	storageDir);    /* directory */
 
     	// Save a file: path for use with ACTION_VIEW intents
-    	mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+    	mCurrentPhotoPath = image.getAbsolutePath();
     	return image;
 	}
 	
