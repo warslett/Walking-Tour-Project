@@ -74,9 +74,14 @@
             <? echo "<p>" . $tour->getLongDesc () . "</p>"; ?>
           </div>
 
+<<<<<<< HEAD
+            <div class="mapmp" id="map">
+
+=======
             <div class = "blockcontent clearfix">
               <div class="mapmp" id ="map">
                 </div>
+>>>>>>> 8409f31fdf50d66c1c01fb1fc00292809208df28
 
             </div>
         </div>

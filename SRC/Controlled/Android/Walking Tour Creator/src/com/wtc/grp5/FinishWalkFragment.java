@@ -16,8 +16,8 @@ public class FinishWalkFragment extends EndWalkFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setTitle("Are you sure?") //Get conformation
-				.setMessage("Your walk will saved online.")//Tell user what will happen
+		builder.setTitle("Are you sure?")
+				.setMessage("Your walk will be saved online.")
 				.setPositiveButton("Yes", this)
 				.setNegativeButton("No", this);
 		return builder.create();

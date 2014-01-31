@@ -7,14 +7,14 @@
         android:title="@string/action_sample_rate">
         <menu>
             <item
-                android:id="@+id/action_sample_five"
-                android:title="@string/action_sample_five"/>
+                android:id="@+id/action_sample_two"
+                android:title="@string/action_sample_two"/>
             <item
-                android:id="@+id/action_sample_ten"
-                android:title="@string/action_sample_ten"/>
+                android:id="@+id/action_sample_three"
+                android:title="@string/action_sample_three"/>
             <item
-                android:id="@+id/action_sample_fifteen"
-                android:title="@string/action_sample_fifteen"/>
+                android:id="@+id/action_sample_four"
+                android:title="@string/action_sample_four"/>
         </menu>
     </item>
     

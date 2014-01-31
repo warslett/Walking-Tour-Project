@@ -56,7 +56,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 				if(tour.getLocations().get(i).getClass() == WTCKeyLocation.class){
 					WTCKeyLocation keyLoc = (WTCKeyLocation) tour.getLocations().get(i);
 					for(int j = 0; j < keyLoc.getPhotos().size(); j++){
-						data.add(new BasicNameValuePair("img" + i, keyLoc.getPhotos().get(j)));
+						data.add(new BasicNameValuePair(keyLoc.getPhotos().get(j), keyLoc.getPhotos().get(j)));
 					}
 				}
 			}
@@ -90,7 +90,7 @@ public class SendData extends AsyncTask<String, Void, Void> {
 
 	@Override
 	protected void onPostExecute(Void result) {
-		Toast.makeText(activity, "Tour sent to server", Toast.LENGTH_LONG).show();
+		Toast.makeText(activity, "Walk saved to server", Toast.LENGTH_LONG).show();
 		tour.getLocations().clear();
 		tour = null;
 		Intent homeScreen = new Intent(activity, MainActivity.class);
