@@ -132,12 +132,13 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
             	for(int i = 0; i < tour.getLocations().size(); i++){
             		if((float) tour.getLocations().get(i).getLatitude() == (float) selectedMarker.getPosition().latitude){
             			Log.d("WILLIAM", "latitudes equal");
-            				if((float) tour.getLocations().get(i).getLongitude() == (float) selectedMarker.getPosition().longitude){
+            			if((float) tour.getLocations().get(i).getLongitude() == (float) selectedMarker.getPosition().longitude){
+            				if(tour.getLocations().get(i).getClass() == WTCKeyLocation.class){
             					Log.d("WILLIAM", "longitudes equal");
             					WTCKeyLocation temp = (WTCKeyLocation) tour.getLocations().get(i);
-                				temp.addPhoto(mCurrentPhotoPath);
-                				Log.d("WILLIAM", ((WTCKeyLocation) tour.getLocations().get(i)).getPhotos().get(i));
-                				break;
+            					temp.addPhoto(mCurrentPhotoPath);
+            					break;
+            					}
             				}
             		}
             	}
