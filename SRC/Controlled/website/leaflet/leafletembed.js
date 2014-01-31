@@ -78,7 +78,7 @@ function loadTour(id) {
             imgstr += "/";
             imgstr += data[i].place.photos[x];
             imgstr += '.jpg" target="_blank">';
-            imgstr += '<img width="85px" height="85px" src="photos/';
+            imgstr += '<img width="85px" src="photos/';
             imgstr += id;
             imgstr += '/thumbs/';
             imgstr += data[i].place.photos[x];
