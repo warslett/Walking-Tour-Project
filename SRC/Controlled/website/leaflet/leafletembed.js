@@ -80,7 +80,7 @@ function loadTour(id) {
             imgstr += '.jpg" target="_blank">';
             imgstr += '<img width="85px" src="photos/';
             imgstr += id;
-            imgstr += '/thumbs/';
+            imgstr += '/';
             imgstr += data[i].place.photos[x];
             imgstr += '.jpg"></a>';
           }

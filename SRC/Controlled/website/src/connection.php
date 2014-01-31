@@ -132,12 +132,12 @@ class dbConnection {
                     );
 
                     $imgname = "photos/" . $tourid . "/" . $photo . ".jpg";
-                    $thumbname = "photos/" . $tourid . "/thumbs/" . $photo . ".jpg";
+                    //$thumbname = "photos/" . $tourid . "/thumbs/" . $photo . ".jpg";
 
                     file_put_contents(
-                            $filename, base64_decode($_POST[$photo])
+                            $imgname, base64_decode($_POST[$photo])
                     );
-
+                    /*
                     $image = imagecreatefromjpeg($imgname);
 
                     list($width, $height) = getimagesize($imgname);
@@ -153,6 +153,7 @@ class dbConnection {
                             $width, 
                             $height);
                     imagejpeg($thumbnail, $thumbname);
+                    */
                 }
             }
         }
