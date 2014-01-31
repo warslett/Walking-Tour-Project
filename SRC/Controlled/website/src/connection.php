@@ -96,11 +96,13 @@ class dbConnection {
                         "
                                             INSERT INTO placeDescription (
                                                locationID,
+                                               name,
                                                shortDesc
                                             )
                                         VALUES (
                                                " . $locid . ",
-                    '" . $curloc->Place . "');
+                                               '" . $curloc->Place . "',
+                    '" . $curloc->PlaceDesc . "');
                  "
                 );
 

@@ -88,9 +88,12 @@ function loadTour(id) {
           tour.addLayer(
               L.marker([data[i].latitude, data[i].longitude])
                   .bindPopup(
-                      '<div style="display: inline; width:3000px;"><h3>' +
-                          data[i].place.shortDesc +
+                      '<div style="display: inline; width:300px;"><h3>' +
+                          data[i].place.name +
                           "</h3>" +
+                          "<p>" +
+                          data[i].place.shortDesc +
+                          "</p>" +
                           imgstr +
                           "</div>"
                   )
