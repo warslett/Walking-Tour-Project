@@ -91,9 +91,9 @@ public class WTCTour implements Serializable{
 	* @return the JSON String.
 	*/
 	public String toJSON(){
-		String out;
-		out = "{\"title\": \""+tourName+"\",\"longDesc\": \""+longDesc+"\",\"shortDesc\": \""+shortDesc+"\",\"distance\":\""+Double.toString(calcDist())+"\",\"locations\": [";
-		if(locations.size()==){
+		String out; // create an output string
+		out = "{\"title\": \""+tourName+"\",\"longDesc\": \""+longDesc+"\",\"shortDesc\": \""+shortDesc+"\",\"distance\":\""+Double.toString(calcDist())+"\",\"locations\": [";// += is compiled down to being a string builder so is not an inefficent method for appending to strings
+		if(locations.isEmpty()){
 			out+="]}";
 		}
 		else{
@@ -168,6 +168,10 @@ public class WTCTour implements Serializable{
 	public LinkedList<WTCLocation> getLocations(){
 		return locations;
 	}
+	public getLocationsSize(){
+
+	return locations.size();
+	}
 	
 	public void fixTime(){
 		WTCLocation start;
@@ -180,7 +184,7 @@ public class WTCTour implements Serializable{
 				long sec = diff/1000;
 				locations.get(i).setTimeStamp(sec); 
 			}catch (Exception e){
-				//do stuff
+				//Catch any exceptions
 			}
 		}		
 	}
@@ -188,9 +192,9 @@ public class WTCTour implements Serializable{
 	/** 
 	 * Calculate a rough estimate for the distance 
 	 */
-	public double calcDist(){
+	 private double calcDist(){
 		double dist = 0;
-		if(locations.size()==0){
+		if(locations.isEmpty()){
 			return dist;
 		}
 		for(int i=1;i<locations.size();i++){
