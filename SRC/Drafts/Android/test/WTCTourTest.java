@@ -31,16 +31,19 @@ public class WTCTourTest {
 	}
 	@Test
 	public void testGetters(){
-		if(assertEquals(test.getLongDesc(),"long desc")){
-			System.out.println("Long Description getter works");
+		test.setTourName("A_Long_And_Loving_Walk");
+		test.setLongDesc("A rather long description of a rather meandingless tour that I am developing purly for a test hahahah test stuff");
+		test.setShortDesc("ape");
+		if(assertEquals("A rather long description of a rather meaningless tour that I am developing purly for a test hahahah test stuff",test.getLongDesc())){	
+			System.out.println("Long Description getter/setter works");
 		}
 
-		else if(assertEquals(test.getTourName(),"name"){
-			System.out.println("getTourName Works");
+		else if(assertEquals("A_Long_And_Loving_Walk",test.getTourName()){
+			System.out.println("get/set TourName Works");
 			
 		}
-		else if(assertEquals(test.getShortDesc(),"short desc")){
-			System.out.println("getShortDesc Works");
+		else if(assertEquals("ape",test.getShortDesc()));
+			System.out.println("get/setShortDesc Works");
 		}
 		else{
 			fail();
