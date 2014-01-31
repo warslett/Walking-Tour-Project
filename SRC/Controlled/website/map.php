@@ -45,7 +45,7 @@
     ?>
 
     <article class = "article">
-      <div class = "block clearfix">
+      <article class = "block clearfix">
         <h2 class = "blockheader">The Map Page!</h2>
 
         <div class = "blockcontent">
@@ -65,21 +65,21 @@
 
         </div>
 
+
         <div class = "block">
           <h3 class = "blockheader"><? echo $tour->getTitle (); ?></h3>
 
           <div class = "blockcontent clearfix">
 
             <? echo "<p>" . $tour->getLongDesc () . "</p>"; ?>
+          </div>
 
-            <div class = "mapmp" id = "map">
-
+            <div class = "blockcontent clearfix">
+              <div class="mapmp" id ="map">
+                </div>
 
             </div>
-
-          </div>
         </div>
-      </div>
 
     </article>
 
