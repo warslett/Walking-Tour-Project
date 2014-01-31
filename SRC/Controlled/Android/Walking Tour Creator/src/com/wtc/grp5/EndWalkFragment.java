@@ -27,7 +27,7 @@ public class EndWalkFragment extends DialogFragment implements OnClickListener{
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setTitle("Are you sure?") //Talk to the user tell them what will happen
+		builder.setTitle("Are you sure?")
 				.setMessage("You will lose the locations you stored!")
 				.setPositiveButton("Yes", this)
 				.setNegativeButton("No", this);

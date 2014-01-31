@@ -105,6 +105,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 		locRequest = LocationRequest.create();
         locRequest.setInterval(sampleRate);
+        locRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         
         // Prevent the screen from going off and pausing / stopping this activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -159,6 +160,7 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 
 	@Override
 	public void onConnected(Bundle bundle) {
+		locClient.requestLocationUpdates(locRequest, this);
 		currentLoc = locClient.getLastLocation();
 		LatLng loc = new LatLng(currentLoc.getLatitude(), currentLoc.getLongitude());
 		if(tour.getLocations().isEmpty()){
@@ -167,7 +169,6 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			addKeyLocation(walkStart);
 		}
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15));
-		locClient.requestLocationUpdates(locRequest, this);
 	}
 
 	@Override
@@ -373,10 +374,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
+		if(networkInfo != null && networkInfo.isConnected()){
 			Toast.makeText(this, "Saving walk...", Toast.LENGTH_SHORT).show();
 			saveToServer();
-		} else {
+		}else{
 			Toast.makeText(this, "Couldn't connect to server", Toast.LENGTH_LONG).show();
 		}
 	}
