@@ -96,13 +96,11 @@ class dbConnection {
                         "
                                             INSERT INTO placeDescription (
                                                locationID,
-                                               name,
                                                shortDesc
                                             )
                                         VALUES (
                                                " . $locid . ",
-                                               '" . $curloc->Place . "',
-                    '" . $curloc->PlaceDesc . "');
+                    '" . $curloc->Place . "');
                  "
                 );
 
@@ -208,7 +206,7 @@ class dbConnection {
                 while ($photo_record = mysqli_fetch_array($photo_query)) {
                     $photo_array[] = $photo_record['photoName'];
                 }
-                $place = new Place($place_record['shortDesc'], $photo_array);
+                $place = new Place($place_record['shortDesc'], $photo_array, $place_record['name']);
             }
 
             $locations[] = new Location(

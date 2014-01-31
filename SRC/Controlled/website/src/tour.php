@@ -79,6 +79,7 @@
           $place = array (
               "shortDesc" => $location->getPlace ()->getShortDesc (),
               "photos"    => $location->getPlace ()->getPhotos (),
+              "name" => $location->getPlace()->getName()
           );
 
         }
@@ -160,13 +161,19 @@
 
     public function __construct (
         $shortDesc,
-        $photos
+        $photos,
+        $name
     )
     {
 
+      $this->name = $name;
       $this->shortDesc = $shortDesc;
       $this->photos    = $photos;
 
+    }
+    
+    public function getName(){
+        return $this->name;
     }
 
     public function getShortDesc ()
