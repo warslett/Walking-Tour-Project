@@ -16,19 +16,41 @@ public class WTCTourTest {
 			System.out.println("The Strings are the same toJSON Passed");
 		}	
 		else{
-			//test that the gets work for each location
-			//test that the toJSON works
-			// test that get distance works
  			fail("Strings are different FAIL");
  		}
 	}
+	@Test
 	public void testAddLocation{
-	WTCLocation blank = new WTCLocation();
-	test.addLocation(WTCLocation);
+		WTCLocation blank = new WTCLocation();
+		test.addLocation(WTCLocation);
 	if(assertEquals(1,WTCLocation.getLocationsSize());
 		System.out.println("Pass");
 	}
 	else{
 		fail(); 
+	}
+	@Test
+	public void testGetters(){
+		if(assertEquals(test.getLongDesc(),"long desc")){
+			System.out.println("Long Description getter works");
+		}
+
+		else if(assertEquals(test.getTourName(),"name"){
+			System.out.println("getTourName Works");
+			
+		}
+		else if(assertEquals(test.getShortDesc(),"short desc")){
+			System.out.println("getShortDesc Works");
+		}
+		else{
+			fail();
+		}
+
+
+
+
+
+
+
 	}
 }
