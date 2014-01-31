@@ -296,16 +296,17 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	*/
 	public void removeLocation(Marker marker) {
 		for(int i = 0; i < tour.getLocations().size(); i++){
-			if(marker.getPosition().latitude == tour.getLocations().get(i).getLatitude() &&
-					marker.getPosition().longitude == tour.getLocations().get(i).getLongitude() &&
+			if((float) marker.getPosition().latitude == (float)tour.getLocations().get(i).getLatitude() &&
+					(float) marker.getPosition().longitude == (float) tour.getLocations().get(i).getLongitude() &&
 					!tour.getLocations().isEmpty()){
 				tour.removeLocation(i);
+				Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}
 		marker.remove();
 		selectedMarker = null;
-		Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}
 	
 	public void addPhoto() {

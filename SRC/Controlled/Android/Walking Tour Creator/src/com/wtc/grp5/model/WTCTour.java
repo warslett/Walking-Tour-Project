@@ -168,9 +168,8 @@ public class WTCTour implements Serializable{
 	public LinkedList<WTCLocation> getLocations(){
 		return locations;
 	}
-	public getLocationsSize(){
-
-	return locations.size();
+	public int getLocationsSize(){
+		return locations.size();
 	}
 	
 	public void fixTime(){
