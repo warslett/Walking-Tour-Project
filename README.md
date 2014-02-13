@@ -9,5 +9,5 @@ TODO List
 4. Personal reflective report - EVERYONE
 5. Maintenance Manual - Will.A, Will.L, Steve.C & Harvey.C
 6. Testing - Neil.V
-7. Printing/getting docs ready - Neil.V
+7. Printing/getting docs ready - Neil.V & Sev.R
 
