@@ -100,6 +100,9 @@ public class SendData extends AsyncTask<String, Void, Void> {
 		return null;
 	}
 
+	/**
+	 * Notifies the user that the tour was saved and takes them back to the home screen.
+	 */
 	@Override
 	protected void onPostExecute(Void result) {
 		Toast.makeText(activity, "Walk saved to server", Toast.LENGTH_LONG).show();
