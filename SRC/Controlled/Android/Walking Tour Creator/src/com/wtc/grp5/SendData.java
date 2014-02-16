@@ -32,14 +32,26 @@ import android.widget.Toast;
 public class SendData extends AsyncTask<String, Void, Void> {
 	
 	private Activity activity;
-    private WTCTour tour;
+    	private WTCTour tour;
 	
+	/**
+	 * Constructs a SendData object.
+	 * 
+	 * @param activity a link back to the activity that made this object.
+	 * @param tour the tour being saved to the server
+	 */
 	public SendData(Activity activity, WTCTour tour){
 		this.activity = activity;
-        this.tour = tour;
+		this.tour = tour;
 	}
 	
-	// Yes that is meant to be a capital V in Void.
+	/**
+	 * Sends the tour data to the specified server.
+	 * <p>The tour data and the accompanying photos are placed into a
+	 * Multi-Part MIME and sent to the server using HTTP POST.</p>
+	 * 
+	 * @param params the list of URLs to send the tour to.
+	 */
 	@Override
 	protected Void doInBackground(String... params) {
 		try{
