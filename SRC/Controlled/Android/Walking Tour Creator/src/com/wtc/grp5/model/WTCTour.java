@@ -168,10 +168,20 @@ public class WTCTour implements Serializable{
 	public LinkedList<WTCLocation> getLocations(){
 		return locations;
 	}
+	
+	/**
+	 * A shortcut method to get the size of the list of locations
+	 * 
+	 * @return the size of the list of locations in the tour
+	 */
 	public int getLocationsSize(){
 		return locations.size();
 	}
 	
+	/**
+	 * Adjusts the timestamps for each location in the tour to be
+	 * minutes from the start of the tour.
+	 */
 	public void fixTime(){
 		WTCLocation start;
 		Calendar startTime;
@@ -189,7 +199,7 @@ public class WTCTour implements Serializable{
 	}
 	
 	/** 
-	 * Calculate a rough estimate for the distance 
+	 * Calculate a rough estimate for the distance of the tour
 	 */
 	 private double calcDist(){
 		double dist = 0;
