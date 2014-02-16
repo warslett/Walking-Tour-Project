@@ -18,10 +18,21 @@ public class TourSave {
 	
 	private String filePath;
 	
+	/**
+	 * Constructs a TourSave object with a file path to where the tour data will be saved.
+	 * 
+	 * @param filePath the file path for where the tour will saved on the device.
+	 */
 	public TourSave(String filePath){
 		this.filePath = filePath;
 	}
 	
+	/**
+	 * Serializes the tour data out to file.
+	 * 
+	 * @param tour the tour being saved.
+	 * @return a message to say whether the save was successful or not
+	 */
 	public String saveTour(WTCTour tour) {
 		try{
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath));
@@ -33,6 +44,11 @@ public class TourSave {
 		return "Tour saved";
 	}
 	
+	/**
+	 * Deserializes a tour data file.
+	 * 
+	 * @return the tour loaded in from file
+	 */
 	public WTCTour loadTour(){
 		WTCTour result = null;
 		try{
