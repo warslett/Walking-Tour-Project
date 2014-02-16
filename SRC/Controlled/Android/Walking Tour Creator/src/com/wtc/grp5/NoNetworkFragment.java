@@ -9,6 +9,9 @@ import android.os.Bundle;
 
 public class NoNetworkFragment extends DialogFragment implements OnClickListener {
 
+	/**
+	 * Create this dialog and sets its layout.
+	 */
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -17,7 +20,10 @@ public class NoNetworkFragment extends DialogFragment implements OnClickListener
 				.setNegativeButton("OK...", this);
 		return builder.create();
 	}
-
+	
+	/**
+	 * Does nothing in this instance, just needs to be here.
+	 */
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		
