@@ -4,6 +4,5 @@ TODO List
 --------------------------
 
 1. finish JavaDoc comments - Will.A
-2. final state - Harvey.C
 2. Printing/getting docs ready - Neil.V & Sev.R
 
