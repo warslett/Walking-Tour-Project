@@ -183,19 +183,30 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onDisconnected() {
 		
 	}
-
+	
+	/**
+	 * Sets the seleced marker.
+	 * 
+	 * Called when the user clicks on a map marker.
+	 */
 	@Override
 	public boolean onMarkerClick(Marker marker) {
 		selectedMarker = marker;
 		return false;
 	}
-
+	
+	/**
+	 * Creates the action bar where all the buttons are.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.map, menu);
 		return true;
 	}
 	
+	/**
+	 * Dictates what happens when the user clicks a button on the options menu.
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()){
@@ -250,6 +261,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		}
 	}
 	
+	/**
+	 * Used to add a new key location to the tour.
+	 */
 	@Override
 	public void onPositiveSelection(DialogFragment fragment) {
 		LocationDetailsFragment frag = (LocationDetailsFragment) fragment;
@@ -259,6 +273,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		addKeyLocation(keyLoc);
 	}
 
+	/**
+	 * Used to cancel the tour if the user selects 'OK' on the dialog.'
+	 */
 	@Override
 	public void onCancelWalkSelection(DialogFragment fragment) {
 		cancelWalk();	
