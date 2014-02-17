@@ -78,7 +78,12 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		
         locClient = new LocationClient(this, this, this);
 	}
-
+	
+	/**
+	 * Called when the activity starts.
+	 * 
+	 * Used to setup the temp storage for the tour and connect to the location client.
+	 */
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -93,13 +98,23 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 			locClient.connect();
 		}
 	}
-
+	
+	/**
+	 * Called when the activity is paused.
+	 * 
+	 * Used to stop the location client from recording the user's location.
+	 */
 	@Override
 	protected void onPause() {
 		locClient.removeLocationUpdates(this);
 		super.onPause();
 	}
-
+	
+	/**
+	 * Called when the activity resumes.
+	 * 
+	 * Used to start location updating and re-load the tour from file.
+	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -113,7 +128,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
         // Prevent the screen from going off and pausing / stopping this activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
-
+	
+	/**
+	 * 
+	 */
 	@Override
 	protected void onStop() {
 		tourSave.saveTour(tour);
@@ -121,7 +139,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		locClient.disconnect();
 		super.onStop();
 	}
-	
+	/**
+	 * Addss the photo' file path the selected key location after the photo has been taken.
+	 */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -154,7 +174,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
             }
         }
     }
-	
+	/**
+	 * Keeps track of the user's location.
+	 */
 	@Override
 	public void onLocationChanged(Location location) {
 		currentLoc = location;
@@ -165,7 +187,11 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onConnectionFailed(ConnectionResult result) {
 		
 	}
-
+	
+	/**
+	 * When the phone detects the Google Play Services SDK to interact with the map,
+	 * this method add the start location to the map and the tour.
+	 */
 	@Override
 	public void onConnected(Bundle bundle) {
 		locClient.requestLocationUpdates(locRequest, this);
@@ -274,13 +300,16 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 
 	/**
-	 * Used to cancel the tour if the user selects 'OK' on the dialog.'
+	 * Used to cancel the tour if the user selects 'OK' on the dialog.
 	 */
 	@Override
 	public void onCancelWalkSelection(DialogFragment fragment) {
 		cancelWalk();	
 	}
 
+	/**
+	 * Used to finish the walk and save it to the server if the user selects 'OK on the dialog.
+	 */
 	@Override
 	public void onFinishWalkSelection(DialogFragment fragment) {
 		finishWalk();
@@ -327,6 +356,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 		//Toast.makeText(this, "Location Removed", Toast.LENGTH_SHORT).show();
 	}
 	
+	/**
+	 * Adds photo to the tour.
+	 */
 	public void addPhoto() {
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
     	// Ensure that there's a camera activity to handle the intent
@@ -347,8 +379,10 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
     	}
 	}
 	
-	/*
-	 * The following method was taken from the Android Developers Documents
+	/**
+	 * Creates the image file where the photo will be saved to.
+	 * 
+	 * e following method was taken from the Android Developers Documents
 	 * 
 	 * URL: http://developer.android.com/training/camera/photobasics.html
 	 */
