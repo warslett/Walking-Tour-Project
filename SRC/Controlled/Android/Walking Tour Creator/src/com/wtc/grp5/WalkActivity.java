@@ -130,7 +130,9 @@ public class WalkActivity extends Activity implements ConnectionCallbacks, OnCon
 	}
 	
 	/**
+	 * Called when the activity is stopped.
 	 * 
+	 * Saves the tour to its temp file and disconnects the location client.
 	 */
 	@Override
 	protected void onStop() {
