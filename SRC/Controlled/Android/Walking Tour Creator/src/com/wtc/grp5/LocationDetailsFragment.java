@@ -23,12 +23,18 @@ public class LocationDetailsFragment extends DialogFragment implements OnClickLi
 	private EditText tfLocDesc;
 	private WTCDialogCallbacks listener;
 	
+	/**
+	 * Links this dialog back to the activity that created it.
+	 */
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
 		listener = (WTCDialogCallbacks) activity;
 	}
 	
+	/**
+	 * Creates the dialog and sets its layout.
+	 */
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -41,18 +47,27 @@ public class LocationDetailsFragment extends DialogFragment implements OnClickLi
 		builder.setNegativeButton("Cancel", this);
 		return builder.create();
 	}
-
+	
+	/**
+	 * Dictates what happens when you click a button on the dialog.
+	 */
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		if(which == DialogInterface.BUTTON_POSITIVE){
 			listener.onPositiveSelection(this);
 		}
 	}
-
+	
+	/**
+	 * @return the text field for the location name.
+	 */
 	public EditText getTfLocName() {
 		return tfLocName;
 	}
-
+	
+	/**
+	 * @return the text field for the location description.
+	 */
 	public EditText getTfLocDesc() {
 		return tfLocDesc;
 	}

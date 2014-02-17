@@ -12,7 +12,7 @@ import android.app.Activity;
 public class AboutActivity extends Activity {
 	
 	/**
-	* Creates this activity its layout.
+	* Creates this activity and its layout.
 	*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -74,7 +74,6 @@ public class WTCLocation implements Serializable{
 	 * The time stamp is set completely by the method and therefore takes no parameters.
 	 */
 	public void setTimeStamp(long newTime){
-
 		timeStamp = newTime;
 	}
 
@@ -84,9 +83,12 @@ public class WTCLocation implements Serializable{
 	public String getTimeStamp(){
 		return Long.toString(timeStamp); //this might be broken now hac22, oops
 	}
-	//Part of some magic code to convert a TIME into a number of seconds since the first time
+	
+	/**
+	 * @return the orginal timestamp for the location
+	 */
 	public Calendar getOldTime(){
-
+		//Part of some magic code to convert a TIME into a number of seconds since the first time
 		return oldTime;
 	}
 	
@@ -96,7 +98,7 @@ public class WTCLocation implements Serializable{
 	* @return the JSON String.
 	*/
 	public String toJSON(){
-		String out;// construct a string "out" based on the contents of the WTCLocation object
+		String out;
 		out = "{\"Longitude\": \""+Double.toString(longitude)+"\",\"Latitude\": \""+Double.toString(latitude)+"\",\"TimeStamp\": \""+Long.toString(timeStamp)+"\",\"Place\":null}";
 		return out;
 	}

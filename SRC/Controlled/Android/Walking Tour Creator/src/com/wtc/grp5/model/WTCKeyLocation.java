@@ -59,33 +59,40 @@ public class WTCKeyLocation extends WTCLocation {
 		}
 	}
 	
+	/**
+	 * @return the list of photo paths in this location
+	 */
 	public List<String> getPhotos(){
 		return photos;
 	}
 
 	/**
-	 * @return the locName
+	 * @return the name of this location
 	 */
 	public String getLocName() {
 		return locName;
 	}
 
 	/**
-	 * @param locName the locName to set
+	 * Sets the name of this location
+	 * 
+	 * @param locName the name of the location being set
 	 */
 	public void setLocName(String locName) {
 		this.locName = locName;
 	}
 
 	/**
-	 * @return the locDesc
+	 * @return the description of this location
 	 */
 	public String getLocDesc() {
 		return locDesc;
 	}
 
 	/**
-	 * @param locDesc the locDesc to set
+	 * Sets the description of this location
+	 * 
+	 * @param locDesc the description of the location being set
 	 */
 	public void setLocDesc(String locDesc) {
 		this.locDesc = locDesc;

@@ -18,12 +18,18 @@ public class EndWalkFragment extends DialogFragment implements OnClickListener{
 	
 	protected WTCDialogCallbacks listener;
 	
+	/**
+	 * Link the this dialog back to the activity creating it.
+	 */
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
 		listener = (WTCDialogCallbacks) activity;
 	}
 	
+	/**
+	 * Creates the dialog and sets its layout.
+	 */
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -33,7 +39,10 @@ public class EndWalkFragment extends DialogFragment implements OnClickListener{
 				.setNegativeButton("No", this);
 		return builder.create();
 	}
-
+	
+	/**
+	 * Dictates what happens when you click one the dialog buttons.
+	 */
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		if(which == DialogInterface.BUTTON_POSITIVE){
