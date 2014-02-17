@@ -54,6 +54,8 @@ Week 06/12/13 - 12/12/13
 
 Tasks:
 	Orchard - 01:00
+	
+	TOTAL HOURS: 01:00
 
 Week 27/01/14 - 03/02/14
 
@@ -64,13 +66,17 @@ Tasks:
 	Orchard - 08:00
 	Demo - 02:00
 	
+	TOTAL HOURS: 33:00
+	
 Week 11/02/14 - 17/02/14
 
 Tasks:
 	Orchard - 3:00
 	Home (personal reflective report) - 1:00
 	Home (Historical account) - 2:30
-	Orchard - 3:00
+	Orchard - 4:00
+	
+	TOTAL HOURS: 10:30
 
 
-	ACCUMULATED HOURS: 77:20 
+	ACCUMULATED HOURS: 78:20 
